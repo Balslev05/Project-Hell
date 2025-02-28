@@ -485,8 +485,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f1292156148bb428be6e33a34f657b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1426425968}
+  player: {fileID: 1426425968}
+  camera: {fileID: 519420031}
   smoothTime: 0.3
+  DebugPrefab: {fileID: 5445630596216433365, guid: 6fe375e8b70fe1d47bc4a3ccb7c3a907, type: 3}
 --- !u!1 &532618854
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +831,7 @@ MonoBehaviour:
   walkSpeed: 5
   rollSpeed: 20
   rollDuration: 0.3
-  rollCooldown: 0.5
+  rollCooldown: 1
 --- !u!50 &1426425970
 Rigidbody2D:
   serializedVersion: 5
