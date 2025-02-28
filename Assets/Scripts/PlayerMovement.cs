@@ -101,11 +101,11 @@ public class PlayerMovement : MonoBehaviour
     private void Invincible(bool becomeInvincible)
     {
         if (becomeInvincible) {
-            collider.enabled = true;
+            collider.enabled = false;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f);
         }
         else if (!becomeInvincible) {
-            collider.enabled = false;
+            collider.enabled = true;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
         }
     }
