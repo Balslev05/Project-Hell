@@ -8,13 +8,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private float threshold;
     [SerializeField] private GameObject DebugPrefab;
     GameObject Debug;
-    private Vector3 offset;
     private Vector3 currentVelocity = Vector3.zero;
-
-    private void Awake()
-    {
-        offset = transform.position - player.position;
-    }
 
     private void Start()
     {
@@ -23,7 +17,7 @@ public class CameraManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 targetPosition = (player.position + camera.ScreenToWorldPoint(Input.mousePosition)) / 2f + offset;
+        Vector3 targetPosition = (player.position + camera.ScreenToWorldPoint(Input.mousePosition)) / 2f;
 
         targetPosition.x = Mathf.Clamp(targetPosition.x, -threshold + player.position.x, threshold + player.position.x);
         targetPosition.y = Mathf.Clamp(targetPosition.y, -threshold + player.position.y, threshold + player.position.y);

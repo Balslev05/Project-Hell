@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+using EZCameraShake;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Components")]
@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rollSpeed = 10f;
     [SerializeField] private float rollDuration = 1f;
     [SerializeField] private float rollCooldown = 1f;
+
     private bool isMoving;
     private bool isRolling;
     private bool canRoll;
@@ -98,15 +99,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Invincible(bool becomeInvincible)
+    public void Invincible(bool becomeInvincible)
     {
         if (becomeInvincible) {
             collider.enabled = false;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f);
+            CameraShaker.Instance.ShakeOnce(.5f, .5f, 1f, 1f);
         }
         else if (!becomeInvincible) {
             collider.enabled = true;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
+            CameraShaker.Instance.ShakeOnce(.5f, .5f, 1f, 1f);
         }
     }
 }
