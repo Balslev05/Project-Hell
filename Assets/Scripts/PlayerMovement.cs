@@ -7,8 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D collider;
     private SpriteRenderer spriteRenderer;
-
-    private Vector2 playerInput;
+    public CameraManager cameraManager;
 
     [Header("Stats")]
     [SerializeField] private float moveSpeed;
@@ -16,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rollSpeed = 10f;
     [SerializeField] private float rollDuration = 1f;
     [SerializeField] private float rollCooldown = 1f;
+
+    private Vector2 playerInput;
 
     private bool isMoving;
     private bool isRolling;
@@ -104,11 +105,13 @@ public class PlayerMovement : MonoBehaviour
         if (becomeInvincible) {
             collider.enabled = false;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f);
+            cameraManager.ZoomCamera(4);
             CameraShaker.Instance.ShakeOnce(.5f, .5f, 1f, 1f);
         }
         else if (!becomeInvincible) {
             collider.enabled = true;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
+            cameraManager.ZoomCamera(6);
             CameraShaker.Instance.ShakeOnce(.5f, .5f, 1f, 1f);
         }
     }

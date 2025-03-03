@@ -1,3 +1,4 @@
+using System.Drawing;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
@@ -24,5 +25,10 @@ public class CameraManager : MonoBehaviour
 
         Debug.transform.position = targetPosition;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime);
+    }
+
+    public void ZoomCamera(float zoom)
+    {
+        camera.orthographicSize = zoom;
     }
 }
