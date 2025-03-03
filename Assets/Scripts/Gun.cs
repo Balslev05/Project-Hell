@@ -5,18 +5,14 @@ using UnityEngine;
 public class Gun : ScriptableObject
 {
     [Header("Assign")]
+    public Sprite GunSprite;
     public GameObject projectilePrefab;
     [Header("Stats")]
-    public float fireRate = 0.5f;  
-    public int damage = 10;        
+    public bool HoldToFire = false;
+    public int magazin;
+    public float reloadeTime;
+    public float timeBetweenShots;
     public int bulletCount = 1;    
     public float spreadAngle = 0f; 
-    public bool HitScan;
-
-    [Header("Raycast Visual Settings")]
-    public Color raycastColor = Color.red;
-    public float raycastDuration = 0.1f;
-    public float raycastWidth = 0.1f;
-    public float raycastMaxDistance = 100f;
-
+    public int damage = 10;        
 }

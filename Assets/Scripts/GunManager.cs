@@ -3,17 +3,28 @@ using UnityEngine;
 
 public class GunManager : MonoBehaviour
 {
+    [Header("Assignebels")]
     public Transform shootPoint;
+    public SpriteRenderer WeaponHolder;
+
+    [Header("GunSystem")]
     public Gun currentGun;
     public int MaxGuns = 3;
     public List<Gun> GunList = new List<Gun>();
+
+    [Header("GunStats")]
+    [SerializeField] private int currentAmmo;
+    [SerializeField] private float reloadTimer = 0f;
+    private bool isReloading = false;
     private int currentGunIndex = 0;
+    private float timeSinceLastShot = 0f;
 
     void Start()
     {
         if (GunList != null && GunList.Count > 0)
         {
             currentGun = GunList[0];
+            currentAmmo = currentGun.magazin;
         }
     }
 
@@ -21,25 +32,64 @@ public class GunManager : MonoBehaviour
     {
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
         
-        if (currentGun && Input.GetKeyDown(KeyCode.Mouse1))
+        if (isReloading)
         {
-            Fire(shootPoint);
+            reloadTimer -= Time.deltaTime;
+            if (reloadTimer <= 0)
+            {
+                isReloading = false;
+                currentAmmo = currentGun.magazin;
+            }
+            return;
         }
-        if (scrollInput > 0f)
+
+        timeSinceLastShot += Time.deltaTime;
+
+        if (currentGun && ((currentGun.HoldToFire && Input.GetKey(KeyCode.Mouse1)) || (!currentGun.HoldToFire && Input.GetKeyDown(KeyCode.Mouse1))))
+        {
+            if (currentAmmo > 0 && timeSinceLastShot >= currentGun.timeBetweenShots)
+            {
+                Fire(shootPoint);
+                currentAmmo--;
+                timeSinceLastShot = 0f;
+            }
+            else if (currentAmmo <= 0)
+            {
+                StartReload();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < currentGun.magazin)
+        {
+            StartReload();
+        }
+
+       /*  if (scrollInput > 0f)
         {
             SwitchToNextGun();
         }
         else if (scrollInput < 0f)
         {
             SwitchToPreviousGun();
-        }
+        } */
 
         for (int i = 0; i < GunList.Count && i < 9; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
                 SwitchToGun(i);
+                WeaponHolder.sprite = currentGun.GunSprite;
             }
+        }
+    }
+
+    private void StartReload()
+    {
+        if (!isReloading)
+        {
+            isReloading = true;
+            reloadTimer = currentGun.reloadeTime;
+            Debug.Log("Reloading...");
         }
     }
 
@@ -49,7 +99,10 @@ public class GunManager : MonoBehaviour
         
         currentGunIndex = (currentGunIndex + 1) % GunList.Count;
         currentGun = GunList[currentGunIndex];
+        currentAmmo = currentGun.magazin;
+        isReloading = false;
     }
+
     private void SwitchToPreviousGun()
     {
         if (GunList == null || GunList.Count == 0) return;
@@ -57,14 +110,20 @@ public class GunManager : MonoBehaviour
         currentGunIndex--;
         if (currentGunIndex < 0) currentGunIndex = GunList.Count - 1;
         currentGun = GunList[currentGunIndex];
+        currentAmmo = currentGun.magazin;
+        isReloading = false;
     }
+
     private void SwitchToGun(int index)
     {
         if (GunList == null || index < 0 || index >= GunList.Count) return;
         
         currentGunIndex = index;
         currentGun = GunList[currentGunIndex];
+        currentAmmo = currentGun.magazin;
+        isReloading = false;
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Got The Gun");
@@ -80,37 +139,19 @@ public class GunManager : MonoBehaviour
             {
                 other.GetComponent<SpriteRenderer>().enabled = false;
             }
+            WeaponHolder.sprite = currentGun.GunSprite;
             Destroy(other.gameObject);
         }
     }
+
     public void Fire(Transform firePoint) 
     {
-        Debug.Log("BANG BANG");
-        for (int i = 0; i < currentGun.bulletCount; i++) {
-
+        for (int i = 0; i < currentGun.bulletCount; i++)
+        {
             float angleOffset = Random.Range(-currentGun.spreadAngle / 2f, currentGun.spreadAngle / 2f);
             Quaternion rotation = Quaternion.Euler(0, 0, angleOffset);
             Vector2 direction = (rotation * firePoint.right).normalized;
-
-            if (currentGun.HitScan)
-            {
-                RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction, currentGun.raycastMaxDistance);
-                
-                if (hit.collider != null)
-                {
-                    Debug.DrawLine(firePoint.position, hit.point, currentGun.raycastColor, currentGun.raycastDuration);
-                    var hitObject = hit.collider.gameObject;
-                    // hitObject.GetComponent<Health>().TakeDamage(damage);
-                }
-                else
-                {
-                    Debug.DrawLine(firePoint.position, (Vector2)firePoint.position + direction * currentGun.raycastMaxDistance, currentGun.raycastColor, currentGun.raycastDuration);
-                }
-            }
-            else {
-                GameObject newBullet = Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
-            }
+            GameObject newBullet = Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
         }
-        Debug.Log("No more BANG BANG");
     }
 }

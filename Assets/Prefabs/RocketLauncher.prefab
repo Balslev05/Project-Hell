@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2404520885840967360}
   - component: {fileID: 8837729650576416559}
   m_Layer: 0
-  m_Name: TesttBullet
+  m_Name: RocketLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,21 +48,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   randomizeSpeed: 1
-  minSpeed: 15
-  maxSpeed: 25
+  minSpeed: 25
+  maxSpeed: 30
   rotationSpeed: 0
   randomizeRotation: 0
   minRotation: -360
   maxRotation: 360
-  sinAmplitude: 10
-  sinFrequency: 10
+  sinAmplitude: 0
+  sinFrequency: 0
   oscillatingAmplitude: 0
   amplitudeChangeSpeed: 1
-  homing: 1
+  homing: 0
   homingStrength: 2
   homingTarget: Player
   delayedHoming: 0
   homingDelay: 1
+  maxLifeTime: 5
 --- !u!212 &2404520885840967360
 SpriteRenderer:
   m_ObjectHideFlags: 0
