@@ -1,13 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using EZCameraShake;
+
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Components")]
     private Rigidbody2D rb;
     private Collider2D collider;
     private SpriteRenderer spriteRenderer;
-    public CameraManager cameraManager;
 
     [Header("Stats")]
     [SerializeField] private float moveSpeed;
@@ -105,14 +105,12 @@ public class PlayerMovement : MonoBehaviour
         if (becomeInvincible) {
             collider.enabled = false;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f);
-            cameraManager.ZoomCamera(4);
-            CameraShaker.Instance.ShakeOnce(.5f, .5f, 1f, 1f);
+            CameraShaker.Instance.ShakeOnce(3f, 3f, 1f, 1f);
         }
         else if (!becomeInvincible) {
             collider.enabled = true;
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
-            cameraManager.ZoomCamera(6);
-            CameraShaker.Instance.ShakeOnce(.5f, .5f, 1f, 1f);
+            CameraShaker.Instance.ShakeOnce(3f, 3f, 1f, 1f);
         }
     }
 }
