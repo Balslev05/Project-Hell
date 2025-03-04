@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class GunManager : MonoBehaviour
 {
     [Header("Assignebels")]
     public Transform shootPoint;
     public SpriteRenderer WeaponHolder;
-
+    public GameObject GunDrop;
     [Header("GunSystem")]
     public Gun currentGun;
     public int MaxGuns = 3;
@@ -50,6 +51,7 @@ public class GunManager : MonoBehaviour
             if (currentAmmo > 0 && timeSinceLastShot >= currentGun.timeBetweenShots)
             {
                 Fire(shootPoint);
+                CameraShaker.Instance.ShakeOnce(currentGun.ShakeStreangth, currentGun.ShakeStreangth, 0.25f, 0.25f);
                 currentAmmo--;
                 timeSinceLastShot = 0f;
             }
@@ -64,6 +66,11 @@ public class GunManager : MonoBehaviour
             StartReload();
         }
 
+        if(Input.GetKeyDown(KeyCode.Z)){
+            {
+                DropGun(currentGun);
+            }
+        }
        /*  if (scrollInput > 0f)
         {
             SwitchToNextGun();
@@ -81,6 +88,7 @@ public class GunManager : MonoBehaviour
                 WeaponHolder.sprite = currentGun.GunSprite;
             }
         }
+   
     }
 
     private void StartReload()
@@ -124,11 +132,27 @@ public class GunManager : MonoBehaviour
         isReloading = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void DropGun(Gun gun)
+    {
+        if (GunList.Count > 1) // Don't drop if it's the last gun
+                {
+                    GunList.Remove(gun);
+                    currentGunIndex = 0;
+                    currentGun = GunList[currentGunIndex];
+                    currentAmmo = currentGun.magazin;
+                    WeaponHolder.sprite = currentGun.GunSprite;
+                    GameObject DroppedGun = Instantiate(GunDrop,transform.position,Quaternion.identity);
+                    DroppedGun.GetComponent<GunHolder>().gun = gun;
+                    DroppedGun.GetComponent<GunHolder>().Activate();
+                    
+                    
+                }
+    }
+    private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log("Got The Gun");
         Gun pickupGun = other.GetComponent<GunHolder>().gun;
-        if (pickupGun != null && GunList.Count < MaxGuns)
+        if (pickupGun != null && GunList.Count < MaxGuns && Input.GetKey(KeyCode.E))
         {
             GunList.Add(pickupGun);
             
@@ -142,6 +166,10 @@ public class GunManager : MonoBehaviour
             WeaponHolder.sprite = currentGun.GunSprite;
             Destroy(other.gameObject);
         }
+
+
+
+
     }
 
     public void Fire(Transform firePoint) 
