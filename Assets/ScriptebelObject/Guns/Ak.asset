@@ -21,3 +21,4 @@ MonoBehaviour:
   bulletCount: 1
   spreadAngle: 10
   damage: 10
+  ShakeStreangth: 2

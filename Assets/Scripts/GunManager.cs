@@ -51,7 +51,7 @@ public class GunManager : MonoBehaviour
             if (currentAmmo > 0 && timeSinceLastShot >= currentGun.timeBetweenShots)
             {
                 Fire(shootPoint);
-                CameraShaker.Instance.ShakeOnce(currentGun.ShakeStreangth, currentGun.ShakeStreangth, 0.5f, 0.5f);
+                CameraShaker.Instance.ShakeOnce(currentGun.ShakeStreangth, currentGun.ShakeStreangth, 0.25f, 0.25f);
                 currentAmmo--;
                 timeSinceLastShot = 0f;
             }

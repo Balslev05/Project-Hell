@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GunSprite: {fileID: -1068439443906237425, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: 2012def4675f7fd4c82385a5e7da3500, type: 3}
+  HoldToFire: 0
   magazin: 10
   reloadeTime: 2
   timeBetweenShots: 0.3
-  fireRate: 0.2
-  damage: 10
   bulletCount: 7
   spreadAngle: 30
+  damage: 10
+  ShakeStreangth: 4.3
