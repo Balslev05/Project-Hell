@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
@@ -27,8 +27,12 @@ public class bullet : MonoBehaviour
     public string homingTarget;
     public bool delayedHoming = false;          
     public float homingDelay = 1f;             
+    
     [Header("LifeTime")]
     public int maxLifeTime;
+
+    [Header("Collision Effects")]
+    public GameObject spawnOnHit;
 
     private Vector2 direction;
     private float lifetime = 0f;
@@ -88,5 +92,14 @@ public class bullet : MonoBehaviour
         
         
         rb.linearVelocity = movement;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (spawnOnHit != null)
+        {
+            Instantiate(spawnOnHit, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
     }
 }
