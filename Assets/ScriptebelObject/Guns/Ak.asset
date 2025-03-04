@@ -17,7 +17,7 @@ MonoBehaviour:
   HoldToFire: 1
   magazin: 31
   reloadeTime: 2
-  timeBetweenShots: 0.3
+  timeBetweenShots: 0.1
   bulletCount: 1
   spreadAngle: 10
   damage: 10
