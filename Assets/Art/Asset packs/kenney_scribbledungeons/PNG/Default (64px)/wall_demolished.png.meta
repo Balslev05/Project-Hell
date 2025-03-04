@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wall_demolished_0: 2435207804386741451
+      wall_demolished_1: 2310248122836377970
+      wall_demolished_2: 7576883134740423290
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
