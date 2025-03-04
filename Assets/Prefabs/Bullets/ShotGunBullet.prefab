@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 880422390373763926}
   - component: {fileID: 2404520885840967360}
   - component: {fileID: 8837729650576416559}
-  - component: {fileID: 3850546925234931463}
+  - component: {fileID: -5040600356659895159}
   m_Layer: 0
-  m_Name: NormalBullet
+  m_Name: ShotGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,9 +108,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.6431373, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.25968242, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,7 +147,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!96 &3850546925234931463
+--- !u!96 &-5040600356659895159
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -223,7 +223,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.6428223, b: 0, a: 1}
+      key0: {r: 1, g: 0.2627451, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

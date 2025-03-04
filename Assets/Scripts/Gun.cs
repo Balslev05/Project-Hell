@@ -14,5 +14,6 @@ public class Gun : ScriptableObject
     public float timeBetweenShots;
     public int bulletCount = 1;    
     public float spreadAngle = 0f; 
-    public int damage = 10;        
+    public int damage = 10;    
+    public float ShakeStreangth = 0.5f;    
 }
