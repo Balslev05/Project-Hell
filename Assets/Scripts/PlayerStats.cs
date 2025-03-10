@@ -16,11 +16,40 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         currentArmor = maxArmor;
         healthBar.SetMaxHealth(maxHealth);
+        armorBar.SetMaxPlotArmor(maxArmor);
     }
 
-    void TakeDamage(int damage)
+    void Update()
     {
-        currentHealth -= damage;
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TakeDamage(10);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            HealHealth(5);
+        }
+    }
+
+    void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        healthBar.SetCurrentHealth(currentHealth);
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("I'm dead D:");
+    }
+
+    void HealHealth(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) { currentHealth = maxHealth; }
         healthBar.SetCurrentHealth(currentHealth);
     }
 }
