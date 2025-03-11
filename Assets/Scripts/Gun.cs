@@ -9,11 +9,19 @@ public class Gun : ScriptableObject
     public GameObject projectilePrefab;
     [Header("Stats")]
     public bool HoldToFire = false;
-    public int magazin;
-    public float reloadeTime;
     public float timeBetweenShots;
     public int bulletCount = 1;    
     public float spreadAngle = 0f; 
     public int damage = 10;    
-    public float ShakeStreangth = 0.5f;    
+    public float ShakeStreangth = 0.5f;   
+    public AmmoType ammoType;
+     public enum AmmoType
+    {
+        Light,      // For pistols, SMGs
+        Medium,     // For rifles, shotguns
+        Heavy,      // For sniper rifles, heavy weapons
+        Explosive,  // For rocket launchers, grenade launchers
+        Shell       // For shotgun shells
+    }
+
 }

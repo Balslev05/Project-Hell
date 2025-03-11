@@ -12,58 +12,122 @@ public class GunManager : MonoBehaviour
     public Gun currentGun;
     public int MaxGuns = 3;
     public List<Gun> GunList = new List<Gun>();
-
     [Header("GunStats")]
-    [SerializeField] private int currentAmmo;
-    [SerializeField] private float reloadTimer = 0f;
-    private bool isReloading = false;
-    private int currentGunIndex = 0;
     private float timeSinceLastShot = 0f;
+    private int currentGunIndex = 0;
+    
+    public enum AmmoType
+    {
+        Light,      // For pistols, SMGs
+        Medium,     // For rifles, shotguns
+        Heavy,      // For sniper rifles, heavy weapons
+        Explosive,  // For rocket launchers, grenade launchers
+        Shell       // For shotgun shells
+    }
+
+    [Header("Ammo")]
+    [SerializeField] private int _lightAmmo = 100;
+    [SerializeField] private int _mediumAmmo = 60;
+    [SerializeField] private int _heavyAmmo = 20;
+    [SerializeField] private int _explosiveAmmo = 5;
+    [SerializeField] private int _shellAmmo = 30;
+
+    private Dictionary<AmmoType, int> AmmoInventory;
+
+    public int lightAmmo 
+    {
+        get { return _lightAmmo; }
+        set { _lightAmmo = value; UpdateAmmoInventory(); }
+    }
+    public int mediumAmmo
+    {
+        get { return _mediumAmmo; }
+        set { _mediumAmmo = value; UpdateAmmoInventory(); }
+    }
+    public int heavyAmmo
+    {
+        get { return _heavyAmmo; }
+        set { _heavyAmmo = value; UpdateAmmoInventory(); }
+    }
+    public int explosiveAmmo
+    {
+        get { return _explosiveAmmo; }
+        set { _explosiveAmmo = value; UpdateAmmoInventory(); }
+    }
+    public int shellAmmo
+    {
+        get { return _shellAmmo; }
+        set { _shellAmmo = value; UpdateAmmoInventory(); }
+    }
+
+    private void UpdateAmmoInventory()
+    {
+        if (AmmoInventory != null)
+        {
+            AmmoInventory[AmmoType.Light] = _lightAmmo;
+            AmmoInventory[AmmoType.Medium] = _mediumAmmo;
+            AmmoInventory[AmmoType.Heavy] = _heavyAmmo;
+            AmmoInventory[AmmoType.Explosive] = _explosiveAmmo;
+            AmmoInventory[AmmoType.Shell] = _shellAmmo;
+        }
+    }
+
+    private void Awake()
+    {
+        AmmoInventory = new Dictionary<AmmoType, int>()
+        {
+            {AmmoType.Light, _lightAmmo},
+            {AmmoType.Medium, _mediumAmmo},
+            {AmmoType.Heavy, _heavyAmmo},
+            {AmmoType.Explosive, _explosiveAmmo},
+            {AmmoType.Shell, _shellAmmo}
+        };
+    }
 
     void Start()
     {
         if (GunList != null && GunList.Count > 0)
         {
             currentGun = GunList[0];
-            currentAmmo = currentGun.magazin;
         }
     }
 
     void Update()
     {
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        
-        if (isReloading)
-        {
-            reloadTimer -= Time.deltaTime;
-            if (reloadTimer <= 0)
-            {
-                isReloading = false;
-                currentAmmo = currentGun.magazin;
-            }
-            return;
-        }
 
         timeSinceLastShot += Time.deltaTime;
 
         if (currentGun && ((currentGun.HoldToFire && Input.GetKey(KeyCode.Mouse1)) || (!currentGun.HoldToFire && Input.GetKeyDown(KeyCode.Mouse1))))
         {
-            if (currentAmmo > 0 && timeSinceLastShot >= currentGun.timeBetweenShots)
+            AmmoType currentAmmoType = (AmmoType)currentGun.ammoType;
+            
+            if (AmmoInventory[currentAmmoType] > 0 && timeSinceLastShot >= currentGun.timeBetweenShots)
             {
                 Fire(shootPoint);
                 CameraShaker.Instance.ShakeOnce(currentGun.ShakeStreangth, currentGun.ShakeStreangth, 0.25f, 0.25f);
-                currentAmmo--;
+                
+                switch(currentAmmoType)
+                {
+                    case AmmoType.Light:
+                        lightAmmo--;
+                        break;
+                    case AmmoType.Medium:
+                        mediumAmmo--;
+                        break;
+                    case AmmoType.Heavy:
+                        heavyAmmo--;
+                        break;
+                    case AmmoType.Explosive:
+                        explosiveAmmo--;
+                        break;
+                    case AmmoType.Shell:
+                        shellAmmo--;
+                        break;
+                }
+                
                 timeSinceLastShot = 0f;
             }
-            else if (currentAmmo <= 0)
-            {
-                StartReload();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < currentGun.magazin)
-        {
-            StartReload();
         }
 
         if(Input.GetKeyDown(KeyCode.Z)){
@@ -71,14 +135,6 @@ public class GunManager : MonoBehaviour
                 DropGun(currentGun);
             }
         }
-       /*  if (scrollInput > 0f)
-        {
-            SwitchToNextGun();
-        }
-        else if (scrollInput < 0f)
-        {
-            SwitchToPreviousGun();
-        } */
 
         for (int i = 0; i < GunList.Count && i < 9; i++)
         {
@@ -91,24 +147,12 @@ public class GunManager : MonoBehaviour
    
     }
 
-    private void StartReload()
-    {
-        if (!isReloading)
-        {
-            isReloading = true;
-            reloadTimer = currentGun.reloadeTime;
-            Debug.Log("Reloading...");
-        }
-    }
-
     private void SwitchToNextGun()
     {
         if (GunList == null || GunList.Count == 0) return;
         
         currentGunIndex = (currentGunIndex + 1) % GunList.Count;
         currentGun = GunList[currentGunIndex];
-        currentAmmo = currentGun.magazin;
-        isReloading = false;
     }
 
     private void SwitchToPreviousGun()
@@ -118,8 +162,6 @@ public class GunManager : MonoBehaviour
         currentGunIndex--;
         if (currentGunIndex < 0) currentGunIndex = GunList.Count - 1;
         currentGun = GunList[currentGunIndex];
-        currentAmmo = currentGun.magazin;
-        isReloading = false;
     }
 
     private void SwitchToGun(int index)
@@ -128,8 +170,6 @@ public class GunManager : MonoBehaviour
         
         currentGunIndex = index;
         currentGun = GunList[currentGunIndex];
-        currentAmmo = currentGun.magazin;
-        isReloading = false;
     }
 
     private void DropGun(Gun gun)
@@ -139,15 +179,13 @@ public class GunManager : MonoBehaviour
                     GunList.Remove(gun);
                     currentGunIndex = 0;
                     currentGun = GunList[currentGunIndex];
-                    currentAmmo = currentGun.magazin;
                     WeaponHolder.sprite = currentGun.GunSprite;
                     GameObject DroppedGun = Instantiate(GunDrop,transform.position,Quaternion.identity);
                     DroppedGun.GetComponent<GunHolder>().gun = gun;
                     DroppedGun.GetComponent<GunHolder>().Activate();
-                    
-                    
                 }
     }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log("Got The Gun");
@@ -166,10 +204,6 @@ public class GunManager : MonoBehaviour
             WeaponHolder.sprite = currentGun.GunSprite;
             Destroy(other.gameObject);
         }
-
-
-
-
     }
 
     public void Fire(Transform firePoint) 

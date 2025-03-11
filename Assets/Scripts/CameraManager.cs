@@ -9,6 +9,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private float threshold;
     [SerializeField] private GameObject DebugPrefab;
     GameObject Debug;
+    
     private Vector3 currentVelocity = Vector3.zero;
 
     private void Start()
