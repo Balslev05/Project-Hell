@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    [Header("Components")]
     [SerializeField] private Transform player;
     [SerializeField] private Camera camera;
-    [SerializeField] private float smoothTime;
-    [SerializeField] private float threshold;
     [SerializeField] private GameObject DebugPrefab;
     GameObject Debug;
+
+    [Header("Stats")]
+    [SerializeField] private float smoothTime;
+    [SerializeField] private float threshold;
     private Vector3 currentVelocity = Vector3.zero;
 
     private void Start()

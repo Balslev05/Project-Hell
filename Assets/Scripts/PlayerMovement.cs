@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Components")]
     private Rigidbody2D rb;
-    private Collider2D collider;
-    private SpriteRenderer spriteRenderer;
+    private PlayerAbilities abilities;
+    private PlayerStats stats;
 
     [Header("Stats")]
     [SerializeField] private float moveSpeed;
@@ -21,13 +21,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving;
     private bool isRolling;
     private bool canRoll;
-    private bool isDodgeing;
 
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
-        collider = GetComponent<Collider2D>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        abilities = GetComponent<PlayerAbilities>();
+        stats = GetComponent<PlayerStats>();
+
         isRolling = false;
         canRoll = true;
         moveSpeed = walkSpeed;
@@ -36,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         LookAtMouse();
-        Dodge();
 
         if (playerInput != Vector2.zero) { isMoving = true; }
         else { isMoving = false; }
@@ -75,42 +75,15 @@ public class PlayerMovement : MonoBehaviour
         isRolling = true;
         canRoll = false;
         moveSpeed = rollSpeed;
-        Invincible(true);
+        abilities.GhostMode(true);
+        stats.LoseArmor(5);
 
         yield return new WaitForSeconds(rollDuration);
         isRolling = false;
         moveSpeed = walkSpeed;
-        Invincible(false);
+        abilities.GhostMode(false);
 
         yield return new WaitForSeconds(rollCooldown);
         canRoll = true;
-    }
-
-    private void Dodge()
-    {
-        if (Input.GetKeyDown(KeyCode.Q) && !isDodgeing)
-        {
-            Invincible(true);
-            isDodgeing = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.Q) && isDodgeing)
-        {
-            Invincible(false);
-            isDodgeing = false;
-        }
-    }
-
-    public void Invincible(bool becomeInvincible)
-    {
-        if (becomeInvincible) {
-            collider.enabled = false;
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f);
-            CameraShaker.Instance.ShakeOnce(3f, 3f, 1f, 1f);
-        }
-        else if (!becomeInvincible) {
-            collider.enabled = true;
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
-            CameraShaker.Instance.ShakeOnce(3f, 3f, 1f, 1f);
-        }
     }
 }

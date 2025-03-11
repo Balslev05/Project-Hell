@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerStats : MonoBehaviour
 {
-    [Header("Stats")]
-    [SerializeField] private int maxHealth = 100;
-    [SerializeField] private int currentHealth;
-    [SerializeField] private int maxArmor = 100;
-    [SerializeField] private int currentArmor;
-
+    [Header("Components")]
     public HealthBar healthBar;
     public PlotArmorBar armorBar;
+    
+    [Header("Stats")]
+    public int maxHealth = 100;
+    public float currentHealth;
+    public int maxArmor = 100;
+    public float currentArmor;
+
 
     void Start()
     {
@@ -31,10 +33,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-        healthBar.SetCurrentHealth(currentHealth);
+        healthBar.SetCurrentHealth(Mathf.FloorToInt(currentHealth));
         if (currentHealth <= 0)
         {
             Die();
@@ -46,10 +48,17 @@ public class Player : MonoBehaviour
         Debug.Log("I'm dead D:");
     }
 
-    void HealHealth(int amount)
+    public void HealHealth(int amount)
     {
         currentHealth += amount;
         if (currentHealth > maxHealth) { currentHealth = maxHealth; }
-        healthBar.SetCurrentHealth(currentHealth);
+        healthBar.SetCurrentHealth(Mathf.FloorToInt(currentHealth));
+    }
+
+    public void LoseArmor(float amount)
+    {
+        currentArmor -= amount;
+        armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
+        if (currentArmor < 0) { currentArmor = 0; }
     }
 }
