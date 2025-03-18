@@ -5,7 +5,7 @@ public class PlayerStats : MonoBehaviour
     [Header("Components")]
     public HealthBar healthBar;
     public PlotArmorBar armorBar;
-    
+
     [Header("Stats")]
     public int maxHealth = 100;
     public float currentHealth;
@@ -23,20 +23,42 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
+        // Debugs
         if (Input.GetKeyDown(KeyCode.K))
         {
             TakeDamage(10);
         }
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            TakeDamage(50);
+        }
+        if (Input.GetKeyDown(KeyCode.N))
         {
             HealHealth(5);
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            currentHealth = maxHealth;
+            currentArmor = maxArmor;
+            healthBar.SetCurrentHealth(Mathf.FloorToInt(currentHealth));
+            armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
         }
     }
 
     public void TakeDamage(float amount)
     {
-        currentHealth -= amount;
+        float damageReduction = currentArmor / maxArmor;
+        float reducedDamage = amount * (1 - damageReduction);
+        currentHealth -= reducedDamage;
+
+        if (currentArmor > 0)
+        {
+            currentArmor -= 1;
+        }
+
         healthBar.SetCurrentHealth(Mathf.FloorToInt(currentHealth));
+        armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
+
         if (currentHealth <= 0)
         {
             Die();
@@ -58,7 +80,14 @@ public class PlayerStats : MonoBehaviour
     public void LoseArmor(float amount)
     {
         currentArmor -= amount;
-        armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
         if (currentArmor < 0) { currentArmor = 0; }
+        armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
+    }
+
+    public void GetArmor(float amount)
+    {
+        currentArmor += amount;
+        if (currentArmor > maxArmor) { currentArmor = maxArmor; }
+        armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
     }
 }
