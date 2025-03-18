@@ -4,182 +4,139 @@ using EZCameraShake;
 
 public class GunManager : MonoBehaviour
 {
-    [Header("Assignebels")]
+    [Header("Assignments")]
     public Transform shootPoint;
     public SpriteRenderer WeaponHolder;
     public GameObject GunDrop;
-    [Header("GunSystem")]
+    
+    [Header("Gun System")]
     public Gun currentGun;
     public int MaxGuns = 3;
     public List<Gun> GunList = new List<Gun>();
-
-    [Header("GunStats")]
-    [SerializeField] private int currentAmmo;
-    [SerializeField] private float reloadTimer = 0f;
-    private bool isReloading = false;
-    private int currentGunIndex = 0;
+    
     private float timeSinceLastShot = 0f;
+    private int currentGunIndex = 0;
 
-    void Start()
+    public enum AmmoType { Light, Medium, Heavy, Explosive, Shell }
+    private Dictionary<AmmoType, int> AmmoInventory = new Dictionary<AmmoType, int>();
+    
+    private void Awake()
     {
-        if (GunList != null && GunList.Count > 0)
+        foreach (AmmoType type in System.Enum.GetValues(typeof(AmmoType)))
         {
-            currentGun = GunList[0];
-            currentAmmo = currentGun.magazin;
+            AmmoInventory[type] = 0; 
         }
+        AddAmmo(AmmoType.Light, 100);
+        AddAmmo(AmmoType.Medium, 60);
+        AddAmmo(AmmoType.Heavy, 20);
+        AddAmmo(AmmoType.Explosive, 5);
+        AddAmmo(AmmoType.Shell, 30);
     }
 
-    void Update()
+    public void AddAmmo(AmmoType type, int amount)
     {
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        
-        if (isReloading)
-        {
-            reloadTimer -= Time.deltaTime;
-            if (reloadTimer <= 0)
-            {
-                isReloading = false;
-                currentAmmo = currentGun.magazin;
-            }
-            return;
-        }
+        if (AmmoInventory.ContainsKey(type))
+            AmmoInventory[type] += amount;
+        else
+            AmmoInventory[type] = amount;
+    }
+    
+    private void Start()
+    {
+        if (GunList.Count > 0) currentGun = GunList[0];
+    }
 
+    private void Update()
+    {
         timeSinceLastShot += Time.deltaTime;
 
-        if (currentGun && ((currentGun.HoldToFire && Input.GetKey(KeyCode.Mouse1)) || (!currentGun.HoldToFire && Input.GetKeyDown(KeyCode.Mouse1))))
+        if (currentGun && Input.GetKey(KeyCode.Mouse1) && timeSinceLastShot >= currentGun.timeBetweenShots)
         {
-            if (currentAmmo > 0 && timeSinceLastShot >= currentGun.timeBetweenShots)
+            AmmoType ammoType = (AmmoType)currentGun.ammoType;
+            if (AmmoInventory[ammoType] > 0)
             {
                 Fire(shootPoint);
-                CameraShaker.Instance.ShakeOnce(currentGun.ShakeStreangth, currentGun.ShakeStreangth, 0.25f, 0.25f);
-                currentAmmo--;
+                CameraShaker.Instance.ShakeOnce(currentGun.CameraShakeStreangth, currentGun.CameraShakeStreangth, 0.25f, 0.25f);
+                AmmoInventory[ammoType]--;
                 timeSinceLastShot = 0f;
             }
-            else if (currentAmmo <= 0)
-            {
-                StartReload();
-            }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < currentGun.magazin)
-        {
-            StartReload();
-        }
-
-        if(Input.GetKeyDown(KeyCode.Z)){
-            {
-                DropGun(currentGun);
-            }
-        }
-       /*  if (scrollInput > 0f)
-        {
-            SwitchToNextGun();
-        }
-        else if (scrollInput < 0f)
-        {
-            SwitchToPreviousGun();
-        } */
+     //   if (Input.GetKeyDown(KeyCode.Z)) DropGun(currentGun);
 
         for (int i = 0; i < GunList.Count && i < 9; i++)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
-            {
-                SwitchToGun(i);
-                WeaponHolder.sprite = currentGun.GunSprite;
-            }
-        }
-   
-    }
-
-    private void StartReload()
-    {
-        if (!isReloading)
-        {
-            isReloading = true;
-            reloadTimer = currentGun.reloadeTime;
-            Debug.Log("Reloading...");
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i)) SwitchToGun(i);
         }
     }
 
-    private void SwitchToNextGun()
-    {
-        if (GunList == null || GunList.Count == 0) return;
-        
-        currentGunIndex = (currentGunIndex + 1) % GunList.Count;
-        currentGun = GunList[currentGunIndex];
-        currentAmmo = currentGun.magazin;
-        isReloading = false;
-    }
-
-    private void SwitchToPreviousGun()
-    {
-        if (GunList == null || GunList.Count == 0) return;
-        
-        currentGunIndex--;
-        if (currentGunIndex < 0) currentGunIndex = GunList.Count - 1;
-        currentGun = GunList[currentGunIndex];
-        currentAmmo = currentGun.magazin;
-        isReloading = false;
-    }
-
-    private void SwitchToGun(int index)
-    {
-        if (GunList == null || index < 0 || index >= GunList.Count) return;
-        
-        currentGunIndex = index;
-        currentGun = GunList[currentGunIndex];
-        currentAmmo = currentGun.magazin;
-        isReloading = false;
-    }
-
-    private void DropGun(Gun gun)
-    {
-        if (GunList.Count > 1) // Don't drop if it's the last gun
-                {
-                    GunList.Remove(gun);
-                    currentGunIndex = 0;
-                    currentGun = GunList[currentGunIndex];
-                    currentAmmo = currentGun.magazin;
-                    WeaponHolder.sprite = currentGun.GunSprite;
-                    GameObject DroppedGun = Instantiate(GunDrop,transform.position,Quaternion.identity);
-                    DroppedGun.GetComponent<GunHolder>().gun = gun;
-                    DroppedGun.GetComponent<GunHolder>().Activate();
-                    
-                    
-                }
-    }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        Debug.Log("Got The Gun");
-        Gun pickupGun = other.GetComponent<GunHolder>().gun;
-        if (pickupGun != null && GunList.Count < MaxGuns && Input.GetKey(KeyCode.E))
-        {
-            GunList.Add(pickupGun);
-            
-            SwitchToGun(GunList.Count - 1);
-
-            other.enabled = false;
-            if (other.GetComponent<SpriteRenderer>())
-            {
-                other.GetComponent<SpriteRenderer>().enabled = false;
-            }
-            WeaponHolder.sprite = currentGun.GunSprite;
-            Destroy(other.gameObject);
-        }
-
-
-
-
-    }
-
-    public void Fire(Transform firePoint) 
+    private void Fire(Transform firePoint)
     {
         for (int i = 0; i < currentGun.bulletCount; i++)
         {
             float angleOffset = Random.Range(-currentGun.spreadAngle / 2f, currentGun.spreadAngle / 2f);
             Quaternion rotation = Quaternion.Euler(0, 0, angleOffset);
-            Vector2 direction = (rotation * firePoint.right).normalized;
-            GameObject newBullet = Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
+            GameObject bullet = Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
+           bullet.GetComponent<bullet>().SetStats(currentGun.BaseDamage, currentGun.criticalMultiplayer);
         }
     }
+
+    public float RollForCritical()
+    {
+        int RandomRoll = Random.Range(0, 101);
+
+        if (RandomRoll <= currentGun.criticalchange)
+        {
+            return currentGun.criticalMultiplayer;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    private void SwitchToGun(int index)
+    {
+        if (index >= 0 && index < GunList.Count)
+        {
+            currentGunIndex = index;
+            currentGun = GunList[currentGunIndex];
+            WeaponHolder.sprite = currentGun.GunSprite;
+        }
+    }
+
+    private void DropGun(Gun gun)
+    {
+        if (GunList.Count > 1)
+        {
+            GunList.Remove(gun);
+            SwitchToGun(0);
+            Instantiate(GunDrop, transform.position, Quaternion.identity).GetComponent<GunHolder>().gun = gun;
+        }
+    }
+
+    //!! DET HER ER PICK UP FUNKTIONEN
+  /*   private void OnTriggerStay2D(Collider2D other)
+    {
+        Gun pickupGun = other.GetComponent<GunHolder>()?.gun;
+        if (pickupGun != null && GunList.Count < MaxGuns && Input.GetKey(KeyCode.E))
+        {
+            GunList.Add(pickupGun);
+            SwitchToGun(GunList.Count - 1);
+            Destroy(other.gameObject);
+        }
+    } */
+
+    public void AddGun(Gun gun)
+    {
+        if (GunList.Count < MaxGuns)
+        {
+            GunList.Add(gun);
+            SwitchToGun(GunList.Count - 1);
+        }else
+        {
+            Debug.Log("No more guns allowed!");
+        }
+    }
+
 }

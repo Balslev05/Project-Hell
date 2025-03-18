@@ -2,6 +2,9 @@
 
 public class bullet : MonoBehaviour
 {
+    [Header("Bullet Unqiue Stats")]
+    public int bulletDamage;
+    public float criticalMultiplayer = 0;
     [Header("Basic Movement")]
     public float speed = 5f;                    
     public bool randomizeSpeed = false;         
@@ -40,6 +43,11 @@ public class bullet : MonoBehaviour
     private Rigidbody2D rb;
     private float currentAmplitude;
 
+    public void SetStats(int _bulletdamage, float _critimultiplayer)
+    {
+        bulletDamage = _bulletdamage;
+        criticalMultiplayer = _critimultiplayer;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -94,6 +102,19 @@ public class bullet : MonoBehaviour
         rb.linearVelocity = movement;
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemey")
+        {
+            other.gameObject.GetComponent<Target>().TakeDamage(bulletDamage,criticalMultiplayer);
+            Destroy(gameObject);
+        }
+        if (spawnOnHit != null)
+        {
+            Instantiate(spawnOnHit, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (spawnOnHit != null)
