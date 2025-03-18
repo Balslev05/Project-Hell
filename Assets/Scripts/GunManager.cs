@@ -70,6 +70,16 @@ public class GunManager : MonoBehaviour
         }
     }
 
+    private void Fire(Transform firePoint)
+    {
+        for (int i = 0; i < currentGun.bulletCount; i++)
+        {
+            float angleOffset = Random.Range(-currentGun.spreadAngle / 2f, currentGun.spreadAngle / 2f);
+            Quaternion rotation = Quaternion.Euler(0, 0, angleOffset);
+            Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
+        }
+    }
+
     private void SwitchToGun(int index)
     {
         if (index >= 0 && index < GunList.Count)
@@ -90,7 +100,8 @@ public class GunManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    //!! DET HER ER PICK UP FUNKTIONEN
+  /*   private void OnTriggerStay2D(Collider2D other)
     {
         Gun pickupGun = other.GetComponent<GunHolder>()?.gun;
         if (pickupGun != null && GunList.Count < MaxGuns && Input.GetKey(KeyCode.E))
@@ -99,15 +110,18 @@ public class GunManager : MonoBehaviour
             SwitchToGun(GunList.Count - 1);
             Destroy(other.gameObject);
         }
-    }
+    } */
 
-    private void Fire(Transform firePoint)
+    public void AddGun(Gun gun)
     {
-        for (int i = 0; i < currentGun.bulletCount; i++)
+        if (GunList.Count < MaxGuns)
         {
-            float angleOffset = Random.Range(-currentGun.spreadAngle / 2f, currentGun.spreadAngle / 2f);
-            Quaternion rotation = Quaternion.Euler(0, 0, angleOffset);
-            Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
+            GunList.Add(gun);
+            SwitchToGun(GunList.Count - 1);
+        }else
+        {
+            Debug.Log("No more guns allowed!");
         }
     }
+
 }

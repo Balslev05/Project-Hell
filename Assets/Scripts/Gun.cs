@@ -7,6 +7,8 @@ public class Gun : ScriptableObject
     [Header("Assign")]
     public Sprite GunSprite;
     public GameObject projectilePrefab;
+    public int price = 10;
+    public string[] tags;
     [Header("Stats")]
     public bool HoldToFire = false;
     public float timeBetweenShots;
@@ -23,5 +25,6 @@ public class Gun : ScriptableObject
         Explosive,  // For rocket launchers, grenade launchers
         Shell       // For shotgun shells
     }
+    
 
 }
