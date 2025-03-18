@@ -56,7 +56,7 @@ public class GunManager : MonoBehaviour
             if (AmmoInventory[ammoType] > 0)
             {
                 Fire(shootPoint);
-                CameraShaker.Instance.ShakeOnce(currentGun.ShakeStreangth, currentGun.ShakeStreangth, 0.25f, 0.25f);
+                CameraShaker.Instance.ShakeOnce(currentGun.CameraShakeStreangth, currentGun.CameraShakeStreangth, 0.25f, 0.25f);
                 AmmoInventory[ammoType]--;
                 timeSinceLastShot = 0f;
             }
@@ -76,7 +76,22 @@ public class GunManager : MonoBehaviour
         {
             float angleOffset = Random.Range(-currentGun.spreadAngle / 2f, currentGun.spreadAngle / 2f);
             Quaternion rotation = Quaternion.Euler(0, 0, angleOffset);
-            Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
+            GameObject bullet = Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
+           bullet.GetComponent<bullet>().SetStats(currentGun.BaseDamage, currentGun.criticalMultiplayer);
+        }
+    }
+
+    public float RollForCritical()
+    {
+        int RandomRoll = Random.Range(0, 101);
+
+        if (RandomRoll <= currentGun.criticalchange)
+        {
+            return currentGun.criticalMultiplayer;
+        }
+        else
+        {
+            return 0;
         }
     }
 
