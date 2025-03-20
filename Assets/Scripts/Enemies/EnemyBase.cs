@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Components")]
+    Collider2D SpawnArea;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Stats")]
+    public int Health;
+
+    public Vector2 FindRadnomPointInCollider()
     {
-        
+        if (SpawnArea)
+        {
+            float RandomX = Random.Range(SpawnArea.bounds.min.x, SpawnArea.bounds.max.x);
+            float RandomY = Random.Range(SpawnArea.bounds.min.y, SpawnArea.bounds.max.y);
+
+            Vector2 SpawnPoint = new Vector2 (RandomX,RandomY);
+            return SpawnPoint;
+        }
+        else
+        {
+            return Vector2.zero;
+        }
     }
 }
