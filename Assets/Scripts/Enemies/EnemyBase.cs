@@ -3,23 +3,22 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     [Header("Components")]
-    Collider2D SpawnArea;
+    private Collider2D SpawnArea;
 
     [Header("Stats")]
-    public int Health;
+    [SerializeField] protected int maxHealth;
+    protected float currentHealth;
 
-    public Vector2 FindRadnomPointInCollider()
+    protected Vector2 FindRadnomPointInCollider()
     {
-        if (SpawnArea)
-        {
+        if (SpawnArea) {
             float RandomX = Random.Range(SpawnArea.bounds.min.x, SpawnArea.bounds.max.x);
             float RandomY = Random.Range(SpawnArea.bounds.min.y, SpawnArea.bounds.max.y);
 
             Vector2 SpawnPoint = new Vector2 (RandomX,RandomY);
             return SpawnPoint;
         }
-        else
-        {
+        else {
             return Vector2.zero;
         }
     }
