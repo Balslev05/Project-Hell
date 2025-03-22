@@ -1,13 +1,54 @@
 using UnityEngine;
+using Pathfinding;
 
-public class EnemyBase : MonoBehaviour
+public abstract class EnemyBase : MonoBehaviour
 {
     [Header("Components")]
-    private Collider2D SpawnArea;
+    [SerializeField] protected GameObject player;
+    protected AIPath path;
+    protected Collider2D SpawnArea;
 
     [Header("Stats")]
     [SerializeField] protected int maxHealth;
     protected float currentHealth;
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float damage;
+    [SerializeField] protected float attackSpeed;
+    [SerializeField] protected float attackRange;
+    protected float distanceToTarget;
+
+    protected bool inAttackRange;
+
+    protected virtual void Start()
+    {
+        path = GetComponent<AIPath>();
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        currentHealth = maxHealth;
+    }
+
+    protected virtual void Move()
+    {
+        path.maxSpeed = moveSpeed;
+
+        distanceToTarget = Vector2.Distance(transform.position, player.transform.position);
+        if (distanceToTarget > attackRange) {
+            path.destination = player.transform.position;
+            inAttackRange = false;
+        }
+        else {
+            path.destination = transform.position;
+            inAttackRange = true;
+        }
+    }
+
+    protected virtual void Attack()
+    {
+        if (inAttackRange)
+        {
+            Debug.Log("Attacking");
+        }
+    }
 
     protected Vector2 FindRadnomPointInCollider()
     {
