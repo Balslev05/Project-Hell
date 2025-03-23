@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,10 +109,10 @@ TextureImporter:
       name: 3_brightDuckPoliceWalkNoGunAnim_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 37
-        width: 17
-        height: 24
+        x: 7
+        y: 38
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: 3_brightDuckPoliceWalkNoGunAnim_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 37
-        width: 17
-        height: 24
+        x: 39
+        y: 38
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: 3_brightDuckPoliceWalkNoGunAnim_2
       rect:
         serializedVersion: 2
-        x: 6
-        y: 5
-        width: 17
-        height: 24
+        x: 7
+        y: 6
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0f603bfae8d2caf498afcffc9d53089e
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3_brightDuckPoliceWalkNoGunAnim_0: -4319537284870398447
+      3_brightDuckPoliceWalkNoGunAnim_1: 477382719563496261
+      3_brightDuckPoliceWalkNoGunAnim_2: -4289892540112755580
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

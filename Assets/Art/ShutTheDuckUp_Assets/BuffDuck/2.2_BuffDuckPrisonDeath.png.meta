@@ -73,7 +73,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +87,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,10 +139,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 146
-        width: 30
-        height: 43
+        x: 11
+        y: 147
+        width: 28
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_1
       rect:
         serializedVersion: 2
-        x: 59
-        y: 146
-        width: 28
-        height: 43
+        x: 60
+        y: 147
+        width: 26
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_2
       rect:
         serializedVersion: 2
-        x: 107
-        y: 146
-        width: 28
-        height: 43
+        x: 108
+        y: 147
+        width: 26
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_3
       rect:
         serializedVersion: 2
-        x: 155
-        y: 146
-        width: 28
-        height: 43
+        x: 156
+        y: 147
+        width: 26
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_4
       rect:
         serializedVersion: 2
-        x: 11
-        y: 97
-        width: 28
-        height: 44
+        x: 12
+        y: 98
+        width: 26
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +249,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_5
       rect:
         serializedVersion: 2
-        x: 59
-        y: 97
-        width: 28
-        height: 43
+        x: 60
+        y: 98
+        width: 26
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +271,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_6
       rect:
         serializedVersion: 2
-        x: 107
-        y: 97
-        width: 28
-        height: 42
+        x: 108
+        y: 98
+        width: 26
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_7
       rect:
         serializedVersion: 2
-        x: 155
-        y: 97
-        width: 28
-        height: 41
+        x: 156
+        y: 98
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_8
       rect:
         serializedVersion: 2
-        x: 11
-        y: 49
-        width: 28
-        height: 40
+        x: 12
+        y: 50
+        width: 26
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +337,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_9
       rect:
         serializedVersion: 2
-        x: 59
-        y: 49
-        width: 28
-        height: 39
+        x: 60
+        y: 50
+        width: 26
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,10 +359,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_10
       rect:
         serializedVersion: 2
-        x: 107
-        y: 49
-        width: 28
-        height: 38
+        x: 108
+        y: 50
+        width: 26
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,10 +381,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_11
       rect:
         serializedVersion: 2
-        x: 155
-        y: 49
-        width: 28
-        height: 36
+        x: 156
+        y: 50
+        width: 26
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +403,10 @@ TextureImporter:
       name: 2.2_BuffDuckPrisonDeath_12
       rect:
         serializedVersion: 2
-        x: 11
-        y: 1
-        width: 28
-        height: 37
+        x: 12
+        y: 2
+        width: 26
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,7 +425,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2d78d84e09f2a194cb50a23488ac04b5
     internalID: 0
     vertices: []
     indices: 
@@ -434,7 +434,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2.2_BuffDuckPrisonDeath_0: -7305575410657388271
+      2.2_BuffDuckPrisonDeath_1: -7981384349556296749
+      2.2_BuffDuckPrisonDeath_10: -1811277970051992812
+      2.2_BuffDuckPrisonDeath_11: -9050936248044164238
+      2.2_BuffDuckPrisonDeath_12: 1264120004230473399
+      2.2_BuffDuckPrisonDeath_2: -9067644677736785311
+      2.2_BuffDuckPrisonDeath_3: 1132393075561956754
+      2.2_BuffDuckPrisonDeath_4: 6366831662379232510
+      2.2_BuffDuckPrisonDeath_5: 4357382250721621366
+      2.2_BuffDuckPrisonDeath_6: 1820481682186632980
+      2.2_BuffDuckPrisonDeath_7: -1612593712317310804
+      2.2_BuffDuckPrisonDeath_8: -3368316021180123820
+      2.2_BuffDuckPrisonDeath_9: 4008263755964154522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

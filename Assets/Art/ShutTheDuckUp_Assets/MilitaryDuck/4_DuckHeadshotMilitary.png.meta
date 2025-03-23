@@ -73,7 +73,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +87,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,10 +139,10 @@ TextureImporter:
       name: 4_DuckHeadshotMilitary_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 54
-        width: 15
-        height: 19
+        x: 5
+        y: 55
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: 4_DuckHeadshotMilitary_1
       rect:
         serializedVersion: 2
-        x: 29
-        y: 54
-        width: 18
-        height: 22
+        x: 30
+        y: 55
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,35 +180,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4_DuckHeadshotMilitary_2
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 67
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17290fffc2f95ebf0800000000000000
-      internalID: -295655184901565839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 4_DuckHeadshotMilitary_3
       rect:
         serializedVersion: 2
         x: 53
-        y: 54
+        y: 55
         width: 21
-        height: 23
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,35 +202,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4_DuckHeadshotMilitary_4
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 67
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4440112a998a26df0800000000000000
-      internalID: -188402856593652668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 4_DuckHeadshotMilitary_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 27
-        width: 25
-        height: 19
+        y: 28
+        width: 24
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,57 +224,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4_DuckHeadshotMilitary_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 36
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 685dbed087c9ca070800000000000000
-      internalID: 8119036267685729670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4_DuckHeadshotMilitary_7
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 39
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7bbf0705042fb4c60800000000000000
-      internalID: 7803597137390926775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 4_DuckHeadshotMilitary_8
       rect:
         serializedVersion: 2
-        x: 25
-        y: 26
-        width: 26
-        height: 16
+        x: 26
+        y: 27
+        width: 25
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,57 +246,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4_DuckHeadshotMilitary_9
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 32
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8296a41e95c4fbd40800000000000000
-      internalID: 5602280410387736872
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4_DuckHeadshotMilitary_10
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 35
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee23222892bd65220800000000000000
-      internalID: 2474406016610087662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 4_DuckHeadshotMilitary_11
       rect:
         serializedVersion: 2
-        x: 51
-        y: 26
-        width: 27
-        height: 12
+        x: 52
+        y: 27
+        width: 26
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,9 +272,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 27
-        height: 12
+        y: 1
+        width: 26
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,7 +293,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d8b207983cb16434c892ea6a846a2c81
     internalID: 0
     vertices: []
     indices: 
@@ -434,7 +302,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      4_DuckHeadshotMilitary_0: 6673298030632990119
+      4_DuckHeadshotMilitary_1: -8509140030472537869
+      4_DuckHeadshotMilitary_10: 2474406016610087662
+      4_DuckHeadshotMilitary_11: 5635482989512294822
+      4_DuckHeadshotMilitary_12: -7211897699753043270
+      4_DuckHeadshotMilitary_2: -295655184901565839
+      4_DuckHeadshotMilitary_3: 1861655673384773711
+      4_DuckHeadshotMilitary_4: -188402856593652668
+      4_DuckHeadshotMilitary_5: 1911614166959414991
+      4_DuckHeadshotMilitary_6: 8119036267685729670
+      4_DuckHeadshotMilitary_7: 7803597137390926775
+      4_DuckHeadshotMilitary_8: -8277272713240239107
+      4_DuckHeadshotMilitary_9: 5602280410387736872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

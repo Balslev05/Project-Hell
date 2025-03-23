@@ -82,7 +82,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -120,7 +120,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -148,10 +148,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 111
-        width: 11
-        height: 21
+        x: 20
+        y: 112
+        width: 9
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 111
-        width: 11
-        height: 20
+        x: 52
+        y: 112
+        width: 9
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +192,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_2
       rect:
         serializedVersion: 2
-        x: 83
-        y: 111
-        width: 11
-        height: 21
+        x: 84
+        y: 112
+        width: 9
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_3
       rect:
         serializedVersion: 2
-        x: 115
-        y: 111
-        width: 11
-        height: 20
+        x: 116
+        y: 112
+        width: 9
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_4
       rect:
         serializedVersion: 2
-        x: 18
-        y: 79
-        width: 13
-        height: 21
+        x: 19
+        y: 80
+        width: 11
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_5
       rect:
         serializedVersion: 2
-        x: 50
-        y: 79
-        width: 13
-        height: 20
+        x: 51
+        y: 80
+        width: 11
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +280,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_6
       rect:
         serializedVersion: 2
-        x: 82
-        y: 79
-        width: 13
-        height: 21
+        x: 83
+        y: 80
+        width: 11
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +302,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_7
       rect:
         serializedVersion: 2
-        x: 113
-        y: 79
-        width: 15
-        height: 20
+        x: 114
+        y: 80
+        width: 13
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,10 +324,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_8
       rect:
         serializedVersion: 2
-        x: 18
-        y: 47
-        width: 11
-        height: 21
+        x: 19
+        y: 48
+        width: 9
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,10 +346,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_9
       rect:
         serializedVersion: 2
-        x: 50
-        y: 47
-        width: 11
-        height: 20
+        x: 51
+        y: 48
+        width: 9
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,10 +368,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_10
       rect:
         serializedVersion: 2
-        x: 82
-        y: 47
-        width: 11
-        height: 21
+        x: 83
+        y: 48
+        width: 9
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,10 +390,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_11
       rect:
         serializedVersion: 2
-        x: 114
-        y: 47
-        width: 11
-        height: 20
+        x: 115
+        y: 48
+        width: 9
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,10 +412,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_12
       rect:
         serializedVersion: 2
-        x: 17
-        y: 15
-        width: 13
-        height: 21
+        x: 18
+        y: 16
+        width: 11
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,10 +434,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_13
       rect:
         serializedVersion: 2
-        x: 49
-        y: 15
-        width: 13
-        height: 20
+        x: 50
+        y: 16
+        width: 11
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,10 +456,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_14
       rect:
         serializedVersion: 2
-        x: 81
-        y: 15
-        width: 13
-        height: 21
+        x: 82
+        y: 16
+        width: 11
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,10 +478,10 @@ TextureImporter:
       name: 0.1_DucklingWalkAnimation_15
       rect:
         serializedVersion: 2
-        x: 112
-        y: 15
-        width: 15
-        height: 20
+        x: 113
+        y: 16
+        width: 13
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,7 +500,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1b7b2c897eacb7845a7eff7e55e7d3c1
     internalID: 0
     vertices: []
     indices: 
@@ -509,7 +509,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0.1_DucklingWalkAnimation_0: -1604402627752339611
+      0.1_DucklingWalkAnimation_1: 2229945344915440923
+      0.1_DucklingWalkAnimation_10: -9207998098830117263
+      0.1_DucklingWalkAnimation_11: -8083034872077406777
+      0.1_DucklingWalkAnimation_12: -7688016227736932862
+      0.1_DucklingWalkAnimation_13: -4025907259660863415
+      0.1_DucklingWalkAnimation_14: -3144699597195636231
+      0.1_DucklingWalkAnimation_15: 4696802520085103475
+      0.1_DucklingWalkAnimation_2: -2655196647498481064
+      0.1_DucklingWalkAnimation_3: 3880974800986064590
+      0.1_DucklingWalkAnimation_4: 1332944049439576585
+      0.1_DucklingWalkAnimation_5: 7590823290668088181
+      0.1_DucklingWalkAnimation_6: 2633660964121464555
+      0.1_DucklingWalkAnimation_7: 3238659934048258544
+      0.1_DucklingWalkAnimation_8: 1845884264265843283
+      0.1_DucklingWalkAnimation_9: -320075128262250994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

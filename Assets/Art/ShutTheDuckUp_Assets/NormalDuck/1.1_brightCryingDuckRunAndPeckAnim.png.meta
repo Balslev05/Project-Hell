@@ -64,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,10 +130,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 55
-        width: 15
-        height: 21
+        x: 17
+        y: 56
+        width: 13
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 55
-        width: 15
-        height: 20
+        x: 33
+        y: 56
+        width: 13
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 55
-        width: 15
-        height: 21
+        x: 49
+        y: 56
+        width: 13
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 55
-        width: 15
-        height: 20
+        x: 65
+        y: 56
+        width: 13
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 29
-        width: 13
-        height: 21
+        x: 4
+        y: 30
+        width: 11
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_5
       rect:
         serializedVersion: 2
-        x: 19
-        y: 29
-        width: 14
-        height: 21
+        x: 20
+        y: 30
+        width: 12
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,10 +262,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_6
       rect:
         serializedVersion: 2
-        x: 37
-        y: 29
-        width: 17
-        height: 19
+        x: 38
+        y: 30
+        width: 15
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,10 +284,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_7
       rect:
         serializedVersion: 2
-        x: 59
-        y: 29
-        width: 15
-        height: 21
+        x: 60
+        y: 30
+        width: 13
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,10 +306,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_8
       rect:
         serializedVersion: 2
-        x: 77
-        y: 29
-        width: 15
-        height: 21
+        x: 78
+        y: 30
+        width: 13
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: 1.1_brightCryingDuckRunAndPeckAnim_9
       rect:
         serializedVersion: 2
-        x: 98
-        y: 29
-        width: 15
-        height: 21
+        x: 99
+        y: 30
+        width: 13
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 93cdea72734c65d4c833473b078b6b6e
     internalID: 0
     vertices: []
     indices: 
@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1.1_brightCryingDuckRunAndPeckAnim_0: 5111919540614329133
+      1.1_brightCryingDuckRunAndPeckAnim_1: -39057356464108245
+      1.1_brightCryingDuckRunAndPeckAnim_2: -3090248933645858296
+      1.1_brightCryingDuckRunAndPeckAnim_3: 6894919750186600550
+      1.1_brightCryingDuckRunAndPeckAnim_4: 8475573344375293047
+      1.1_brightCryingDuckRunAndPeckAnim_5: 6246575476456308760
+      1.1_brightCryingDuckRunAndPeckAnim_6: 5391039649895088875
+      1.1_brightCryingDuckRunAndPeckAnim_7: -5424076822255503736
+      1.1_brightCryingDuckRunAndPeckAnim_8: 3738943538178010365
+      1.1_brightCryingDuckRunAndPeckAnim_9: -712799917264179338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
