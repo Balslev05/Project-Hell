@@ -5,8 +5,11 @@ public abstract class EnemyBase : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] protected GameObject player;
+    [SerializeField] protected SpriteRenderer bodySprite;
+    [SerializeField] protected Animator animator;
     protected AIPath path;
     protected Collider2D SpawnArea;
+    
 
     [Header("Stats")]
     [SerializeField] protected int maxHealth;
@@ -35,11 +38,18 @@ public abstract class EnemyBase : MonoBehaviour
         if (distanceToTarget > attackRange) {
             path.destination = player.transform.position;
             inAttackRange = false;
+            FlipSprite();
         }
         else {
             path.destination = transform.position;
             inAttackRange = true;
         }
+    }
+
+    protected void FlipSprite()
+    {
+        if (path.desiredVelocity.x >= 0.01f) { bodySprite.flipX = true; }
+        else if (path.desiredVelocity.x <= -0.01f) { bodySprite.flipX = false; }
     }
 
     protected virtual void Attack()

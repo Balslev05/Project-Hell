@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Components")]
     private Rigidbody2D rb;
+    private Animator animator;
     private PlayerAbilities abilities;
     private PlayerStats stats;
 
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
         abilities = GetComponent<PlayerAbilities>();
         stats = GetComponent<PlayerStats>();
 
@@ -36,10 +38,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        LookAtMouse();
+        //LookAtMouse();
 
-        if (playerInput != Vector2.zero) { isMoving = true; }
-        else { isMoving = false; }
+        if (playerInput != Vector2.zero) { isMoving = true; animator.SetBool("IsMoving", true); }
+        else { isMoving = false; animator.SetBool("IsMoving", false); }
 
         if (isRolling) { return; }
         GetPlayerInput();
@@ -72,16 +74,16 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator DodgeRoll()
     {
-        isRolling = true;
+        isRolling = true; animator.SetBool("IsRolling", true);
         canRoll = false;
         moveSpeed = rollSpeed;
-        abilities.GhostMode(true);
+        //abilities.GhostMode(true);
         stats.LoseArmor(5);
 
         yield return new WaitForSeconds(rollDuration);
-        isRolling = false;
+        isRolling = false; animator.SetBool("IsRolling", false);
         moveSpeed = walkSpeed;
-        abilities.GhostMode(false);
+        //abilities.GhostMode(false);
 
         yield return new WaitForSeconds(rollCooldown);
         canRoll = true;
