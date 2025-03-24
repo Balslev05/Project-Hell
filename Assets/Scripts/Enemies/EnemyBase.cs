@@ -60,6 +60,16 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
+    protected void TakeDamage()
+    {
+        
+    }
+
+    protected void Die()
+    {
+        
+    }
+
     protected Vector2 FindRadnomPointInCollider()
     {
         if (SpawnArea) {

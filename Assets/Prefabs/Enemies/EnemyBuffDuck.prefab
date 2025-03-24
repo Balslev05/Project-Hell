@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   bodySprite: {fileID: 2609004951811597344}
+  animator: {fileID: 6535124421333307290}
   maxHealth: 200
   moveSpeed: 2
   damage: 20
