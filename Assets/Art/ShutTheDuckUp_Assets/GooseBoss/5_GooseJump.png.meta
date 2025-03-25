@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      5_GooseJump_0: -4114557637801405778
+      5_GooseJump_1: 7996800558903912338
+      5_GooseJump_2: -3412519400320758628
+      5_GooseJump_3: -9197466109948527273
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

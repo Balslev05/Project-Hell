@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      5_GooseIdle_0: 8700965389278172882
+      5_GooseIdle_1: -2944674501515565941
+      5_GooseIdle_10: 8619373075340031502
+      5_GooseIdle_11: -2981040511491510862
+      5_GooseIdle_2: 9087506295652212866
+      5_GooseIdle_3: -8873757313368093172
+      5_GooseIdle_4: 8078397509350115648
+      5_GooseIdle_5: 8554402454416946203
+      5_GooseIdle_6: 1072372900786855623
+      5_GooseIdle_7: -1758995032847430235
+      5_GooseIdle_8: 3466605756767624050
+      5_GooseIdle_9: -5150900437495413812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

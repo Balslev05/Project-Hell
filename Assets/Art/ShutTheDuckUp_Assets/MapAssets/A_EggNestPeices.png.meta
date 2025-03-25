@@ -609,7 +609,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      A_EggNestPeices_0: -2186961631074406887
+      A_EggNestPeices_1: -8569864820295606486
+      A_EggNestPeices_10: 2391907324033701741
+      A_EggNestPeices_11: 8206093855556410644
+      A_EggNestPeices_12: -8483709824029567273
+      A_EggNestPeices_13: -1138139403148402133
+      A_EggNestPeices_14: 3348365821117920499
+      A_EggNestPeices_15: 990721432070757528
+      A_EggNestPeices_16: 1158200581230805708
+      A_EggNestPeices_17: -5325699262831811880
+      A_EggNestPeices_18: -3458441784963038141
+      A_EggNestPeices_19: 4086043847598282120
+      A_EggNestPeices_2: 5473781656024938565
+      A_EggNestPeices_3: 3304856585921741431
+      A_EggNestPeices_4: -9205488924917782323
+      A_EggNestPeices_5: 1078638074879330262
+      A_EggNestPeices_6: -1597301598120837414
+      A_EggNestPeices_7: -2423182674249100403
+      A_EggNestPeices_8: 3741154327509627273
+      A_EggNestPeices_9: -2925023608953030928
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
