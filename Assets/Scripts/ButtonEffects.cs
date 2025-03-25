@@ -6,9 +6,6 @@ using UnityEngine.Events;
 
 public class ButtonEffects : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    [Header("Hover Settings")]
-    public float hoverScale = 1.2f; 
-    public float hoverDuration = 0.2f; 
     
     [Header("Click Settings")]
     public AudioSource audioSource;
@@ -18,6 +15,19 @@ public class ButtonEffects : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [Header("Event")]
     public UnityEvent OnClick;
     private Vector3 originalScale; 
+    [Header("Hover Settings")]
+    public float hoverScale = 1.2f; 
+    public float hoverDuration = 0.2f; 
+    [Header("------------------------------------------------------------")]
+    [Header("IGNORE THIS IF NOT A TAB BUTTON")]
+    public SwitchTabs ThisTab = SwitchTabs.None;
+    public enum SwitchTabs { Shop, Inventory, Scrapper,None };
+    [Header("Shop")]
+    public GameObject ShopTab;
+    [Header("Inventory&Stats")]
+    public GameObject InventoryTab;
+    [Header("Scrapper")]
+    public GameObject scapperTab;
 
     void Start()
     {
@@ -49,5 +59,41 @@ public class ButtonEffects : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void QUIT()
     {
         Application.Quit();
+    }
+
+    public void SwitchTab()
+    {
+      if (ThisTab == SwitchTabs.None) return; // Avoid switching to the same tab
+      // Get the current active tab
+      GameObject currentTab = GetActiveTab();
+        
+      // Scale down the current tab before switching
+      if (currentTab != null)
+      {
+        currentTab.transform.DOScale(0.8f, 0.2f).SetEase(Ease.InOutQuad).OnComplete(() =>{
+        // Disable all tabs after shrinking animation
+        ShopTab.SetActive(false);
+        InventoryTab.SetActive(false);
+        scapperTab.SetActive(false);
+
+        // Update active tab
+        GameObject newActiveTab = GetActiveTab();
+        newActiveTab.SetActive(true);
+
+        // Scale up the new active tab
+        newActiveTab.transform.localScale = Vector3.one * 0.8f; // Start small
+        newActiveTab.transform.DOScale(1f, 0.2f).SetEase(Ease.OutBack);});
+      }
+    }
+
+    private GameObject GetActiveTab()
+    {
+        switch (ThisTab)
+        {
+            case SwitchTabs.Shop: return ShopTab;
+            case SwitchTabs.Inventory: return InventoryTab;
+            case SwitchTabs.Scrapper: return scapperTab;
+            default: return null;
+        }
     }
 }

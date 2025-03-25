@@ -6,8 +6,10 @@ using System.Collections.Generic;
 using System.Collections;
 using JetBrains.Annotations;
 
+
 public class ShopCanvas : MonoBehaviour
 {
+    SwitchTabs ThisTab = SwitchTabs.Shop;
     public GameManager manager;
     public Image FadeCanvas;
     public GameObject nextRoundButton;
@@ -20,10 +22,13 @@ public class ShopCanvas : MonoBehaviour
     [Header("ShopAnimation")]
     private int StartBox_XPos = -175;
     private int OffSet = 150;
-    [Header("Inventory")]
-    public GameObject xxx;
-    [Header("Stats")]
-    public GameObject xx;
+    [Header("Shop")]
+    public GameObject ShopTab;
+    [Header("Inventory&Stats")]
+    public GameObject InventoryTab;
+    [Header("Scrapper")]
+    public GameObject scapperTab;
+    public enum SwitchTabs { Shop, Inventory, Scrapper };
 
     void Start()
     {
@@ -105,6 +110,44 @@ public class ShopCanvas : MonoBehaviour
         child.gameObject.SetActive(true);
         child.GetComponent<ShopCard>().SetCard(manager.GetRandomGun());
       }
+    }
+
+
+    public void SwitchTab(SwitchTabs newTab)
+    {
+      if (ThisTab == newTab) return; // Avoid switching to the same tab
+      // Get the current active tab
+      GameObject currentTab = GetActiveTab();
+        
+      // Scale down the current tab before switching
+      if (currentTab != null)
+      {
+      currentTab.transform.DOScale(0.8f, 0.2f).SetEase(Ease.InOutQuad).OnComplete(() =>{
+        // Disable all tabs after shrinking animation
+        ShopTab.SetActive(false);
+        InventoryTab.SetActive(false);
+        scapperTab.SetActive(false);
+
+        // Update active tab
+        ThisTab = newTab;
+        GameObject newActiveTab = GetActiveTab();
+        newActiveTab.SetActive(true);
+
+        // Scale up the new active tab
+        newActiveTab.transform.localScale = Vector3.one * 0.8f; // Start small
+        newActiveTab.transform.DOScale(1f, 0.2f).SetEase(Ease.OutBack);});
+      }
+    }
+
+    private GameObject GetActiveTab()
+    {
+        switch (ThisTab)
+        {
+            case SwitchTabs.Shop: return ShopTab;
+            case SwitchTabs.Inventory: return InventoryTab;
+            case SwitchTabs.Scrapper: return scapperTab;
+            default: return null;
+        }
     }
 
 }
