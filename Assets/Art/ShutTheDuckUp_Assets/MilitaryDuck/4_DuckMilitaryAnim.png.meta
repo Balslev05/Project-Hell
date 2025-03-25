@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 78401d5af8014974db72fe03b64afe00
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -264900632274983919
+    second: 4_DuckMilitaryAnim_0
+  - first:
+      213: -2741795439349190501
+    second: 4_DuckMilitaryAnim_1
+  - first:
+      213: 7696032105360328571
+    second: 4_DuckMilitaryAnim_2
+  - first:
+      213: -5448989098327873688
+    second: 4_DuckMilitaryAnim_3
+  - first:
+      213: -3363452444277707739
+    second: 4_DuckMilitaryAnim_4
+  - first:
+      213: -7749900337835406918
+    second: 4_DuckMilitaryAnim_5
+  - first:
+      213: 6873777080307767738
+    second: 4_DuckMilitaryAnim_6
+  - first:
+      213: 7339988647238593516
+    second: 4_DuckMilitaryAnim_7
+  - first:
+      213: -3079505789335246278
+    second: 4_DuckMilitaryAnim_8
+  - first:
+      213: -4975768522963021703
+    second: 4_DuckMilitaryAnim_9
+  - first:
+      213: 7410460394088551717
+    second: 4_DuckMilitaryAnim_10
+  - first:
+      213: 161246900265412859
+    second: 4_DuckMilitaryAnim_11
+  - first:
+      213: 3290458637020986069
+    second: 4_DuckMilitaryAnim_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 80
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11429784742e25cf0800000000000000
+      internalID: -264900632274983919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 80
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b903ec6139f23f9d0800000000000000
+      internalID: -2741795439349190501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 80
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77010cac6ccdca60800000000000000
+      internalID: 7696032105360328571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 80
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867e039f84d4164b0800000000000000
+      internalID: -5448989098327873688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 54
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c68ef72dd9251d0800000000000000
+      internalID: -3363452444277707739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 54
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab904a614b2d27490800000000000000
+      internalID: -7749900337835406918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_6
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 68
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab957f0f5df846f50800000000000000
+      internalID: 6873777080307767738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_7
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 48
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb6e0629c0ecd560800000000000000
+      internalID: 7339988647238593516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 27
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ae9eeecc56345d0800000000000000
+      internalID: -3079505789335246278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_9
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 27
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970183024e482fab0800000000000000
+      internalID: -4975768522963021703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_10
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 20
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 525dfb3577e37d660800000000000000
+      internalID: 7410460394088551717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_11
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 3
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf8e373933ddc3200800000000000000
+      internalID: 161246900265412859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_DuckMilitaryAnim_12
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 3
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da70cf52be0aad20800000000000000
+      internalID: 3290458637020986069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6c4cae60e655b1f4aaf598e0154a8dfc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      4_DuckMilitaryAnim_0: -264900632274983919
+      4_DuckMilitaryAnim_1: -2741795439349190501
+      4_DuckMilitaryAnim_10: 7410460394088551717
+      4_DuckMilitaryAnim_11: 161246900265412859
+      4_DuckMilitaryAnim_12: 3290458637020986069
+      4_DuckMilitaryAnim_2: 7696032105360328571
+      4_DuckMilitaryAnim_3: -5448989098327873688
+      4_DuckMilitaryAnim_4: -3363452444277707739
+      4_DuckMilitaryAnim_5: -7749900337835406918
+      4_DuckMilitaryAnim_6: 6873777080307767738
+      4_DuckMilitaryAnim_7: 7339988647238593516
+      4_DuckMilitaryAnim_8: -3079505789335246278
+      4_DuckMilitaryAnim_9: -4975768522963021703
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

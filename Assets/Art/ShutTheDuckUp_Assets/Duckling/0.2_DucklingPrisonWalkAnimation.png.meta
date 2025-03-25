@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 23f613dfd354f324a9924be2c51f2d44
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -435929682084777241
+    second: 0.2_DucklingPrisonWalkAnimation_0
+  - first:
+      213: -7359038227346921523
+    second: 0.2_DucklingPrisonWalkAnimation_1
+  - first:
+      213: -9025091374216997550
+    second: 0.2_DucklingPrisonWalkAnimation_2
+  - first:
+      213: 1927706534951627362
+    second: 0.2_DucklingPrisonWalkAnimation_3
+  - first:
+      213: 2862348162227246681
+    second: 0.2_DucklingPrisonWalkAnimation_4
+  - first:
+      213: 9072052407398824902
+    second: 0.2_DucklingPrisonWalkAnimation_5
+  - first:
+      213: -6946263038260790779
+    second: 0.2_DucklingPrisonWalkAnimation_6
+  - first:
+      213: 1229651894816416464
+    second: 0.2_DucklingPrisonWalkAnimation_7
+  - first:
+      213: -4991105358400668845
+    second: 0.2_DucklingPrisonWalkAnimation_8
+  - first:
+      213: 2200488742572566146
+    second: 0.2_DucklingPrisonWalkAnimation_9
+  - first:
+      213: 1140987874565176419
+    second: 0.2_DucklingPrisonWalkAnimation_10
+  - first:
+      213: -7907626880991486809
+    second: 0.2_DucklingPrisonWalkAnimation_11
+  - first:
+      213: 7315731425473324671
+    second: 0.2_DucklingPrisonWalkAnimation_12
+  - first:
+      213: 7218392930005345201
+    second: 0.2_DucklingPrisonWalkAnimation_13
+  - first:
+      213: -2120031021558240517
+    second: 0.2_DucklingPrisonWalkAnimation_14
+  - first:
+      213: 3411741957674188466
+    second: 0.2_DucklingPrisonWalkAnimation_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e2b948834443f9f0800000000000000
+      internalID: -435929682084777241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 112
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7677ad8b17fd990800000000000000
+      internalID: -7359038227346921523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 112
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2559a5e463f60c280800000000000000
+      internalID: -9025091374216997550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 112
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26aadfe41e690ca10800000000000000
+      internalID: 1927706534951627362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 80
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9561c09fc7a19b720800000000000000
+      internalID: 2862348162227246681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 80
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cbfbb6499766ed70800000000000000
+      internalID: 9072052407398824902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 80
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a3a00d19ae99f90800000000000000
+      internalID: -6946263038260790779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 80
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d22be322e9901110800000000000000
+      internalID: 1229651894816416464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 48
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35bbafbde180cbab0800000000000000
+      internalID: -4991105358400668845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 48
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 286a8494ad4b98e10800000000000000
+      internalID: 2200488742572566146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 48
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c3c7c3d6a95df00800000000000000
+      internalID: 1140987874565176419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 48
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac1c268f37724290800000000000000
+      internalID: -7907626880991486809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 16
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f76ef7798f2b68560800000000000000
+      internalID: 7315731425473324671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 16
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3e82a0022ec2460800000000000000
+      internalID: 7218392930005345201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 16
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa663fa4032492e0800000000000000
+      internalID: -2120031021558240517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0.2_DucklingPrisonWalkAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 16
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be377cfb31f85f20800000000000000
+      internalID: 3411741957674188466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2bae3aac35ebf5640bf251aeeb4472d7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      0.2_DucklingPrisonWalkAnimation_0: -435929682084777241
+      0.2_DucklingPrisonWalkAnimation_1: -7359038227346921523
+      0.2_DucklingPrisonWalkAnimation_10: 1140987874565176419
+      0.2_DucklingPrisonWalkAnimation_11: -7907626880991486809
+      0.2_DucklingPrisonWalkAnimation_12: 7315731425473324671
+      0.2_DucklingPrisonWalkAnimation_13: 7218392930005345201
+      0.2_DucklingPrisonWalkAnimation_14: -2120031021558240517
+      0.2_DucklingPrisonWalkAnimation_15: 3411741957674188466
+      0.2_DucklingPrisonWalkAnimation_2: -9025091374216997550
+      0.2_DucklingPrisonWalkAnimation_3: 1927706534951627362
+      0.2_DucklingPrisonWalkAnimation_4: 2862348162227246681
+      0.2_DucklingPrisonWalkAnimation_5: 9072052407398824902
+      0.2_DucklingPrisonWalkAnimation_6: -6946263038260790779
+      0.2_DucklingPrisonWalkAnimation_7: 1229651894816416464
+      0.2_DucklingPrisonWalkAnimation_8: -4991105358400668845
+      0.2_DucklingPrisonWalkAnimation_9: 2200488742572566146
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

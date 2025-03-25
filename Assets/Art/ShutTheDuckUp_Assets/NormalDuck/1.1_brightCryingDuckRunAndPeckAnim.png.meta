@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: e2d5a1854defd754eae8600b90bc91f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5111919540614329133
+    second: 1.1_brightCryingDuckRunAndPeckAnim_0
+  - first:
+      213: -39057356464108245
+    second: 1.1_brightCryingDuckRunAndPeckAnim_1
+  - first:
+      213: -3090248933645858296
+    second: 1.1_brightCryingDuckRunAndPeckAnim_2
+  - first:
+      213: 6894919750186600550
+    second: 1.1_brightCryingDuckRunAndPeckAnim_3
+  - first:
+      213: 8475573344375293047
+    second: 1.1_brightCryingDuckRunAndPeckAnim_4
+  - first:
+      213: 6246575476456308760
+    second: 1.1_brightCryingDuckRunAndPeckAnim_5
+  - first:
+      213: 5391039649895088875
+    second: 1.1_brightCryingDuckRunAndPeckAnim_6
+  - first:
+      213: -5424076822255503736
+    second: 1.1_brightCryingDuckRunAndPeckAnim_7
+  - first:
+      213: 3738943538178010365
+    second: 1.1_brightCryingDuckRunAndPeckAnim_8
+  - first:
+      213: -712799917264179338
+    second: 1.1_brightCryingDuckRunAndPeckAnim_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 56
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23f1b2fcbf21f640800000000000000
+      internalID: 5111919540614329133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 56
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d471e8a8d357ff0800000000000000
+      internalID: -39057356464108245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 56
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a428ab7fa3d15d0800000000000000
+      internalID: -3090248933645858296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 56
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66882b06bfcafaf50800000000000000
+      internalID: 6894919750186600550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 30
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 774424b1d094f9570800000000000000
+      internalID: 8475573344375293047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 30
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81048d0dc4b40b650800000000000000
+      internalID: 6246575476456308760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_6
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 30
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be20b06aff1d0da40800000000000000
+      internalID: 5391039649895088875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_7
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 30
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 886f70f3edec9b4b0800000000000000
+      internalID: -5424076822255503736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_8
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 30
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfca754965563e330800000000000000
+      internalID: 3738943538178010365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1.1_brightCryingDuckRunAndPeckAnim_9
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 30
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f6a877040ab16f0800000000000000
+      internalID: -712799917264179338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 93cdea72734c65d4c833473b078b6b6e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      1.1_brightCryingDuckRunAndPeckAnim_0: 5111919540614329133
+      1.1_brightCryingDuckRunAndPeckAnim_1: -39057356464108245
+      1.1_brightCryingDuckRunAndPeckAnim_2: -3090248933645858296
+      1.1_brightCryingDuckRunAndPeckAnim_3: 6894919750186600550
+      1.1_brightCryingDuckRunAndPeckAnim_4: 8475573344375293047
+      1.1_brightCryingDuckRunAndPeckAnim_5: 6246575476456308760
+      1.1_brightCryingDuckRunAndPeckAnim_6: 5391039649895088875
+      1.1_brightCryingDuckRunAndPeckAnim_7: -5424076822255503736
+      1.1_brightCryingDuckRunAndPeckAnim_8: 3738943538178010365
+      1.1_brightCryingDuckRunAndPeckAnim_9: -712799917264179338
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -84,7 +84,7 @@ public class PlayerStats : MonoBehaviour
         armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
     }
 
-    public void GetArmor(float amount)
+    public void GainArmor(float amount)
     {
         currentArmor += amount;
         if (currentArmor > maxArmor) { currentArmor = maxArmor; }
