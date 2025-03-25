@@ -7,13 +7,11 @@ TagManager:
   - PopupPlayer
   - Enemey
   - WorldCanvas
-  - Obstacles
-  - Currency
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - obstacle
   - Water
   - UI
   - 
