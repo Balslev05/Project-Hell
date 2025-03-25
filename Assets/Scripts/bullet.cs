@@ -2,9 +2,9 @@
 
 public class bullet : MonoBehaviour
 {
-    [Header("Bullet Unqiue Stats")]
-    public int bulletDamage;
-    public float criticalMultiplayer = 0;
+    //[Header("Bullet Unqiue Stats")]
+    [HideInInspector] public int bulletDamage;
+    [HideInInspector] public float criticalMultiplayer = 0;
     [Header("Basic Movement")]
     public float speed = 5f;                    
     public bool randomizeSpeed = false;         

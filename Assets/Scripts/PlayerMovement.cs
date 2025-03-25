@@ -86,4 +86,14 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(rollCooldown);
         canRoll = true;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Currency")
+        {
+           //stats.AddCurrency(1);
+            Destroy(other.gameObject);
+            // BLING BLING
+        }
+    }
 }

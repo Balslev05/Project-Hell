@@ -4,33 +4,28 @@ using DG.Tweening;
 
 public class PopUp : MonoBehaviour
 {
-    private TMP_Text PopUpText;
+    public TMP_Text PopUpText;
     private VertexGradient colorGradient; // Declare colorGradient
-
-    public enum TextGradient
-    {
-        Red,
-        Green,
-        White
-    }
+    public Gradient Crit;
+    public Gradient BaseGradient; // Renamed to avoid "base" keyword issue
+    public Gradient NonCrit;
 
     void Start()
     {
+        PopUpText = this.transform.GetComponent<TMP_Text>();
         this.GetComponent<RectTransform>().localScale = new Vector3(0.01f, 0.01f, 0.01f);
     }
 
     public void ShowPopUp(string text, Camera cam)
     {
-        this.GetComponent<PopUp>().enabled = false;
-
         PopUpText = this.transform.GetComponent<TMP_Text>();
-        PopUpText.GetComponent<TMP_Text>().enabled = true;
+        PopUpText.enabled = true;
         
         PopUpText.text = text;
         PopUpText.transform.localScale = Vector3.zero;
 
         // Scale up with bounce effect
-        PopUpText.transform.DOScale(0.015f, 1)
+        PopUpText.transform.DOScale(0.015f, 0.5f)
             .SetEase(Ease.OutBack)
             .OnComplete(() => {
                 PopUpText.transform.DOScale(0.01f, 0.2f).SetEase(Ease.InOutBack);
@@ -44,11 +39,12 @@ public class PopUp : MonoBehaviour
         PopUpText.transform.DORotate(new Vector3(0, 0, 10), 0.2f)
             .SetEase(Ease.InOutSine)
             .SetLoops(2, LoopType.Yoyo);
-            FadeOut();
-        // Fade out and scale down before destroying
+        
+        FadeOut();
     }
 
-    public void FadeOut(){
+    public void FadeOut()
+    {
         Sequence fadeOutSequence = DOTween.Sequence();
         fadeOutSequence.SetDelay(1f)
             .Append(PopUpText.DOFade(0, 0.3f))
@@ -59,29 +55,38 @@ public class PopUp : MonoBehaviour
         });
     }
 
-    public void SetCustomGradient(Color baseColor, float topBrightness = 1.0f, float bottomBrightness = 0.8f)
+    private void ApplyGradient(Gradient gradient)
     {
-        colorGradient.topLeft = baseColor * topBrightness;
-        colorGradient.topRight = baseColor * topBrightness;
-        colorGradient.bottomLeft = baseColor * bottomBrightness;
-        colorGradient.bottomRight = baseColor * bottomBrightness;
-    }
+        if (PopUpText == null)
+        {
+            PopUpText = GetComponent<TMP_Text>();
+            if (PopUpText == null)
+            {
+                Debug.LogError("PopUpText is STILL null! Ensure the TMP_Text component is attached.");
+                return;
+            }
+        }
+        PopUpText.enableVertexGradient = true;
+        PopUpText.colorGradient = new VertexGradient(
+            gradient.Evaluate(1f), // Top Left
+            gradient.Evaluate(1f), // Top Right
+            gradient.Evaluate(0f), // Bottom Left
+            gradient.Evaluate(0f)  // Bottom Right
+    );
+}
 
     public void SetBadSilverGradient()
     {
-        Color badSilver = new Color(0.6f, 0.6f, 0.6f); // Dull silver, not too bright
-        SetCustomGradient(badSilver, 0.9f, 0.7f); // Slightly darker gradient for a weaker feel
+        ApplyGradient(NonCrit);
     }
 
     public void SetRedGradient()
     {
-        Color red = new Color(1f, 0.2f, 0.2f); // Bright red for critical damage
-        SetCustomGradient(red, 1.0f, 0.8f);
+        ApplyGradient(Crit);
     }
 
     public void SetWhiteGradient()
     {
-        Color white = new Color(1f, 1f, 1f); // Pure white for normal damage
-        SetCustomGradient(white, 1.0f, 0.8f);
+        ApplyGradient(BaseGradient);
     }
 }
