@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 4466db5116fed0a478db3831254f7f17
+guid: 968929a1762dd3140b64db7e369f46e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4114557637801405778
-    second: 5_GooseJump_0
-  - first:
-      213: 7996800558903912338
-    second: 5_GooseJump_1
-  - first:
-      213: -3412519400320758628
-    second: 5_GooseJump_2
-  - first:
-      213: -9197466109948527273
-    second: 5_GooseJump_3
+      213: 2481782529714385274
+    second: U_ArmorbarOutline_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 5_GooseJump_0
+      name: U_ArmorbarOutline_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 13
-        width: 80
-        height: 41
+        x: 1
+        y: 3
+        width: 65
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea21af6d0a726e6c0800000000000000
-      internalID: -4114557637801405778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 5_GooseJump_1
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 13
-        width: 66
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 297ec1d4db75afe60800000000000000
-      internalID: 7996800558903912338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 5_GooseJump_2
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 12
-        width: 67
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c9c80ca8fab44a0d0800000000000000
-      internalID: -3412519400320758628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 5_GooseJump_3
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 12
-        width: 67
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 75df2d2ad490c5080800000000000000
-      internalID: -9197466109948527273
+      spriteID: a71756dcf00117220800000000000000
+      internalID: 2481782529714385274
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 447d530e07f066b478eb6435bef0ee26
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      5_GooseJump_0: -4114557637801405778
-      5_GooseJump_1: 7996800558903912338
-      5_GooseJump_2: -3412519400320758628
-      5_GooseJump_3: -9197466109948527273
+      U_ArmorbarOutline_0: 2481782529714385274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
