@@ -42,15 +42,15 @@ public class ShopCard : MonoBehaviour
 
         cardName.text = gun.name;
         tagsText.text = "Tags: ";
-        for (int i = 0; i < gun.tags.Length; i++)
+       /*  for (int i = 0; i < gun.tags.Length; i++)
         {
             tags[i].text = gun.tags[i].ToString();
-        }
+        } */
         damage.text = "Damage: " + gun.damage.ToString();
         //critChange.text = "Crit Change: " + gun.critChance.ToString();
         //critDamage.text = "Crit Damage: " + gun.critDamage.ToString();
         fireRate.text = "Fire Rate: " + gun.timeBetweenShots.ToString();
-        price.text = "Price: " + gun.price.ToString();
+      //  price.text = "Price: " + gun.price.ToString();
     }
     public void BuyGun()
     {
@@ -60,7 +60,6 @@ public class ShopCard : MonoBehaviour
             transform.DOShakePosition(0.5f);
             this.GetComponent<Image>().DOColor(Color.red, 0.25f).OnComplete(() => this.GetComponent<Image>().DOColor(Color.black, 0.25f));
             return;
-
         }
         gunManager.AddGun(currentGun);
         this.gameObject.SetActive(false);

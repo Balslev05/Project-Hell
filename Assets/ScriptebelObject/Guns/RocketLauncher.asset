@@ -14,11 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GunSprite: {fileID: -5863325949546817249, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: 69094567eb1e9e744a2030288fc04f5a, type: 3}
+  price: 10
+  tags:
+  - Woa
+  BaseDamage: 10
+  criticalchange: 10
+  criticalMultiplayer: 1.5
   HoldToFire: 0
-  magazin: 1
-  reloadeTime: 1
   timeBetweenShots: 0.3
   bulletCount: 1
   spreadAngle: 0
   damage: 10
-  ShakeStreangth: 6.5
+  ammoType: 0
+  CameraShakeStreangth: 0.5
