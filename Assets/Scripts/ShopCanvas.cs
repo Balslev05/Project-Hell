@@ -37,7 +37,6 @@ public class ShopCanvas : MonoBehaviour
       StartCoroutine(ShowShop());
     }
     
-    // Update is called once per frame
     void Update()
     {
       if (Input.GetKeyDown(KeyCode.Escape))
