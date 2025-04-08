@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using DG.Tweening;
 public class ShopCard : MonoBehaviour
 {
     [Header("Card Info")]
@@ -54,6 +54,14 @@ public class ShopCard : MonoBehaviour
     }
     public void BuyGun()
     {
+        if (gunManager.GunList.Count >= gunManager.MaxGuns)
+        {
+            // shake effect to show and error
+            transform.DOShakePosition(0.5f);
+            this.GetComponent<Image>().DOColor(Color.red, 0.25f).OnComplete(() => this.GetComponent<Image>().DOColor(Color.black, 0.25f));
+            return;
+
+        }
         gunManager.AddGun(currentGun);
         this.gameObject.SetActive(false);
     }

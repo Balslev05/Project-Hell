@@ -6,24 +6,23 @@ using System.Collections.Generic;
 using System.Collections;
 using JetBrains.Annotations;
 
+
 public class ShopCanvas : MonoBehaviour
 {
+    public GameObject PlayerCanvas;
     public GameManager manager;
     public Image FadeCanvas;
     public GameObject nextRoundButton;
     [Header("Shop")]
-    public int RerollCost = 1;
-    public GameObject RerollButton;
-    public TMP_Text RerollCostText;
-    public GameObject BoxContainer;
     public List<Transform> ShopBoxes = new List<Transform>();
+    public int RerollCost = 1;
+    public TMP_Text RerollCostText;
+    public GameObject TabObjects;
+    public GameObject RerollButton;
+    public GameObject BoxContainer;
     [Header("ShopAnimation")]
     private int StartBox_XPos = -175;
     private int OffSet = 150;
-    [Header("Inventory")]
-    public GameObject xxx;
-    [Header("Stats")]
-    public GameObject xx;
 
     void Start()
     {
@@ -38,7 +37,6 @@ public class ShopCanvas : MonoBehaviour
       StartCoroutine(ShowShop());
     }
     
-    // Update is called once per frame
     void Update()
     {
       if (Input.GetKeyDown(KeyCode.Escape))
@@ -57,6 +55,8 @@ public class ShopCanvas : MonoBehaviour
 
     public IEnumerator ShowShop()
     {
+      PlayerCanvas.SetActive(false);
+      TabObjects.SetActive(true);
       FadeCanvas.DOFade(0, 0).SetEase(Ease.OutExpo);
       yield return new WaitForSeconds(0.25f);
       FadeCanvas.DOFade(1, 0.5f).SetEase(Ease.OutExpo);
@@ -91,6 +91,8 @@ public class ShopCanvas : MonoBehaviour
     public IEnumerator CloseShop()
     {
       UpdateChildrenCount();
+      TabObjects.SetActive(false);
+      PlayerCanvas.SetActive(true);
       foreach (Transform child in ShopBoxes)
       {
         child.GetComponent<RectTransform>().DOAnchorPosX(-550, 0.5f).SetEase(Ease.InQuint).onComplete = ()=> child.gameObject.SetActive(false);        
@@ -106,5 +108,4 @@ public class ShopCanvas : MonoBehaviour
         child.GetComponent<ShopCard>().SetCard(manager.GetRandomGun());
       }
     }
-
 }
