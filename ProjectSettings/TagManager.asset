@@ -7,6 +7,8 @@ TagManager:
   - PopupPlayer
   - Enemey
   - WorldCanvas
+  - Currency
+  - Scrapper
   layers:
   - Default
   - TransparentFX

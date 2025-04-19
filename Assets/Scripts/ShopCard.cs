@@ -18,11 +18,12 @@ public class ShopCard : MonoBehaviour
     public TMP_Text price;
 
     private GunManager gunManager;
-
+    private Scrapper scrapper; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gunManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GunManager>();
+        scrapper = GameObject.FindGameObjectWithTag("Scrapper").GetComponent<Scrapper>();
     }
 
     // Update is called once per frame
@@ -62,6 +63,12 @@ public class ShopCard : MonoBehaviour
             return;
         }
         gunManager.AddGun(currentGun);
+        this.gameObject.SetActive(false);
+    }
+    public void GiveToScrapper()
+    {
+        
+        scrapper.AddGun(currentGun);
         this.gameObject.SetActive(false);
     }
 }

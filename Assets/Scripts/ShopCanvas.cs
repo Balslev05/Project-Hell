@@ -9,6 +9,7 @@ using JetBrains.Annotations;
 
 public class ShopCanvas : MonoBehaviour
 {
+    public GameObject Tabs;  
     public GameObject PlayerCanvas;
     public GameManager manager;
     public Image FadeCanvas;
@@ -62,6 +63,7 @@ public class ShopCanvas : MonoBehaviour
       FadeCanvas.DOFade(1, 0.5f).SetEase(Ease.OutExpo);
       yield return new WaitForSeconds(0.5f);
       StartCoroutine(AnimateShopBox());
+      Tabs.SetActive(true);
     }
     public IEnumerator AnimateShopBox()
     {
@@ -81,6 +83,7 @@ public class ShopCanvas : MonoBehaviour
     
     public IEnumerator HideShop()
     {
+      Tabs.SetActive(false);
       RerollButton.SetActive(false);
       nextRoundButton.SetActive(false);    
       StartCoroutine(CloseShop());
