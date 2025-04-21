@@ -114,6 +114,12 @@ public class GunManager : MonoBehaviour
             Instantiate(GunDrop, transform.position, Quaternion.identity).GetComponent<GunHolder>().gun = gun;
         }
     }
+    public void SellGun(Gun gun)
+    {
+        if (gun == null) return;
+        GunList.Remove(gun);
+        SwitchToGun(0);
+    }
 
     //!! DET HER ER PICK UP FUNKTIONEN
   /*   private void OnTriggerStay2D(Collider2D other)
