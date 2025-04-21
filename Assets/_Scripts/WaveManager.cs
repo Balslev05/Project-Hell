@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,9 +10,12 @@ public class WaveManager : MonoBehaviour
     public GameObject enemyBuffDuckPrefab;
     public GameObject enemyPoliceDuckPrefab;
     public GameObject enemyMilitaryDuckPrefab;
+    
+    public GameObject SpawnMarkerPrefab;
 
     [Header("Components")]
-    public GameObject SpawnMarkerPrefab;
+    [SerializeField] private List<Wave> waves = new List<Wave>();
+    private int currentWave;
     [SerializeField] private Collider2D spawnArea;
 
     private void Update()
@@ -36,16 +40,14 @@ public class WaveManager : MonoBehaviour
 
     private Vector2 FindRadnomPointInCollider()
     {
-        if (spawnArea)
-        {
+        if (spawnArea) {
             float RandomX = Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x);
             float RandomY = Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y);
 
             Vector2 SpawnPoint = new Vector2(RandomX, RandomY);
             return SpawnPoint;
         }
-        else
-        {
+        else {
             return Vector2.zero;
         }
     }
