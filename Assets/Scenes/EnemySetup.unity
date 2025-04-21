@@ -33777,6 +33777,10 @@ MonoBehaviour:
   enemyPoliceDuckPrefab: {fileID: 2260861580196408629, guid: 7138c53e424e0a942b18503c0f29b702, type: 3}
   enemyMilitaryDuckPrefab: {fileID: 6225666379509061222, guid: 45e37ebd138d86d4ebd0c74e62c35b8b, type: 3}
   SpawnMarkerPrefab: {fileID: 6177823870520763783, guid: c06cc4b28cd323c44a80df4cf5818906, type: 3}
+  waves:
+  - {fileID: 11400000, guid: 240048e480b7c87428ed005750889db4, type: 2}
+  - {fileID: 11400000, guid: c269db1a1e42100408f4d75a1353922e, type: 2}
+  - {fileID: 11400000, guid: 6ca2476d9ef9bec4590bfb478dde7459, type: 2}
   spawnArea: {fileID: 192550068}
 --- !u!1 &1647448008
 GameObject:
