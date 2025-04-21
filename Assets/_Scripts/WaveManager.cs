@@ -16,14 +16,27 @@ public class WaveManager : MonoBehaviour
     [Header("Components")]
     [SerializeField] private List<Wave> waves = new List<Wave>();
     private int currentWave;
+    private int currentThreatLevel;
     [SerializeField] private Collider2D spawnArea;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(SpawnEnemy());
         }
+    }
+
+    IEnumerator PlayWave()
+    {
+        while (waves[currentWave].totalThreatScore > 0)
+        {
+            if (currentThreatLevel < waves[currentWave].allowedThreatLevel)
+            {
+
+            }
+        }
+        yield return new WaitForSeconds(1);
     }
 
     IEnumerator SpawnEnemy()

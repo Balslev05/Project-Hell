@@ -10,6 +10,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected AIPath path;
 
     [Header("Stats")]
+    [SerializeField] protected int threatValue;
     [SerializeField] protected int maxHealth;
     protected float currentHealth;
     [SerializeField] protected float moveSpeed;
