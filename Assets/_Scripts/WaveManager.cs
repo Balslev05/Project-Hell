@@ -15,12 +15,20 @@ public class WaveManager : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private List<Wave> waves = new List<Wave>();
+    [SerializeField] private List<GameObject> Enemies = new List<GameObject>();
     private int currentWave;
     private int currentThreatLevel;
     [SerializeField] private Collider2D spawnArea;
 
     private void Update()
     {
+        foreach (GameObject enemy in Enemies)
+        {
+            if (enemy == null) { Enemies.Remove(enemy); }
+        }
+
+        Debug.Log(Enemies.Count);
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(SpawnEnemy());
@@ -48,7 +56,8 @@ public class WaveManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         Destroy(spawnMarker);
-        Instantiate(enemyNormalDuckPrefab, SpawnPoint, Quaternion.identity);
+        GameObject spawnedEnemy = Instantiate(enemyNormalDuckPrefab, SpawnPoint, Quaternion.identity);
+        Enemies.Add(spawnedEnemy);
     }
 
     private Vector2 FindRadnomPointInCollider()
