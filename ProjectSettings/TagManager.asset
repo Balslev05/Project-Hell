@@ -7,7 +7,6 @@ TagManager:
   - PopupPlayer
   - Enemey
   - WorldCanvas
-  - SpawnArea
   layers:
   - Default
   - TransparentFX
