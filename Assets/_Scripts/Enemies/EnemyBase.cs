@@ -11,6 +11,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] public int threatValue;
+    [SerializeField] public int currencyValue;
     [SerializeField] protected int maxHealth;
     protected float currentHealth;
     [SerializeField] protected float moveSpeed;

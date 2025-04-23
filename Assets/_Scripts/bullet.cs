@@ -48,6 +48,7 @@ public class bullet : MonoBehaviour
         bulletDamage = _bulletdamage;
         criticalMultiplayer = _critimultiplayer;
     }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -101,10 +102,10 @@ public class bullet : MonoBehaviour
         
         rb.linearVelocity = movement;
     }
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemey")
+        if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<Target>().TakeDamage(bulletDamage,criticalMultiplayer);
             Destroy(gameObject);
