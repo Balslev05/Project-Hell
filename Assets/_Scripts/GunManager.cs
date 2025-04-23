@@ -77,7 +77,7 @@ public class GunManager : MonoBehaviour
             float angleOffset = Random.Range(-currentGun.spreadAngle / 2f, currentGun.spreadAngle / 2f);
             Quaternion rotation = Quaternion.Euler(0, 0, angleOffset);
             GameObject bullet = Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
-           bullet.GetComponent<bullet>().SetStats(currentGun.BaseDamage, RollForCritical());
+            bullet.GetComponent<bullet>().SetStats(currentGun.BaseDamage, RollForCritical());
         }
     }
 

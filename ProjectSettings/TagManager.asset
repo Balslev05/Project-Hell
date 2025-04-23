@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - PopupPlayer
-  - Enemey
   - WorldCanvas
+  - Enemy
   layers:
   - Default
   - TransparentFX

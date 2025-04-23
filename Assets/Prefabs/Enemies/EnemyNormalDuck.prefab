@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3080727549959774863, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+      propertyPath: drawGizmos
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3918744144634423177, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -72,17 +76,21 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 7082500271246367253, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
-      propertyPath: m_Radius
-      value: 0.54829013
-      objectReference: {fileID: 0}
-    - target: {fileID: 7082500271246367253, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 6510206455829212457, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+      propertyPath: enableRotation
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7082500271246367253, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082500271246367253, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082500271246367253, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
       propertyPath: m_Offset.y
-      value: -0.04829015
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -120,6 +128,7 @@ MonoBehaviour:
   player: {fileID: 0}
   bodySprite: {fileID: 1954336827983338623}
   animator: {fileID: 104051811678453991}
+  threatValue: 1
   maxHealth: 40
   moveSpeed: 3
   damage: 5

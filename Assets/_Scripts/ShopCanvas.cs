@@ -78,7 +78,7 @@ public class ShopCanvas : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
       }
       RerollButton.SetActive(true);
-      nextRoundButton.SetActive(false);
+      nextRoundButton.SetActive(true);
     }
     
     public IEnumerator HideShop()
@@ -89,6 +89,12 @@ public class ShopCanvas : MonoBehaviour
       StartCoroutine(CloseShop());
       yield return new WaitForSeconds(1f);
       FadeCanvas.DOFade(0, 0.5f).SetEase(Ease.OutExpo);
+    }
+
+    public void OnClickCloseCanvas()
+    {
+        StartCoroutine(HideShop());
+        StartCoroutine(CloseShop());
     }
 
     public IEnumerator CloseShop()

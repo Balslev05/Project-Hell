@@ -2,11 +2,17 @@ using UnityEngine;
 using DG.Tweening;
 public class Target : MonoBehaviour
 {
-    
+    private EnemyBase enemyBase;
+
     public int TempHealth = 100;
     public GameObject PopUpEffectPrefab;
     public GameObject CurrencyPrefab;
     public int AmountCurrency = 10;
+
+    private void Start()
+    {
+        enemyBase = GetComponent<EnemyBase>();
+    }
 
     public void TakeDamage(int damage, float criticalMultiplayer)
     {
