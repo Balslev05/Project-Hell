@@ -15,24 +15,21 @@ public class WaveManager : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private List<Wave> waves = new List<Wave>();
-    [SerializeField] private List<GameObject> SpawnedEnemies = new List<GameObject>();
     [SerializeField] private List<GameObject> PossibleEnemies = new List<GameObject>();
+    [SerializeField] private List<GameObject> LiveEnemies = new List<GameObject>();
+    [SerializeField] private Collider2D spawnArea;
     private int currentWave;
     private int currentThreatLevel;
-    [SerializeField] private Collider2D spawnArea;
 
     private void Update()
     {
-        foreach (GameObject enemy in SpawnedEnemies)
-        {
-            if (enemy == null) { SpawnedEnemies.Remove(enemy); }
-        }
+        GetCurrentThreatLevel();
 
-        Debug.Log(SpawnedEnemies.Count);
+        Debug.Log(LiveEnemies.Count);
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            StartCoroutine(SpawnEnemy());
+            StartCoroutine(SpawnEnemy(enemyNormalDuckPrefab));
         }
     }
 
@@ -44,34 +41,69 @@ public class WaveManager : MonoBehaviour
         {
             if (currentThreatLevel < waves[currentWave].allowedThreatLevel)
             {
-                int spawnAmount = Random.Range(1, 4);
-
+                int spawnAmount = Random.Range(waves[currentWave].minSpawnAmount, waves[currentWave].maxSpawnAmount + 1);
+                
+                for (int i = 0; i < spawnAmount; i++)
+                {
+                    int enemyIndex = Random.Range(0, PossibleEnemies.Count);
+                    StartCoroutine(SpawnEnemy(PossibleEnemies[enemyIndex]));
+                }
             }
         }
         yield return new WaitForSeconds(1);
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnEnemy(GameObject EnemyToSpawn)
     {
         Vector2 SpawnPoint = FindRadnomPointInCollider();
-
         GameObject spawnMarker = Instantiate(SpawnMarkerPrefab, SpawnPoint, Quaternion.identity);
 
         yield return new WaitForSeconds(1);
 
         Destroy(spawnMarker);
-        GameObject spawnedEnemy = Instantiate(enemyNormalDuckPrefab, SpawnPoint, Quaternion.identity);
-        SpawnedEnemies.Add(spawnedEnemy);
+        GameObject spawnedEnemy = Instantiate(EnemyToSpawn, SpawnPoint, Quaternion.identity);
+        
+        LiveEnemies.Add(spawnedEnemy);
+        waves[currentWave].totalThreatScore -= spawnedEnemy.GetComponent<EnemyBase>().threatValue;
     }
 
     private void SetupPossibleEnemies()
     {
         if (PossibleEnemies.Count != 0) { PossibleEnemies.Clear(); }
 
-        if (waves[currentWave].enemyNormalDuckAllowed) { PossibleEnemies.Add(enemyNormalDuckPrefab); }
-        if (waves[currentWave].enemyBuffDuckAllowed) { PossibleEnemies.Add(enemyBuffDuckPrefab); }
-        if (waves[currentWave].enemyPoliceDuckAllowed) { PossibleEnemies.Add(enemyPoliceDuckPrefab); }
-        if (waves[currentWave].enemyMilitaryDuckAllowed) { PossibleEnemies.Add(enemyMilitaryDuckPrefab); }
+        if (waves[currentWave].enemyNormalDuckAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyNormalDuckSpawnChance; i++) {
+                PossibleEnemies.Add(enemyNormalDuckPrefab); }
+        }
+
+        if (waves[currentWave].enemyBuffDuckAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyBuffDuckSpawnChance; i++) {
+                PossibleEnemies.Add(enemyBuffDuckPrefab); }
+        }
+
+        if (waves[currentWave].enemyPoliceDuckAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyPoliceDuckSpawnChance; i++) {
+                PossibleEnemies.Add(enemyPoliceDuckPrefab); }
+        }
+
+        if (waves[currentWave].enemyMilitaryDuckAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyMilitaryDuckSpawnChance; i++) {
+                PossibleEnemies.Add(enemyMilitaryDuckPrefab); }
+        }
+    }
+
+    private void GetCurrentThreatLevel()
+    {
+        currentThreatLevel = 0;
+
+        foreach (GameObject enemy in LiveEnemies)
+        {
+            if (enemy == null) { LiveEnemies.Remove(enemy); }
+            else
+            {
+                currentThreatLevel += enemy.GetComponent<EnemyBase>().threatValue;
+            }
+        }
     }
 
     private Vector2 FindRadnomPointInCollider()

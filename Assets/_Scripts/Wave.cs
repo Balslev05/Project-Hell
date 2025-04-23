@@ -8,8 +8,15 @@ public class Wave : ScriptableObject
     public bool enemyBuffDuckAllowed;
     public bool enemyPoliceDuckAllowed;
     public bool enemyMilitaryDuckAllowed;
+    
+    public int enemyNormalDuckSpawnChance;
+    public int enemyBuffDuckSpawnChance;
+    public int enemyPoliceDuckSpawnChance;
+    public int enemyMilitaryDuckSpawnChance;
 
-    [Header("Components")]
-    public int allowedThreatLevel;
+    [Header("Variables")]
     public int totalThreatScore;
+    public int allowedThreatLevel;
+    public int maxSpawnAmount;
+    public int minSpawnAmount;
 }
