@@ -1684,7 +1684,70 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rpgItems_sheet_0: 8388890371590417799
+      rpgItems_sheet_1: -4670207236197158072
+      rpgItems_sheet_10: 9049495874196642303
+      rpgItems_sheet_11: -7294876062518498764
+      rpgItems_sheet_12: 7910898370279052032
+      rpgItems_sheet_13: -8585607673074014903
+      rpgItems_sheet_14: 4373281978926227545
+      rpgItems_sheet_15: 4578281867903241751
+      rpgItems_sheet_16: 1419011446128467162
+      rpgItems_sheet_17: -6715534089220809167
+      rpgItems_sheet_18: 5377177409989052065
+      rpgItems_sheet_19: -5717209872333751994
+      rpgItems_sheet_2: -3449758224342126172
+      rpgItems_sheet_20: -193259861495268656
+      rpgItems_sheet_21: 3591695200799170751
+      rpgItems_sheet_22: -576513766165549105
+      rpgItems_sheet_23: 1473785724197280365
+      rpgItems_sheet_24: 3114804684088319329
+      rpgItems_sheet_25: -8872465293877844935
+      rpgItems_sheet_26: 5498926869629776758
+      rpgItems_sheet_27: -4911170722916283346
+      rpgItems_sheet_28: -7060719454596171389
+      rpgItems_sheet_29: -6109396198914085557
+      rpgItems_sheet_3: -5712032402808027806
+      rpgItems_sheet_30: -2043460052163090190
+      rpgItems_sheet_31: -342446841072618702
+      rpgItems_sheet_32: 4685928976655714237
+      rpgItems_sheet_33: -3564167689326112889
+      rpgItems_sheet_34: 3485967593667324608
+      rpgItems_sheet_35: -2785318073491560814
+      rpgItems_sheet_36: 3196411138377590877
+      rpgItems_sheet_37: 4571072374846650809
+      rpgItems_sheet_38: 6525581455529420368
+      rpgItems_sheet_39: -5681651383558082862
+      rpgItems_sheet_4: -2688750537641178276
+      rpgItems_sheet_40: 1335258204192823059
+      rpgItems_sheet_41: 2570514056867815304
+      rpgItems_sheet_42: 7232002675582995392
+      rpgItems_sheet_43: 8674736757584753364
+      rpgItems_sheet_44: 2153548419047809741
+      rpgItems_sheet_45: 9052840552663688663
+      rpgItems_sheet_46: 919638072793888122
+      rpgItems_sheet_47: 6146530326548710728
+      rpgItems_sheet_48: 3963285970782746751
+      rpgItems_sheet_49: 3911305453626415947
+      rpgItems_sheet_5: 390328648931106719
+      rpgItems_sheet_50: 8157214327967565962
+      rpgItems_sheet_51: -2792915823984136910
+      rpgItems_sheet_52: 310138799688485220
+      rpgItems_sheet_53: 3436988884271921373
+      rpgItems_sheet_54: 7402704423473929295
+      rpgItems_sheet_55: -7657393634805497129
+      rpgItems_sheet_56: 7743817726481801195
+      rpgItems_sheet_57: 6641366917451232861
+      rpgItems_sheet_58: 4947339836353194393
+      rpgItems_sheet_59: 6750736029148046015
+      rpgItems_sheet_6: -5447599328983387615
+      rpgItems_sheet_60: -7882288683953590358
+      rpgItems_sheet_61: -7543235683321466293
+      rpgItems_sheet_62: 7672871924715991632
+      rpgItems_sheet_7: -3112839762767229802
+      rpgItems_sheet_8: -8179991467555942926
+      rpgItems_sheet_9: 3968630818884870804
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
