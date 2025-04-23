@@ -1,24 +1,27 @@
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 public class Target : MonoBehaviour
 {
     private EnemyBase enemyBase;
+    private Managers manager;
+    private WaveManager waveManager;
 
-    public int TempHealth = 100;
-    public GameObject PopUpEffectPrefab;
-    public GameObject CurrencyPrefab;
-    public int AmountCurrency = 10;
+    [SerializeField] private GameObject PopUpEffectPrefab;
+    [SerializeField] private GameObject CurrencyPrefab;
 
     private void Start()
     {
         enemyBase = GetComponent<EnemyBase>();
+        manager = GameObject.FindWithTag("Manager").GetComponent<Managers>();
+        waveManager = manager.waveManager;
     }
 
     public void TakeDamage(int damage, float criticalMultiplayer)
     {
     //-----The calculations-----///
-        TempHealth -= Mathf.FloorToInt(damage * criticalMultiplayer);
-        CheckHealth(TempHealth);
+        enemyBase.currentHealth -= Mathf.FloorToInt(damage * criticalMultiplayer);
+        CheckHealth();
      //-----SpawnDamageNumbers-----///
         GameObject worldCanvas = GameObject.FindGameObjectWithTag("WorldCanvas");
         PopUp EffectPrefab  = Instantiate(PopUpEffectPrefab, worldCanvas.transform).GetComponent<PopUp>();
@@ -53,17 +56,17 @@ public class Target : MonoBehaviour
         return new Vector3(transform.localPosition.x + randomOffsetX, transform.localPosition.y * 1.5f + randomOffsetY, transform.localPosition.z);
     }
 
-    public void CheckHealth(int damage)
+    public void CheckHealth()
     {
-        if (TempHealth <= 0)
+        if (enemyBase.currentHealth <= 0)
         {
             Debug.Log("Target Destroyed");
-            Death();
+            Die();
         }
     }
-    public void Death()
+    public void Die()
     {
-        for (int i = 0; i < AmountCurrency; i++)
+        for (int i = 0; i < enemyBase.currencyValue; i++)
         {
             GameObject coin = Instantiate(CurrencyPrefab, transform.position, Quaternion.identity);
 
@@ -78,10 +81,10 @@ public class Target : MonoBehaviour
             coin.transform.DORotate(new Vector3(0, 0, Random.Range(-180f, 180f)), 0.5f, RotateMode.FastBeyond360);
 
             // FADE OUT  MABY DELETE ?!?!?!?!?
-            coin.GetComponent<SpriteRenderer>().DOFade(0, 3f).SetDelay(1f).OnComplete(() => Destroy(coin));
+            //coin.GetComponent<SpriteRenderer>().DOFade(0, 3f).SetDelay(1f).OnComplete(() => Destroy(coin));
         }
 
-    Destroy(gameObject);
-}
-
+        waveManager.LiveEnemies.Remove(this.gameObject);
+        Destroy(gameObject);
+    }
 }

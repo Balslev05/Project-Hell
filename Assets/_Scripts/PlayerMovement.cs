@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private PlayerAbilities abilities;
     private PlayerStats stats;
+    
+    private Managers manager;
+    private CurrencyManager currencyManager;
 
     [Header("Stats")]
     [SerializeField] private float moveSpeed;
@@ -16,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rollSpeed = 10f;
     [SerializeField] private float rollDuration = 1f;
     [SerializeField] private float rollCooldown = 1f;
+    [SerializeField] private int rollArmorCost;
 
     private Vector2 playerInput;
 
@@ -30,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         abilities = GetComponent<PlayerAbilities>();
         stats = GetComponent<PlayerStats>();
+
+        manager = GameObject.FindWithTag("Manager").GetComponent<Managers>();
+        currencyManager = manager.currencyManager;
 
         isRolling = false;
         canRoll = true;
@@ -78,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         canRoll = false;
         moveSpeed = rollSpeed;
         //abilities.GhostMode(true);
-        stats.LoseArmor(5);
+        stats.LoseArmor(rollArmorCost);
 
         yield return new WaitForSeconds(rollDuration);
         isRolling = false; animator.SetBool("IsRolling", false);
@@ -89,13 +96,12 @@ public class PlayerMovement : MonoBehaviour
         canRoll = true;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D Collider)
     {
-        if (other.gameObject.tag == "Currency")
+        if (Collider.tag == "Currency")
         {
-           //stats.AddCurrency(1);
-            Destroy(other.gameObject);
-            // BLING BLING
+            currencyManager.GetMoney(currencyManager.bananaPickupValue);
+            Destroy(Collider.gameObject);
         }
     }
 }

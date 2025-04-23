@@ -8,17 +8,17 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] protected SpriteRenderer bodySprite;
     [SerializeField] protected Animator animator;
     protected AIPath path;
+    protected PlayerAbilities playerAbilities;
 
     [Header("Stats")]
     [SerializeField] public int threatValue;
     [SerializeField] public int currencyValue;
     [SerializeField] protected int maxHealth;
-    protected float currentHealth;
+    [HideInInspector] public float currentHealth;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float damage;
     [SerializeField] protected float attackSpeed;
     [SerializeField] protected float attackRange;
-    protected float distanceToTarget;
 
     protected bool inAttackRange;
 
@@ -26,6 +26,7 @@ public abstract class EnemyBase : MonoBehaviour
     {
         path = GetComponent<AIPath>();
         player = GameObject.FindGameObjectWithTag("Player");
+        playerAbilities = player.GetComponent<PlayerAbilities>();
 
         currentHealth = maxHealth;
     }
@@ -34,15 +35,15 @@ public abstract class EnemyBase : MonoBehaviour
     {
         path.maxSpeed = moveSpeed;
 
-        distanceToTarget = Vector2.Distance(transform.position, player.transform.position);
-        if (distanceToTarget > attackRange) {
-            path.destination = player.transform.position;
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        if (distanceToPlayer > attackRange && !playerAbilities.isGhosting) {
             inAttackRange = false;
+            path.destination = player.transform.position;
             FlipSprite();
         }
         else {
-            path.destination = transform.position;
             inAttackRange = true;
+            path.destination = transform.position;
         }
     }
 
@@ -56,17 +57,7 @@ public abstract class EnemyBase : MonoBehaviour
     {
         if (inAttackRange)
         {
-            Debug.Log("Attacking");
+            
         }
-    }
-
-    protected virtual void TakeDamage()
-    {
-        
-    }
-
-    protected virtual void Die()
-    {
-        
     }
 }

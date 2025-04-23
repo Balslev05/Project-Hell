@@ -16,7 +16,7 @@ public class WaveManager : MonoBehaviour
     [Header("Components")]
     [SerializeField] private List<Wave> waves = new List<Wave>();
     [SerializeField] private List<GameObject> PossibleEnemies = new List<GameObject>();
-    [SerializeField] private List<GameObject> LiveEnemies = new List<GameObject>();
+    [SerializeField] public List<GameObject> LiveEnemies = new List<GameObject>();
     [SerializeField] private Collider2D spawnArea;
     private int currentWave = 0;
     private int localTotalThreatScore;
@@ -25,8 +25,6 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        GetCurrentThreatLevel();
-
         Debug.Log(LiveEnemies.Count);
 
         if (Input.GetKeyDown(KeyCode.X))
@@ -52,14 +50,13 @@ public class WaveManager : MonoBehaviour
 
         while (localTotalThreatScore > 0)
         {
-            if (currentThreatLevel < waves[currentWave].allowedThreatLevel)
+            if (GetCurrentThreatLevel() < waves[currentWave].allowedThreatLevel)
             {
                 int spawnAmount = Random.Range(waves[currentWave].minSpawnAmount, waves[currentWave].maxSpawnAmount + 1);
                 
                 for (int i = 0; i < spawnAmount; i++)
                 {
-                    int enemyIndex = Random.Range(0, PossibleEnemies.Count);
-                    StartCoroutine(SpawnEnemy(PossibleEnemies[enemyIndex]));
+                    StartCoroutine(SpawnEnemy(PossibleEnemies[Random.Range(0, PossibleEnemies.Count)]));
                 }
             }
             yield return new WaitForSeconds(5);
@@ -109,7 +106,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private void GetCurrentThreatLevel()
+    private int GetCurrentThreatLevel()
     {
         currentThreatLevel = 0;
 
@@ -121,6 +118,8 @@ public class WaveManager : MonoBehaviour
                 currentThreatLevel += enemy.GetComponent<EnemyBase>().threatValue;
             }
         }
+
+        return currentThreatLevel;
     }
 
     private Vector2 FindRadnomPointInCollider()
