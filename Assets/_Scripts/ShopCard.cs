@@ -10,12 +10,19 @@ public class ShopCard : MonoBehaviour
     public TMP_Text cardName;
     public TMP_Text tagsText;
     public TMP_Text[] tags;
+
     [Header("Stats")]
-    public TMP_Text damage;
-    public TMP_Text critChange;
-    public TMP_Text critDamage;
-    public TMP_Text fireRate;
-    public TMP_Text price;
+    [SerializeField] private TMP_Text damage;
+    [SerializeField] private TMP_Text critChange;
+    [SerializeField] private TMP_Text critDamage;
+    [SerializeField] private TMP_Text fireRate;
+    [SerializeField] private TMP_Text price;
+    
+    [Header("RandomizeStats")]
+    public int randomDamage;
+    public int randomCritChange;
+    public int randomCritDamage;
+    public int randomFireRate;
 
     private GunManager gunManager;
     private Scrapper scrapper; 
@@ -25,13 +32,6 @@ public class ShopCard : MonoBehaviour
         gunManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GunManager>();
         scrapper = GameObject.FindGameObjectWithTag("Scrapper").GetComponent<Scrapper>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     public void SetCard(Gun gun)
     {
@@ -43,7 +43,7 @@ public class ShopCard : MonoBehaviour
 
         cardName.text = gun.name;
         tagsText.text = "Tags: ";
-       /*  for (int i = 0; i < gun.tags.Length; i++)
+        /*for (int i = 0; i < gun.tags.Length; i++)
         {
             tags[i].text = gun.tags[i].ToString();
         } */
@@ -51,7 +51,10 @@ public class ShopCard : MonoBehaviour
         //critChange.text = "Crit Change: " + gun.critChance.ToString();
         //critDamage.text = "Crit Damage: " + gun.critDamage.ToString();
         fireRate.text = "Fire Rate: " + gun.timeBetweenShots.ToString();
-      //  price.text = "Price: " + gun.price.ToString();
+        //price.text = "Price: " + gun.price.ToString();
+        RandomizeStats();
+        SetStats();
+
     }
     public void BuyGun()
     {
@@ -67,8 +70,24 @@ public class ShopCard : MonoBehaviour
     }
     public void GiveToScrapper()
     {
-        
         scrapper.AddGun(currentGun);
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
+    private void RandomizeStats()
+    {
+        currentGun.damage += Random.Range(-randomDamage, randomDamage);
+        currentGun.criticalchange += Random.Range(-randomCritChange, randomCritChange);
+        currentGun.criticalMultiplayer += Random.Range(-randomCritDamage, randomCritDamage);
+        currentGun.timeBetweenShots += Random.Range(-randomFireRate, randomFireRate);
+    }
+    public void SetStats()
+    {
+        damage.text = "Damage: " + currentGun.damage.ToString();
+        critChange.text = "Crit Change: " + currentGun.criticalchange.ToString();
+        critDamage.text = "Crit Damage: " + currentGun.criticalMultiplayer.ToString();
+        fireRate.text = "Fire Rate: " + currentGun.timeBetweenShots.ToString();
+        price.text = "Price:" + currentGun.CalculatePrice();
+    }
+
+
 }

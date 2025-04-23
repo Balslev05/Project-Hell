@@ -31,5 +31,12 @@ public class Gun : ScriptableObject
     public enum GunRarity { Common, Rare, Epic, Legendary }
     [Header("Meta")]    
     public GunRarity rarity = GunRarity.Common;
+    
+
+    public int CalculatePrice()
+    {
+        price = BaseDamage + criticalchange + (int)criticalMultiplayer + (int)timeBetweenShots + bulletCount - (int)spreadAngle + (int)damage;
+        return price;
+    }
 
 }
