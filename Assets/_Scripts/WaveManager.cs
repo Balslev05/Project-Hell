@@ -18,8 +18,10 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<GameObject> PossibleEnemies = new List<GameObject>();
     [SerializeField] private List<GameObject> LiveEnemies = new List<GameObject>();
     [SerializeField] private Collider2D spawnArea;
-    private int currentWave;
+    private int currentWave = 0;
+    private int localTotalThreatScore;
     private int currentThreatLevel;
+    private bool waveRunning = false;
 
     private void Update()
     {
@@ -27,17 +29,28 @@ public class WaveManager : MonoBehaviour
 
         Debug.Log(LiveEnemies.Count);
 
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            OnClickStartWave();
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(SpawnEnemy(enemyNormalDuckPrefab));
         }
     }
-
-    IEnumerator PlayWave()
+    public void OnClickStartWave()
     {
+        if (!waveRunning) { StartCoroutine(PlayWave()); }
+    }
+
+    private IEnumerator PlayWave()
+    {
+        waveRunning = true;
+        localTotalThreatScore = waves[currentWave].totalThreatScore;
         SetupPossibleEnemies();
 
-        while (waves[currentWave].totalThreatScore > 0)
+        while (localTotalThreatScore > 0)
         {
             if (currentThreatLevel < waves[currentWave].allowedThreatLevel)
             {
@@ -49,11 +62,15 @@ public class WaveManager : MonoBehaviour
                     StartCoroutine(SpawnEnemy(PossibleEnemies[enemyIndex]));
                 }
             }
+            yield return new WaitForSeconds(5);
         }
-        yield return new WaitForSeconds(1);
+
+        if (currentWave != waves.Count)
+        currentWave++;
+        waveRunning = false;
     }
 
-    IEnumerator SpawnEnemy(GameObject EnemyToSpawn)
+    private IEnumerator SpawnEnemy(GameObject EnemyToSpawn)
     {
         Vector2 SpawnPoint = FindRadnomPointInCollider();
         GameObject spawnMarker = Instantiate(SpawnMarkerPrefab, SpawnPoint, Quaternion.identity);
@@ -64,7 +81,7 @@ public class WaveManager : MonoBehaviour
         GameObject spawnedEnemy = Instantiate(EnemyToSpawn, SpawnPoint, Quaternion.identity);
         
         LiveEnemies.Add(spawnedEnemy);
-        waves[currentWave].totalThreatScore -= spawnedEnemy.GetComponent<EnemyBase>().threatValue;
+        localTotalThreatScore -= spawnedEnemy.GetComponent<EnemyBase>().threatValue;
     }
 
     private void SetupPossibleEnemies()

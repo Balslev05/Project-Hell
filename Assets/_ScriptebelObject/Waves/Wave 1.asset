@@ -23,4 +23,4 @@ MonoBehaviour:
   totalThreatScore: 100
   allowedThreatLevel: 20
   maxSpawnAmount: 5
-  minSpawnAmount: 0
+  minSpawnAmount: 1
