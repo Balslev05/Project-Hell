@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d81bb4241d0f449bf9fe0bd6e57a03, type: 3}
   m_Name: Wave 1
   m_EditorClassIdentifier: 
-  enemyNormalDuckAllowed: 1
-  enemyBuffDuckAllowed: 0
+  enemyNormalDuckAllowed: 0
+  enemyBuffDuckAllowed: 1
   enemyPoliceDuckAllowed: 0
   enemyMilitaryDuckAllowed: 0
   enemyNormalDuckSpawnChance: 1
-  enemyBuffDuckSpawnChance: 0
+  enemyBuffDuckSpawnChance: 1
   enemyPoliceDuckSpawnChance: 0
   enemyMilitaryDuckSpawnChance: 0
   totalThreatScore: 100
-  allowedThreatLevel: 20
-  maxSpawnAmount: 5
+  allowedThreatLevel: 5
+  maxSpawnAmount: 1
   minSpawnAmount: 1
+  waveCurrencyValue: 0

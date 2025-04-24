@@ -1,13 +1,15 @@
 using UnityEngine;
 using Pathfinding;
+using System.Collections;
 
 public abstract class EnemyBase : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] protected GameObject player;
+    protected GameObject player;
     [SerializeField] protected SpriteRenderer bodySprite;
     [SerializeField] protected Animator animator;
     protected AIPath path;
+    protected PlayerStats playerStats;
     protected PlayerAbilities playerAbilities;
 
     [Header("Stats")]
@@ -16,33 +18,54 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] protected int maxHealth;
     [HideInInspector] public float currentHealth;
     [SerializeField] protected float moveSpeed;
-    [SerializeField] protected float damage;
+    [SerializeField] public float damage;
     [SerializeField] protected float attackSpeed;
     [SerializeField] protected float attackRange;
 
-    protected bool inAttackRange;
+    protected float distanceToPlayer;
+    public bool isMoving;
+    public bool inAttackRange;
+    public bool canAttack;
+    public bool isAttacking = false;
 
     protected virtual void Start()
     {
         path = GetComponent<AIPath>();
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerAbilities = player.GetComponent<PlayerAbilities>();
+        playerStats = player.GetComponent<PlayerStats>();
 
         currentHealth = maxHealth;
+    }
+
+    protected virtual void Update()
+    {
+        Move();
+
+        if (distanceToPlayer <= attackRange) { inAttackRange = true; }
+        else { inAttackRange = false; }
+
+        if (inAttackRange && !isAttacking && !playerAbilities.isGhosting) { canAttack = true; }
+        else { canAttack = false; }
+
+        if (inAttackRange && canAttack && !isAttacking) {
+            StartCoroutine(Attack());
+        }
     }
 
     protected virtual void Move()
     {
         path.maxSpeed = moveSpeed;
 
-        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distanceToPlayer > attackRange && !playerAbilities.isGhosting) {
-            inAttackRange = false;
+            isMoving = true; animator.SetBool("IsMoving", true);
             path.destination = player.transform.position;
             FlipSprite();
         }
         else {
-            inAttackRange = true;
+            isMoving = false; animator.SetBool("IsMoving", false);
             path.destination = transform.position;
         }
     }
@@ -53,11 +76,16 @@ public abstract class EnemyBase : MonoBehaviour
         else if (path.desiredVelocity.x <= -0.01f) { bodySprite.flipX = false; }
     }
 
-    protected virtual void Attack()
+    protected virtual IEnumerator Attack()
     {
-        if (inAttackRange)
-        {
-            
-        }
+        isAttacking = true;
+        canAttack = false;
+
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(attackSpeed);
+        
+        animator.SetTrigger("StopAttack");
+        isAttacking = false;
+        canAttack = true;
     }
 }
