@@ -1,6 +1,5 @@
 using UnityEngine;
 using Pathfinding;
-using System.Collections;
 
 public abstract class EnemyBase : MonoBehaviour
 {
@@ -23,10 +22,10 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] protected float attackRange;
 
     protected float distanceToPlayer;
-    public bool isMoving;
-    public bool inAttackRange;
-    public bool canAttack;
-    public bool isAttacking = false;
+    protected bool isMoving;
+    protected bool inAttackRange;
+    protected bool canAttack;
+    protected bool isAttacking = false;
 
     protected virtual void Start()
     {
@@ -42,16 +41,6 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Update()
     {
         Move();
-
-        if (distanceToPlayer <= attackRange) { inAttackRange = true; }
-        else { inAttackRange = false; }
-
-        if (inAttackRange && !isAttacking && !playerAbilities.isGhosting) { canAttack = true; }
-        else { canAttack = false; }
-
-        if (inAttackRange && canAttack && !isAttacking) {
-            StartCoroutine(Attack());
-        }
     }
 
     protected virtual void Move()
@@ -74,18 +63,5 @@ public abstract class EnemyBase : MonoBehaviour
     {
         if (path.desiredVelocity.x >= 0.01f) { bodySprite.flipX = true; }
         else if (path.desiredVelocity.x <= -0.01f) { bodySprite.flipX = false; }
-    }
-
-    protected virtual IEnumerator Attack()
-    {
-        isAttacking = true;
-        canAttack = false;
-
-        animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(attackSpeed);
-        
-        animator.SetTrigger("StopAttack");
-        isAttacking = false;
-        canAttack = true;
     }
 }
