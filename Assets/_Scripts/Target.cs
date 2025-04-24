@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting;
+using System.Collections;
 public class Target : MonoBehaviour
 {
     private EnemyBase enemyBase;
@@ -61,11 +62,13 @@ public class Target : MonoBehaviour
         if (enemyBase.currentHealth <= 0)
         {
             Debug.Log("Target Destroyed");
-            Die();
+            StartCoroutine(Die());
         }
     }
-    public void Die()
+    public IEnumerator Die()
     {
+        enemyBase.isDead = true;
+
         for (int i = 0; i < enemyBase.currencyValue; i++)
         {
             GameObject coin = Instantiate(CurrencyPrefab, transform.position, Quaternion.identity);
@@ -85,6 +88,9 @@ public class Target : MonoBehaviour
         }
 
         waveManager.LiveEnemies.Remove(this.gameObject);
-        Destroy(gameObject);
+        enemyBase.collider.enabled = false;
+        enemyBase.animator.SetTrigger("Die");
+        yield return new WaitForSeconds(10);
+        enemyBase.bodySprite.DOFade(0, 3f).SetDelay(1f).OnComplete(() => Destroy(this.gameObject));
     }
 }

@@ -5,8 +5,9 @@ public abstract class EnemyBase : MonoBehaviour
 {
     [Header("Components")]
     protected GameObject player;
-    [SerializeField] protected SpriteRenderer bodySprite;
-    [SerializeField] protected Animator animator;
+    public SpriteRenderer bodySprite;
+    public Animator animator;
+    public Collider2D collider;
     protected AIPath path;
     protected PlayerStats playerStats;
     protected PlayerAbilities playerAbilities;
@@ -20,8 +21,10 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] public float damage;
     [SerializeField] protected float attackSpeed;
     [SerializeField] protected float attackRange;
+    //[SerializeField] public int DeathVersions;
 
     protected float distanceToPlayer;
+    public bool isDead;
     protected bool isMoving;
     protected bool inAttackRange;
     protected bool canAttack;
@@ -30,6 +33,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Start()
     {
         path = GetComponent<AIPath>();
+        collider = GetComponent<Collider2D>();
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerAbilities = player.GetComponent<PlayerAbilities>();
@@ -41,6 +45,8 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Update()
     {
         Move();
+
+        if (isDead) { return; }
     }
 
     protected virtual void Move()
@@ -48,7 +54,7 @@ public abstract class EnemyBase : MonoBehaviour
         path.maxSpeed = moveSpeed;
 
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        if (distanceToPlayer > attackRange && !playerAbilities.isGhosting) {
+        if (distanceToPlayer > attackRange && !playerAbilities.isGhosting && !isDead) {
             isMoving = true; animator.SetBool("IsMoving", true);
             path.destination = player.transform.position;
             FlipSprite();
