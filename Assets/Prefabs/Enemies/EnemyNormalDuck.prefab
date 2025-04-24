@@ -305,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodySprite: {fileID: 1954336827983338623}
   animator: {fileID: 104051811678453991}
+  collider: {fileID: 5708039353893511651}
   threatValue: 1
   currencyValue: 0
   maxHealth: 40
@@ -313,10 +314,7 @@ MonoBehaviour:
   damage: 5
   attackSpeed: 1
   attackRange: 2
-  isMoving: 0
-  inAttackRange: 0
-  canAttack: 0
-  isAttacking: 0
+  isDead: 0
   attackHitbox: {fileID: 5811992217835282647}
 --- !u!4 &4339298127739408456 stripped
 Transform:
@@ -364,3 +362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 7962177748643016017}
   enemyBase: {fileID: -7027928772570122925}
+--- !u!58 &5708039353893511651 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7082500271246367253, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+  m_PrefabInstance: {fileID: 3277811236929715190}
+  m_PrefabAsset: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   enemyNormalDuckAllowed: 1
-  enemyBuffDuckAllowed: 0
+  enemyBuffDuckAllowed: 1
   enemyPoliceDuckAllowed: 0
   enemyMilitaryDuckAllowed: 0
   enemyNormalDuckSpawnChance: 1

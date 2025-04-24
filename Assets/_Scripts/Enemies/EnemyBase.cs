@@ -19,7 +19,8 @@ public abstract class EnemyBase : MonoBehaviour
     [HideInInspector] public float currentHealth;
     [SerializeField] protected float moveSpeed;
     [SerializeField] public float damage;
-    [SerializeField] protected float attackSpeed;
+    [SerializeField] protected float attackDuration;
+    [SerializeField] protected float attackCooldown;
     [SerializeField] protected float attackRange;
     //[SerializeField] public int DeathVersions;
 

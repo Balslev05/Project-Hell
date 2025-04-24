@@ -324,18 +324,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodySprite: {fileID: 2609004951811597344}
   animator: {fileID: 6535124421333307290}
+  collider: {fileID: 5473735758489261114}
   threatValue: 5
   currencyValue: 0
   maxHealth: 200
   currentHealth: 0
   moveSpeed: 2
   damage: 20
-  attackSpeed: 0.5
+  attackSpeed: 1
   attackRange: 2.5
-  isMoving: 0
-  inAttackRange: 0
-  canAttack: 0
-  isAttacking: 0
+  isDead: 0
 --- !u!70 &5473735758489261114
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
