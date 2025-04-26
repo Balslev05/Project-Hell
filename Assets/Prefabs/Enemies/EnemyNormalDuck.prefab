@@ -312,7 +312,8 @@ MonoBehaviour:
   currentHealth: 0
   moveSpeed: 3
   damage: 5
-  attackSpeed: 1
+  attackDuration: 0
+  attackCooldown: 0
   attackRange: 2
   isDead: 0
   attackHitbox: {fileID: 5811992217835282647}

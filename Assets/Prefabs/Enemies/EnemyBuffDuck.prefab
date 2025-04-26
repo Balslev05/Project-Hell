@@ -331,7 +331,8 @@ MonoBehaviour:
   currentHealth: 0
   moveSpeed: 2
   damage: 20
-  attackSpeed: 1
+  attackDuration: 0
+  attackCooldown: 0
   attackRange: 2.5
   isDead: 0
 --- !u!70 &5473735758489261114
