@@ -17,10 +17,11 @@ MonoBehaviour:
   enemyPoliceDuckAllowed: 0
   enemyMilitaryDuckAllowed: 0
   enemyNormalDuckSpawnChance: 1
-  enemyBuffDuckSpawnChance: 0
+  enemyBuffDuckSpawnChance: 1
   enemyPoliceDuckSpawnChance: 0
   enemyMilitaryDuckSpawnChance: 0
   totalThreatScore: 100
   allowedThreatLevel: 20
-  maxSpawnAmount: 5
+  maxSpawnAmount: 2
   minSpawnAmount: 1
+  waveCurrencyValue: 0

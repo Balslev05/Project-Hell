@@ -127,7 +127,9 @@ MonoBehaviour:
   bodySprite: {fileID: 7039608149329121435}
   animator: {fileID: 1946555399962723345}
   threatValue: 4
+  currencyValue: 0
   maxHealth: 60
+  currentHealth: 0
   moveSpeed: 3
   damage: 10
   attackSpeed: 0

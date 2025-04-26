@@ -19,4 +19,6 @@ public class Wave : ScriptableObject
     public int allowedThreatLevel;
     public int maxSpawnAmount;
     public int minSpawnAmount;
+
+    public int waveCurrencyValue;
 }

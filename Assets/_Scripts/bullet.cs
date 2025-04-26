@@ -71,10 +71,8 @@ public class bullet : MonoBehaviour
     void Update()
     {
         lifetime += Time.deltaTime;
-        
 
         Vector2 movement = direction * currentSpeed;
-        
         
         if (currentAmplitude > 0) {
             float perpendicular = Mathf.Sin(lifetime * sinFrequency) * currentAmplitude;
@@ -86,7 +84,6 @@ public class bullet : MonoBehaviour
             }
         }
         
-        
         if (homing && target != null) {
             if (!delayedHoming || lifetime > homingDelay) {
                 Vector2 toTarget = (target.position - transform.position).normalized;
@@ -94,11 +91,9 @@ public class bullet : MonoBehaviour
             }
         }
         
-        
         if (rotationSpeed != 0) {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
         }
-        
         
         rb.linearVelocity = movement;
     }
