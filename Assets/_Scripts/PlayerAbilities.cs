@@ -5,7 +5,7 @@ public class PlayerAbilities : MonoBehaviour
     [Header("Components")]
     private Collider2D collider;
     private SpriteRenderer spriteRenderer;
-    private PlayerStats Stats;
+    private PlayerStats stats;
 
     [Header("Stats")]
     [SerializeField] private float ghostArmorCost;
@@ -16,7 +16,7 @@ public class PlayerAbilities : MonoBehaviour
     {
         collider = GetComponent<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        Stats = GetComponent<PlayerStats>();
+        stats = GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -28,16 +28,16 @@ public class PlayerAbilities : MonoBehaviour
     {
         if (isGhosting) {
             float armorCost = ghostArmorCost * Time.fixedDeltaTime;
-            Stats.LoseArmor(armorCost);
+            stats.LoseArmor(armorCost);
         }
     }
 
     private void Dodge()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !isGhosting && Stats.currentArmor > 0) {
+        if (Input.GetKeyDown(KeyCode.Q) && !isGhosting && stats.currentArmor > 0) {
             GhostMode(true);
         }
-        else if (Input.GetKeyDown(KeyCode.Q) && isGhosting || Stats.currentArmor <= 0) {
+        else if (Input.GetKeyDown(KeyCode.Q) && isGhosting || stats.currentArmor <= 0) {
             GhostMode(false);
         }
     }

@@ -13,10 +13,7 @@ public class EnemyNormalDuck : EnemyBase
         if (distanceToPlayer <= attackRange) { inAttackRange = true; }
         else { inAttackRange = false; }
 
-        if (inAttackRange && !isAttacking && !playerAbilities.isGhosting) { canAttack = true; }
-        else { canAttack = false; }
-
-        if (inAttackRange && canAttack && !isAttacking)
+        if (inAttackRange && canAttack && !isAttacking && !playerAbilities.isGhosting)
         {
             StartCoroutine(Attack());
         }

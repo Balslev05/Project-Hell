@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using EZCameraShake;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,14 +17,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Stats")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed = 5f;
-    [SerializeField] private float rollSpeed = 10f;
+    [SerializeField] private float sprintSpeed = 8f;
+    [SerializeField] private float rollSpeed = 20f;
     [SerializeField] private float rollDuration = 1f;
     [SerializeField] private float rollCooldown = 1f;
+    [SerializeField] private float SprintArmorCost;
     [SerializeField] private int rollArmorCost;
 
     private Vector2 playerInput;
 
     private bool isMoving;
+    private bool isSprinting;
     private bool isRolling;
     private bool canRoll;
 
@@ -50,7 +54,10 @@ public class PlayerMovement : MonoBehaviour
         if (playerInput != Vector2.zero) { isMoving = true; animator.SetBool("IsMoving", true); }
         else { isMoving = false; animator.SetBool("IsMoving", false); }
 
+        Sprint();
+
         if (isRolling) { return; }
+        
         GetPlayerInput();
 
         if (Input.GetKey(KeyCode.Space) && canRoll && isMoving)
@@ -60,6 +67,11 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+
+        if (isSprinting) {
+            float armorCost = SprintArmorCost * Time.fixedDeltaTime;
+            stats.LoseArmor(armorCost);
+        }
     }
 
     private void LookAtMouse()
@@ -94,6 +106,18 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(rollCooldown);
         canRoll = true;
+    }
+
+    private void Sprint()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isMoving && stats.currentArmor > 0) {
+            isSprinting = true;
+            moveSpeed = sprintSpeed;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || !isMoving || stats.currentArmor <= 0) {
+            isSprinting = false;
+            moveSpeed = walkSpeed;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D Collider)

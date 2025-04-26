@@ -28,7 +28,7 @@ public abstract class EnemyBase : MonoBehaviour
     public bool isDead;
     protected bool isMoving;
     protected bool inAttackRange;
-    protected bool canAttack;
+    protected bool canAttack = true;
     protected bool isAttacking = false;
 
     protected virtual void Start()
@@ -55,7 +55,7 @@ public abstract class EnemyBase : MonoBehaviour
         path.maxSpeed = moveSpeed;
 
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        if (distanceToPlayer > attackRange && !playerAbilities.isGhosting && !isDead) {
+        if (!isDead && distanceToPlayer > attackRange && !isAttacking && !playerAbilities.isGhosting) {
             isMoving = true; animator.SetBool("IsMoving", true);
             path.destination = player.transform.position;
             FlipSprite();

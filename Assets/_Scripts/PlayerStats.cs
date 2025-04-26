@@ -57,18 +57,12 @@ public class PlayerStats : MonoBehaviour
         float reducedDamage = amount * (1 - damageReduction);
         currentHealth -= reducedDamage;
 
-        if (currentArmor > 0)
-        {
-            currentArmor -= 1;
-        }
+        if (currentArmor > 0) { currentArmor--; }
 
         healthBar.SetCurrentHealth(Mathf.FloorToInt(currentHealth));
         armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
 
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        if (currentHealth <= 0) { Die(); }
     }
 
     void Die()

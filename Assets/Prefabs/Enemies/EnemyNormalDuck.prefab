@@ -109,9 +109,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.627451}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.47058824}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -312,8 +312,8 @@ MonoBehaviour:
   currentHealth: 0
   moveSpeed: 3
   damage: 5
-  attackDuration: 0
-  attackCooldown: 0
+  attackDuration: 0.5
+  attackCooldown: 1
   attackRange: 2
   isDead: 0
   attackHitbox: {fileID: 5811992217835282647}
