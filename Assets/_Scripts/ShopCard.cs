@@ -4,20 +4,33 @@ using UnityEngine.UI;
 using DG.Tweening;
 public class ShopCard : MonoBehaviour
 {
-    [Header("Card Info")]
-    public Gun currentGun;
+    public Item current_Item;
+    public Gun current_Gun;
+
+    [Header("Holders")]
+    public GameObject GunBuyHolder;
+    public GameObject ItemBuyHolder;
+
+    [Header("Card Info GUN")]
     public Image cardImage;
     public TMP_Text cardName;
     public TMP_Text tagsText;
     public TMP_Text[] tags;
-
-    [Header("Stats")]
-    [SerializeField] private TMP_Text damage;
-    [SerializeField] private TMP_Text critChange;
-    [SerializeField] private TMP_Text critDamage;
-    [SerializeField] private TMP_Text fireRate;
-    [SerializeField] private TMP_Text price;
+   
+    [Header("GunStats")]
+    [SerializeField] private GameObject GunstatsHolder;
+    [SerializeField] private TMP_Text Text_1;
+    [SerializeField] private TMP_Text Text_2;
+    [SerializeField] private TMP_Text Text_3;
+    [SerializeField] private TMP_Text Text_4;
+    [SerializeField] private TMP_Text priceGUN;
+    [Header("ItemStats")]
+    public GameObject EffectHolder;
+    public GameObject TextPrefab;
+    [SerializeField] private TMP_Text priceItem;
     
+    [SerializeField] Effect[] effects;
+
     [Header("RandomizeStats")]
     public int randomDamage;
     public int randomCritChange;
@@ -25,69 +38,103 @@ public class ShopCard : MonoBehaviour
     public int randomFireRate;
 
     private GunManager gunManager;
+    private PlayerStats playerStats;
     private Scrapper scrapper; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         gunManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GunManager>();
         scrapper = GameObject.FindGameObjectWithTag("Scrapper").GetComponent<Scrapper>();
     }
 
     public void SetCard(Gun gun)
     {
-        currentGun = gun;
+        current_Gun = gun;
         cardImage.sprite = gun.GunSprite;
+        cardName.text = gun.gunname;
         RectTransform rectTransform = cardImage.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(cardImage.sprite.rect.width, cardImage.sprite.rect.height);
-
-
-        cardName.text = gun.name;
-        tagsText.text = "Tags: ";
-        /*for (int i = 0; i < gun.tags.Length; i++)
-        {
-            tags[i].text = gun.tags[i].ToString();
-        } */
-        damage.text = "Damage: " + gun.damage.ToString();
-        //critChange.text = "Crit Change: " + gun.critChance.ToString();
-        //critDamage.text = "Crit Damage: " + gun.critDamage.ToString();
-        fireRate.text = "Fire Rate: " + gun.timeBetweenShots.ToString();
-        //price.text = "Price: " + gun.price.ToString();
         RandomizeStats();
-        SetStats();
-
+        SetGunStats();
     }
-    public void BuyGun()
+     public void SetCard(Item item)
     {
-        if (gunManager.GunList.Count >= gunManager.MaxGuns)
+        current_Item = item;
+        cardImage.sprite = item.icon;
+        cardName.text = item.itemName;
+        RectTransform rectTransform = cardImage.GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(cardImage.sprite.rect.width, cardImage.sprite.rect.height);
+        SetItemStats();
+    }
+    public void Buy()
+    {
+        if (current_Gun != null)
         {
-            // shake effect to show and error
-            transform.DOShakePosition(0.5f);
-            this.GetComponent<Image>().DOColor(Color.red, 0.25f).OnComplete(() => this.GetComponent<Image>().DOColor(Color.black, 0.25f));
-            return;
+            if (gunManager.GunList.Count >= gunManager.MaxGuns)
+            {
+                //shake effect to show and error
+                transform.DOShakePosition(0.5f);
+                this.GetComponent<Image>().DOColor(Color.red, 0.25f).OnComplete(() => this.GetComponent<Image>().DOColor(Color.black, 0.25f));
+                return;
+            }
+            gunManager.AddGun(current_Gun);
+            this.gameObject.SetActive(false);
+            
         }
-        gunManager.AddGun(currentGun);
-        this.gameObject.SetActive(false);
+        else if(current_Item != null)
+        {
+            playerStats.Applyitem(current_Item);
+            this.gameObject.SetActive(false);
+        }   
     }
     public void GiveToScrapper()
     {
-        scrapper.AddGun(currentGun);
+        scrapper.AddGun(current_Gun);
         gameObject.SetActive(false);
     }
     private void RandomizeStats()
     {
-        currentGun.damage += Random.Range(-randomDamage, randomDamage);
-        currentGun.criticalchange += Random.Range(-randomCritChange, randomCritChange);
-        currentGun.criticalMultiplayer += Random.Range(-randomCritDamage, randomCritDamage);
-        currentGun.timeBetweenShots += Random.Range(-randomFireRate, randomFireRate);
+        current_Gun.damage += Random.Range(-randomDamage, randomDamage);
+        current_Gun.criticalchange += Random.Range(-randomCritChange, randomCritChange);
+        current_Gun.criticalMultiplayer += Random.Range(-randomCritDamage, randomCritDamage);
+        current_Gun.timeBetweenShots += Random.Range(-randomFireRate, randomFireRate);
     }
-    public void SetStats()
+    public void SetGunStats()
     {
-        damage.text = "Damage: " + currentGun.damage.ToString();
-        critChange.text = "Crit Change: " + currentGun.criticalchange.ToString();
-        critDamage.text = "Crit Damage: " + currentGun.criticalMultiplayer.ToString();
-        fireRate.text = "Fire Rate: " + currentGun.timeBetweenShots.ToString();
-        price.text = "Price:" + currentGun.CalculatePrice();
+        GunBuyHolder.SetActive(true);
+        GunstatsHolder.SetActive(true);
+
+        ItemBuyHolder.SetActive(false);
+        EffectHolder.SetActive(false);
+        Text_1.text = "Damage: " + current_Gun.damage.ToString();
+        Text_2.text = "Crit Change: " + current_Gun.criticalchange.ToString();
+        Text_3.text = "Crit Damage: " + current_Gun.criticalMultiplayer.ToString();
+        Text_4.text = "Fire Rate: " + current_Gun.timeBetweenShots.ToString();
+        priceGUN.text = "Price:" + current_Gun.GunSetup();
     }
+    public void SetItemStats()
+    {   
+        EffectHolder.SetActive(true);
+        ItemBuyHolder.SetActive(true);
 
+        GunBuyHolder.SetActive(false);
+        GunstatsHolder.SetActive(false);
+        Vector3 offset = new Vector3(0, -6, 0);
 
+        foreach (Transform child in EffectHolder.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < current_Item.effects.Count; i++)
+        {
+            TMP_Text text = Instantiate(Text_1, EffectHolder.transform);
+            text.transform.localPosition += offset;
+            Debug.Log("Try settings effect");
+            offset.y -= 6;
+            text.gameObject.SetActive(true);
+            text.text = current_Item.effects[i].Descreption();
+        }
+    }
 }

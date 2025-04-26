@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -11,10 +12,15 @@ public class PlayerStats : MonoBehaviour
     public float currentHealth;
     public int maxArmor = 100;
     public float currentArmor;
+    public bool selfHarm = false;
 
+    [Header("Inventory")]
+    List<Item> Items = new List<Item>();
+    public GunManager gunManager;
 
     void Start()
     {
+        gunManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GunManager>();
         currentHealth = maxHealth;
         currentArmor = maxArmor;
         healthBar.SetMaxHealth(maxHealth);
@@ -90,4 +96,23 @@ public class PlayerStats : MonoBehaviour
         if (currentArmor > maxArmor) { currentArmor = maxArmor; }
         armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
     }
+
+
+    public void Applyitem(Item item)
+    {
+         for (int i = 0; i < item.effects.Count; i++)
+            {
+                item.effects[i].Apply(this);
+            }
+    }
+   /*  public void ApplyItems()
+    {
+        for (int i = 0; i < Items.Count; i++)
+        {
+            for (int j = 0; j < Items[i].effects.Count; j++)
+            {
+                Items[i].effects[j].Apply(this);
+            }
+        }
+    } */
 }

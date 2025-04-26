@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gun : ScriptableObject
 {
     [Header("Assign")]
+    public string gunname;
     public Sprite GunSprite;
     public GameObject projectilePrefab;
     public int price = 10;
@@ -31,10 +32,13 @@ public class Gun : ScriptableObject
     public enum GunRarity { Common, Rare, Epic, Legendary }
     [Header("Meta")]    
     public GunRarity rarity = GunRarity.Common;
+
+    private PlayerStats stats;
     
 
-    public int CalculatePrice()
+    public int GunSetup()
     {
+        stats = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerStats>();
         price = BaseDamage + criticalchange + (int)criticalMultiplayer + (int)timeBetweenShots + bulletCount - (int)spreadAngle + (int)damage;
         return price;
     }

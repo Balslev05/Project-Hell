@@ -11,7 +11,6 @@ public class HealthBar : MonoBehaviour
     {
         healthSlider.maxValue = maxAmount;
         healthSlider.value = maxAmount;
-
         healthFill.color = healthGradient.Evaluate(1f);
     }
 
