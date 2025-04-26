@@ -25,10 +25,12 @@ public class EnemyBuffDuck : EnemyBase
         canAttack = false;
 
         animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(attackSpeed);
+        yield return new WaitForSeconds(attackDuration);
 
         animator.SetTrigger("StopAttack");
         isAttacking = false;
+
+        yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
 }
