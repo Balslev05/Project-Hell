@@ -135,9 +135,9 @@ public class InventoryContainer : MonoBehaviour
             if (item != null)
             {
                 ShopCard card = item.GetComponent<ShopCard>();
-                if (card != null && card.currentGun != null)
+                if (card != null && card.current_Gun != null)
                 {
-                    gunManager.GunList.Add(card.currentGun);
+                    gunManager.GunList.Add(card.current_Gun);
                 }
             }
         }
@@ -148,10 +148,10 @@ public class InventoryContainer : MonoBehaviour
         if (SelectedGun != null)
         {
             ShopCard card = SelectedGun.GetComponentInChildren<ShopCard>();
-            if (card != null && card.currentGun != null)
+            if (card != null && card.current_Gun != null)
             {
-                gunManager.SellGun(card.currentGun);
-                Debug.Log("Sold: " + card.currentGun.name);
+                gunManager.SellGun(card.current_Gun);
+                Debug.Log("Sold: " + card.current_Gun.name);
 
                 InventoryList.Remove(SelectedGun.GetComponent<InteractableUI>());
                 Destroy(SelectedGun);
@@ -169,10 +169,10 @@ public class InventoryContainer : MonoBehaviour
             ShopCard card = SelectedGun.GetComponentInChildren<ShopCard>();
             Scrapper scrapper = GameObject.FindGameObjectWithTag("Scrapper").GetComponent<Scrapper>();
 
-            if (card != null && card.currentGun != null && scrapper != null)
+            if (card != null && card.current_Gun != null && scrapper != null)
             {
-                scrapper.AddGun(card.currentGun);
-                Debug.Log("Given to scrapper: " + card.currentGun.name);
+                scrapper.AddGun(card.current_Gun);
+                Debug.Log("Given to scrapper: " + card.current_Gun.name);
 
                 InventoryList.Remove(SelectedGun.GetComponent<InteractableUI>());
                 Destroy(SelectedGun);

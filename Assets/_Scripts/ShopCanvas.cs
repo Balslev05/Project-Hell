@@ -25,6 +25,7 @@ public class ShopCanvas : MonoBehaviour
     private int StartBox_XPos = -175;
     private int OffSet = 150;
 
+
     void Start()
     {
       RerollCostText.text = "Reroll:" + RerollCost.ToString();
@@ -70,16 +71,28 @@ public class ShopCanvas : MonoBehaviour
       int i = 0;
       foreach (Transform child in ShopBoxes)
       {
+        
         child.gameObject.SetActive(true);
         child.GetComponent<RectTransform>().anchoredPosition = new Vector2(-3000, 0.5f);
-        child.GetComponent<ShopCard>().SetCard(manager.GetRandomGun());
         child.GetComponent<RectTransform>().DOAnchorPosX(StartBox_XPos + (OffSet * i), 0.5f).SetEase(Ease.OutExpo);
+        
+        int Type = Random.Range(0, 2);
+
+        if (Type == 0) // ITEM
+          {
+            child.GetComponent<ShopCard>().SetCard(manager.GetRandomItem());
+          }
+        else if (Type == 1) // GUN
+          {
+            child.GetComponent<ShopCard>().SetCard(manager.GetRandomGun());  
+          }
         i++;
         yield return new WaitForSeconds(0.1f);
       }
       RerollButton.SetActive(true);
       nextRoundButton.SetActive(true);
     }
+  
     
     public IEnumerator HideShop()
     {
@@ -113,8 +126,19 @@ public class ShopCanvas : MonoBehaviour
     {
       foreach (Transform child in ShopBoxes)
       {
+        child.GetComponent<ShopCard>().current_Gun = null;
+        child.GetComponent<ShopCard>().current_Item = null;
+        
         child.gameObject.SetActive(true);
-        child.GetComponent<ShopCard>().SetCard(manager.GetRandomGun());
+        int Type = Random.Range(0, 2);
+        if (Type == 0) // ITEM
+          {
+            child.GetComponent<ShopCard>().SetCard(manager.GetRandomItem());
+          }
+        else if (Type == 1) // GUN
+          {
+            child.GetComponent<ShopCard>().SetCard(manager.GetRandomGun());  
+          }
       }
     }
 }
