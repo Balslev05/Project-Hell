@@ -119,10 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf85f90700435a84eb09f58a04069a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TempHealth: 100
   PopUpEffectPrefab: {fileID: 7278509703058650245, guid: 025d452889a52634d82a0c1c918be45a, type: 3}
   CurrencyPrefab: {fileID: 3514557440815052217, guid: f6508e5d2df1c574a864715ac60c75a1, type: 3}
-  AmountCurrency: 10
 --- !u!50 &4827495448104708812
 Rigidbody2D:
   serializedVersion: 5
@@ -293,7 +291,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

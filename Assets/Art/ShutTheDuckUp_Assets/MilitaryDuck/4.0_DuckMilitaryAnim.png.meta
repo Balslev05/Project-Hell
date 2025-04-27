@@ -1,10 +1,46 @@
 fileFormatVersion: 2
-guid: 73e80eb5987eb0141b8597968ae3bc69
+guid: 5f90f6bed36c6574ca2687e8bdbdf5b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8878631897520748580
-    second: 3_brightDuckPoliceBeheaded_0
+      213: -956108110502497626
+    second: 4.0_DuckMilitaryAnim_0
+  - first:
+      213: -5655476920460441286
+    second: 4.0_DuckMilitaryAnim_1
+  - first:
+      213: 5059658505103840257
+    second: 4.0_DuckMilitaryAnim_2
+  - first:
+      213: 2318722104024851191
+    second: 4.0_DuckMilitaryAnim_3
+  - first:
+      213: 7993352896768315118
+    second: 4.0_DuckMilitaryAnim_4
+  - first:
+      213: -8598983556921009109
+    second: 4.0_DuckMilitaryAnim_5
+  - first:
+      213: 5662407297750942141
+    second: 4.0_DuckMilitaryAnim_6
+  - first:
+      213: 2386891513096291422
+    second: 4.0_DuckMilitaryAnim_7
+  - first:
+      213: -6175195439183430616
+    second: 4.0_DuckMilitaryAnim_8
+  - first:
+      213: -1093906887240671696
+    second: 4.0_DuckMilitaryAnim_9
+  - first:
+      213: -3010812252653294409
+    second: 4.0_DuckMilitaryAnim_10
+  - first:
+      213: 6003357031911448685
+    second: 4.0_DuckMilitaryAnim_11
+  - first:
+      213: -282267626895557531
+    second: 4.0_DuckMilitaryAnim_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_brightDuckPoliceBeheaded_0
+      name: 4.0_DuckMilitaryAnim_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 26
-        height: 15
+        x: 5
+        y: 79
+        width: 17
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,140 +151,162 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4283d277bac373b70800000000000000
-      internalID: 8878631897520748580
+      spriteID: 6a2f0aa3db83bb2f0800000000000000
+      internalID: -956108110502497626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_brightDuckPoliceBeheaded_1
+      name: 4.0_DuckMilitaryAnim_3
       rect:
         serializedVersion: 2
-        x: 26
-        y: 1
-        width: 26
-        height: 15
+        x: 74
+        y: 79
+        width: 19
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ecf2aee7d5d8e49489e249ab4b61c827
-      internalID: 299692799
+      spriteID: 7f26f3fe771cd2020800000000000000
+      internalID: 2318722104024851191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_brightDuckPoliceBeheaded_2
+      name: 4.0_DuckMilitaryAnim_4
       rect:
         serializedVersion: 2
-        x: 52
-        y: 1
-        width: 26
-        height: 15
+        x: 5
+        y: 53
+        width: 17
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ed2fe02bf70bd584184226a612773ec4
-      internalID: -283117387
+      spriteID: eee0738eb181eee60800000000000000
+      internalID: 7993352896768315118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_brightDuckPoliceBeheaded_3
+      name: 4.0_DuckMilitaryAnim_6
       rect:
         serializedVersion: 2
-        x: 78
-        y: 1
-        width: 26
-        height: 15
+        x: 48
+        y: 67
+        width: 17
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 71525079f09fd4f45a914b0280649e9f
-      internalID: 1397534133
+      spriteID: db14604cf69e49e40800000000000000
+      internalID: 5662407297750942141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_brightDuckPoliceBeheaded_4
+      name: 4.0_DuckMilitaryAnim_7
       rect:
         serializedVersion: 2
-        x: 104
-        y: 1
-        width: 26
-        height: 15
+        x: 68
+        y: 47
+        width: 28
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2b2697f9d7906924cab558490bee79c4
-      internalID: 1153665739
+      spriteID: e54cf735f21ff1120800000000000000
+      internalID: 2386891513096291422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_brightDuckPoliceBeheaded_5
+      name: 4.0_DuckMilitaryAnim_8
       rect:
         serializedVersion: 2
-        x: 130
-        y: 1
-        width: 26
-        height: 15
+        x: 5
+        y: 26
+        width: 17
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 44629d179b8604148891f089d353bc3d
-      internalID: 825876048
+      spriteID: 82cfbd4377c4d4aa0800000000000000
+      internalID: -6175195439183430616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_brightDuckPoliceBeheaded_6
+      name: 4.0_DuckMilitaryAnim_11
       rect:
         serializedVersion: 2
-        x: 156
-        y: 1
-        width: 26
-        height: 15
+        x: 58
+        y: 19
+        width: 28
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a74ab7123f2c7b04592654bc5d5fd732
-      internalID: -1721451731
+      spriteID: d60ece2d965305350800000000000000
+      internalID: 6003357031911448685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4.0_DuckMilitaryAnim_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c3c4fb61f251cf0800000000000000
+      internalID: -282267626895557531
       vertices: []
       indices: 
       edges: []
@@ -257,7 +315,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f05e5d344c2051d46b3e6b82629c8e9b
+    spriteID: 3c0c0f8efc175364f8b50c52a0040367
     internalID: 0
     vertices: []
     indices: 
@@ -267,13 +325,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3_brightDuckPoliceBeheaded_0: 8878631897520748580
-      3_brightDuckPoliceBeheaded_1: 299692799
-      3_brightDuckPoliceBeheaded_2: -283117387
-      3_brightDuckPoliceBeheaded_3: 1397534133
-      3_brightDuckPoliceBeheaded_4: 1153665739
-      3_brightDuckPoliceBeheaded_5: 825876048
-      3_brightDuckPoliceBeheaded_6: -1721451731
+      4.0_DuckMilitaryAnim_0: -956108110502497626
+      4.0_DuckMilitaryAnim_1: -5655476920460441286
+      4.0_DuckMilitaryAnim_10: -3010812252653294409
+      4.0_DuckMilitaryAnim_11: 6003357031911448685
+      4.0_DuckMilitaryAnim_12: -282267626895557531
+      4.0_DuckMilitaryAnim_2: 5059658505103840257
+      4.0_DuckMilitaryAnim_3: 2318722104024851191
+      4.0_DuckMilitaryAnim_4: 7993352896768315118
+      4.0_DuckMilitaryAnim_5: -8598983556921009109
+      4.0_DuckMilitaryAnim_6: 5662407297750942141
+      4.0_DuckMilitaryAnim_7: 2386891513096291422
+      4.0_DuckMilitaryAnim_8: -6175195439183430616
+      4.0_DuckMilitaryAnim_9: -1093906887240671696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

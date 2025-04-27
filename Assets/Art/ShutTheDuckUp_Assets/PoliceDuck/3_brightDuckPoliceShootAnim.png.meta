@@ -121,94 +121,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_brightDuckPoliceShootAnim_0
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 48
-        width: 15
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d3e080782be503f0800000000000000
-      internalID: -935082788690795567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_brightDuckPoliceShootAnim_1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 48
-        width: 15
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: debe2837317e18230800000000000000
-      internalID: 3639444044620426221
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_brightDuckPoliceShootAnim_2
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 48
-        width: 21
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc0209098be4f1ca0800000000000000
-      internalID: -6044025620301602613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_brightDuckPoliceShootAnim_3
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 48
-        width: 15
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c11c9adc6df916dd0800000000000000
-      internalID: -2494536973664272100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 3_brightDuckPoliceShootAnim_4
       rect:
         serializedVersion: 2
@@ -292,6 +204,94 @@ TextureImporter:
       bones: []
       spriteID: dd615736d820123f0800000000000000
       internalID: -927457241979349283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_brightDuckPoliceShootAnim_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 48
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9ac23c04908f24b855612e2d08eede
+      internalID: -935082788690795567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_brightDuckPoliceShootAnim_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 48
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8374f7b07f7b0408226a61d40c8ae3
+      internalID: 3639444044620426221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_brightDuckPoliceShootAnim_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 48
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927b65eeecf4cf0449cd6c516c14e854
+      internalID: -6044025620301602613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_brightDuckPoliceShootAnim_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 48
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a2837ccd91c7543b7e73a769e145fe
+      internalID: -2494536973664272100
       vertices: []
       indices: 
       edges: []

@@ -124,12 +124,12 @@ TextureImporter:
       name: 4_DuckExplodeMilitary_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
-        width: 15
-        height: 19
+        x: 0
+        y: 1
+        width: 25
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,11 +147,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 25
-        y: 3
-        width: 24
-        height: 22
+        y: 1
+        width: 25
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -173,7 +173,7 @@ TextureImporter:
         width: 25
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,12 +190,12 @@ TextureImporter:
       name: 4_DuckExplodeMilitary_3
       rect:
         serializedVersion: 2
-        x: 76
+        x: 75
         y: 1
-        width: 23
-        height: 21
+        width: 25
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: 4_DuckExplodeMilitary_5
       rect:
         serializedVersion: 2
-        x: 101
+        x: 125
         y: 1
-        width: 23
-        height: 18
+        width: 25
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: 4_DuckExplodeMilitary_6
       rect:
         serializedVersion: 2
-        x: 126
+        x: 150
         y: 1
-        width: 23
-        height: 11
+        width: 25
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -253,23 +253,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4_DuckExplodeMilitary_7
+      name: 4_DuckExplodeMilitary_4
       rect:
         serializedVersion: 2
-        x: 151
+        x: 100
         y: 1
-        width: 23
-        height: 5
+        width: 25
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: db5093388a270fb20800000000000000
-      internalID: 3166156606123083197
+      spriteID: dd4b83c0c49ba934eb0948698ddb320b
+      internalID: -2066379458009766461
       vertices: []
       indices: 
       edges: []
