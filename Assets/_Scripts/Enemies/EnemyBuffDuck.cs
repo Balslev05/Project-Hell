@@ -3,6 +3,11 @@ using System.Collections;
 
 public class EnemyBuffDuck : EnemyBase
 {
+    [Header("BuffDuckSpecific")]
+    [SerializeField] protected float attackRange;
+    [SerializeField] protected float attackDuration;
+    [SerializeField] protected float attackCooldown;
+
     private void Update()
     {
         base.Update();

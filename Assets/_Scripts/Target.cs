@@ -14,8 +14,7 @@ public class Target : MonoBehaviour
     private void Start()
     {
         enemyBase = GetComponent<EnemyBase>();
-        manager = GameObject.FindWithTag("Manager").GetComponent<Managers>();
-        waveManager = manager.waveManager;
+        
     }
 
     public void TakeDamage(int damage, float criticalMultiplayer)
@@ -67,7 +66,7 @@ public class Target : MonoBehaviour
     }
     public IEnumerator Die()
     {
-        enemyBase.isDead = true;
+        enemyBase.Die();
 
         for (int i = 0; i < enemyBase.currencyValue; i++)
         {
@@ -87,8 +86,6 @@ public class Target : MonoBehaviour
             //coin.GetComponent<SpriteRenderer>().DOFade(0, 3f).SetDelay(1f).OnComplete(() => Destroy(coin));
         }
 
-        waveManager.LiveEnemies.Remove(this.gameObject);
-        enemyBase.collider.enabled = false;
         enemyBase.animator.SetTrigger("Die");
         yield return new WaitForSeconds(10);
         enemyBase.bodySprite.DOFade(0, 3f).SetDelay(1f).OnComplete(() => Destroy(this.gameObject));

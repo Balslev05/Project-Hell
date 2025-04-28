@@ -5,6 +5,9 @@ public class EnemyNormalDuck : EnemyBase
 {
     [Header("NormalDuckSpecific")]
     [SerializeField] private GameObject attackHitbox;
+    [SerializeField] private float attackRange;
+    [SerializeField] private float attackDuration;
+    [SerializeField] private float attackCooldown;
 
     private void Update()
     {

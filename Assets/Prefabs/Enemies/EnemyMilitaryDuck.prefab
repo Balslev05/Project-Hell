@@ -136,7 +136,7 @@ MonoBehaviour:
   animator: {fileID: 1946555399962723345}
   collider: {fileID: 3862262333960744199}
   threatValue: 4
-  currencyValue: 0
+  currencyValue: 4
   maxHealth: 60
   currentHealth: 0
   moveSpeed: 3

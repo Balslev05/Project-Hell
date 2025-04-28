@@ -544,15 +544,16 @@ MonoBehaviour:
   animator: {fileID: 6535124421333307290}
   collider: {fileID: 5473735758489261114}
   threatValue: 5
-  currencyValue: 0
+  currencyValue: 5
   maxHealth: 200
   currentHealth: 0
   moveSpeed: 2
+  MoveToRange: 2
   damage: 20
+  isDead: 0
+  attackRange: 3
   attackDuration: 0.66
   attackCooldown: 1
-  attackRange: 2.5
-  isDead: 0
 --- !u!70 &5473735758489261114
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

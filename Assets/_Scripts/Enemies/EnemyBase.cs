@@ -1,27 +1,30 @@
 using UnityEngine;
 using Pathfinding;
+using DG.Tweening.Core.Easing;
 
 public abstract class EnemyBase : MonoBehaviour
 {
     [Header("Components")]
-    protected GameObject player;
     public SpriteRenderer bodySprite;
     public Animator animator;
     public Collider2D collider;
     protected AIPath path;
+
+    protected GameObject player;
     protected PlayerStats playerStats;
     protected PlayerAbilities playerAbilities;
 
+    protected Managers manager;
+    protected WaveManager waveManager;
+
     [Header("Stats")]
-    [SerializeField] public int threatValue;
-    [SerializeField] public int currencyValue;
+    public int threatValue;
+    public int currencyValue;
     [SerializeField] protected int maxHealth;
     [HideInInspector] public float currentHealth;
     [SerializeField] protected float moveSpeed;
-    [SerializeField] public float damage;
-    [SerializeField] protected float attackDuration;
-    [SerializeField] protected float attackCooldown;
-    [SerializeField] protected float attackRange;
+    [SerializeField] protected float MoveToRange;
+    public float damage;
     //[SerializeField] public int DeathVersions;
 
     protected float distanceToPlayer;
@@ -40,6 +43,9 @@ public abstract class EnemyBase : MonoBehaviour
         playerAbilities = player.GetComponent<PlayerAbilities>();
         playerStats = player.GetComponent<PlayerStats>();
 
+        manager = GameObject.FindWithTag("Manager").GetComponent<Managers>();
+        waveManager = manager.waveManager;
+
         currentHealth = maxHealth;
     }
 
@@ -55,7 +61,7 @@ public abstract class EnemyBase : MonoBehaviour
         path.maxSpeed = moveSpeed;
 
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        if (!isDead && distanceToPlayer > attackRange && !isAttacking && !playerAbilities.isGhosting) {
+        if (!isDead && distanceToPlayer > MoveToRange && !isAttacking && !playerAbilities.isGhosting) {
             isMoving = true; animator.SetBool("IsMoving", true);
             path.destination = player.transform.position;
             FlipSprite();
@@ -70,5 +76,12 @@ public abstract class EnemyBase : MonoBehaviour
     {
         if (path.desiredVelocity.x >= 0.01f) { bodySprite.flipX = true; }
         else if (path.desiredVelocity.x <= -0.01f) { bodySprite.flipX = false; }
+    }
+
+    public virtual void Die()
+    {
+        isDead = true;
+        waveManager.LiveEnemies.Remove(this.gameObject);
+        collider.enabled = false;
     }
 }
