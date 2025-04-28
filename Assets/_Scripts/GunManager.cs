@@ -5,7 +5,6 @@ using EZCameraShake;
 public class GunManager : MonoBehaviour
 {
     [Header("Assignments")]
-    
     public Transform shootPoint;
     public SpriteRenderer WeaponHolder;
     public GameObject GunDrop;

@@ -20,7 +20,12 @@ public class Target : MonoBehaviour
     public void TakeDamage(int damage, float criticalMultiplayer)
     {
     //-----The calculations-----///
-        enemyBase.currentHealth -= Mathf.FloorToInt(damage * criticalMultiplayer);
+        if (enemyBase.currentArmor > 0) {
+            enemyBase.currentArmor -= Mathf.FloorToInt(damage * criticalMultiplayer);
+        }
+        else {
+            enemyBase.currentHealth -= Mathf.FloorToInt(damage * criticalMultiplayer);
+        }
         CheckHealth();
      //-----SpawnDamageNumbers-----///
         GameObject worldCanvas = GameObject.FindGameObjectWithTag("WorldCanvas");
@@ -58,12 +63,10 @@ public class Target : MonoBehaviour
 
     public void CheckHealth()
     {
-        if (enemyBase.currentHealth <= 0)
-        {
-            Debug.Log("Target Destroyed");
-            StartCoroutine(Die());
-        }
+        //if (enemyBase.currentArmor <= 0) { enemyBase.StartCoroutine(Taunt()); }
+        if (enemyBase.currentHealth <= 0) { StartCoroutine(Die()); }
     }
+
     public IEnumerator Die()
     {
         enemyBase.Die();

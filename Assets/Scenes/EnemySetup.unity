@@ -421,7 +421,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1054164392}
-  m_Father: {fileID: 199520740}
+  m_Father: {fileID: 1501239618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &199520739
 GameObject:
@@ -454,7 +454,6 @@ Transform:
   m_Children:
   - {fileID: 1282097660}
   - {fileID: 1195391096}
-  - {fileID: 193190151}
   m_Father: {fileID: 1501239618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &365553836
@@ -33672,6 +33671,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 199520740}
+  - {fileID: 193190151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1501239619
@@ -33725,7 +33725,7 @@ MonoBehaviour:
   rollDuration: 0.3
   rollCooldown: 1
   SprintArmorCost: 2
-  rollArmorCost: 1
+  rollArmorCost: 2
 --- !u!114 &1501239622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33745,7 +33745,7 @@ MonoBehaviour:
   maxArmor: 100
   currentArmor: 0
   selfHarm: 0
-  gunManager: {fileID: 0}
+  gunManager: {fileID: 1501239619}
 --- !u!50 &1501239623
 Rigidbody2D:
   serializedVersion: 5
@@ -33822,6 +33822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 968848987}
+  player: {fileID: 1501239617}
+  playerSprite: {fileID: 1282097659}
   gunHolder: {fileID: 193190150}
   gunSprite: {fileID: 1054164394}
 --- !u!1 &1618330378

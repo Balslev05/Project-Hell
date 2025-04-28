@@ -322,8 +322,10 @@ MonoBehaviour:
   collider: {fileID: 8980089797251716692}
   threatValue: 2
   currencyValue: 2
-  maxHealth: 30
+  maxHealth: 40
   currentHealth: 0
+  maxArmor: 0
+  currentArmor: 0
   moveSpeed: 3
   MoveToRange: 6
   damage: 8
@@ -332,9 +334,9 @@ MonoBehaviour:
   gunSprite: {fileID: 4487641869150865567}
   gunPoint: {fileID: 8488539336132940442}
   bulletPrefab: {fileID: 894301910066111340, guid: b4baab68a4143364aa00225fb2aa9ffb, type: 3}
-  attackRange: 8
-  attackCooldown: 2
   bulletSpeed: 30
+  range: 8
+  shootCooldown: 2
 --- !u!212 &2933960358741715912 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3918744144634423177, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}

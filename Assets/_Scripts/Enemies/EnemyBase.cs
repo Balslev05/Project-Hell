@@ -1,6 +1,6 @@
 using UnityEngine;
 using Pathfinding;
-using DG.Tweening.Core.Easing;
+using System.Collections;
 
 public abstract class EnemyBase : MonoBehaviour
 {
@@ -49,6 +49,7 @@ public abstract class EnemyBase : MonoBehaviour
         waveManager = manager.waveManager;
 
         currentHealth = maxHealth;
+        currentArmor = maxArmor;
     }
 
     protected virtual void Update()
@@ -83,6 +84,11 @@ public abstract class EnemyBase : MonoBehaviour
 
         //if (path.desiredVelocity.x >= 0.01f) { sprite.flipX = true; }
         //else if (path.desiredVelocity.x <= -0.01f) { sprite.flipX = false; }
+    }
+
+    public virtual IEnumerator Taunt()
+    {
+        yield return null;
     }
 
     public virtual void Die()

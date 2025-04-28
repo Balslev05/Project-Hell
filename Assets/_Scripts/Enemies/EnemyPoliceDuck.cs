@@ -8,9 +8,9 @@ public class EnemyPoliceDuck : EnemyBase
     [SerializeField] private SpriteRenderer gunSprite;
     [SerializeField] private Transform gunPoint;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float attackRange;
-    [SerializeField] private float attackCooldown;
     [SerializeField] private float bulletSpeed;
+    [SerializeField] private float range;
+    [SerializeField] private float shootCooldown;
 
     private void Update()
     {
@@ -18,23 +18,23 @@ public class EnemyPoliceDuck : EnemyBase
 
         GunLookAtPlayer();
 
-        if (distanceToPlayer <= attackRange) { inAttackRange = true; }
+        if (distanceToPlayer <= range) { inAttackRange = true; }
         else { inAttackRange = false; }
 
-        if (inAttackRange && canAttack && !playerAbilities.isGhosting)
+        if (!isDead && inAttackRange && canAttack && !playerAbilities.isGhosting)
         {
-            StartCoroutine(Shot());
+            StartCoroutine(Shoot());
         }
     }
 
-    private IEnumerator Shot()
+    private IEnumerator Shoot()
     {
         canAttack = false;
 
         GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, gunPoint.rotation);
         bullet.GetComponent<EnemyBullet>().SetStats(damage, bulletSpeed);
 
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(shootCooldown);
         canAttack = true;
     }
 
