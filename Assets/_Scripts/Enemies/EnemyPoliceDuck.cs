@@ -5,10 +5,12 @@ public class EnemyPoliceDuck : EnemyBase
 {
     [Header("PoliceDuckSpecific")]
     [SerializeField] private GameObject gun;
-    [SerializeField] private Transform shotPoint;
+    [SerializeField] private Transform gunPoint;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] protected float attackRange;
+    [SerializeField] private float attackRange;
     [SerializeField] private float attackCooldown;
+    [SerializeField] private float bulletSpeed;
+
 
     private void Update()
     {
@@ -29,6 +31,9 @@ public class EnemyPoliceDuck : EnemyBase
     {
         canAttack = false;
 
+        GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, gunPoint.rotation);
+        bullet.GetComponent<EnemyBullet>().SetStats(damage, bulletSpeed);
+
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
@@ -36,7 +41,7 @@ public class EnemyPoliceDuck : EnemyBase
     private void GunLookAtPlayer()
     {
         Vector2 playerPosition = player.transform.position;
-        gun.transform.up = playerPosition - new Vector2(transform.position.x, transform.position.y);
+        gun.transform.right = -(playerPosition - new Vector2(transform.position.x, transform.position.y));
     }
 
     public void ActivateGun(bool activate)

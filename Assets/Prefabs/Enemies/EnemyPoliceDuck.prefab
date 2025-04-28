@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8488539336132940442}
   m_Layer: 0
-  m_Name: ShotPoint
+  m_Name: GunPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,9 +329,11 @@ MonoBehaviour:
   damage: 8
   isDead: 0
   gun: {fileID: 453369676462379318}
-  shotPoint: {fileID: 8488539336132940442}
+  gunPoint: {fileID: 8488539336132940442}
+  bulletPrefab: {fileID: 894301910066111340, guid: b4baab68a4143364aa00225fb2aa9ffb, type: 3}
   attackRange: 10
   attackCooldown: 2
+  bulletSpeed: 55
 --- !u!212 &2933960358741715912 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3918744144634423177, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}

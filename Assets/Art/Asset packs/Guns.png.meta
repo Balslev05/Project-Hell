@@ -1482,10 +1482,10 @@ TextureImporter:
       name: 1_53
       rect:
         serializedVersion: 2
-        x: 82
-        y: 52
-        width: 23
-        height: 9
+        x: 83
+        y: 53
+        width: 21
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

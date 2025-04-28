@@ -6,30 +6,30 @@ public class bullet : MonoBehaviour
     [HideInInspector] public int bulletDamage;
     [HideInInspector] public float criticalMultiplayer = 0;
     [Header("Basic Movement")]
-    public float speed = 5f;                    
-    public bool randomizeSpeed = false;         
-    public float minSpeed = 3f;                 
-    public float maxSpeed = 8f;                 
-    private float currentSpeed;                 
+    public float speed = 5f;
+    public bool randomizeSpeed = false;
+    public float minSpeed = 3f;
+    public float maxSpeed = 8f;
+    private float currentSpeed;
 
     [Header("Rotation")]
-    public float rotationSpeed = 0f;            
-    public bool randomizeRotation = false;      
-    public float minRotation = -360f;          
-    public float maxRotation = 360f;           
+    public float rotationSpeed = 0f;
+    public bool randomizeRotation = false;
+    public float minRotation = -360f;
+    public float maxRotation = 360f;
 
     [Header("Wave Motion Bullet hell classic")]
-    public float sinAmplitude = 0f;             
-    public float sinFrequency = 0f;             
-    public bool oscillatingAmplitude = false;    
-    public float amplitudeChangeSpeed = 1f;     
+    public float sinAmplitude = 0f;
+    public float sinFrequency = 0f;
+    public bool oscillatingAmplitude = false;
+    public float amplitudeChangeSpeed = 1f;
 
     [Header("Homing")]
-    public bool homing = false;                 
-    public float homingStrength = 2f;          
+    public bool homing = false;
+    public float homingStrength = 2f;
     public string homingTarget;
-    public bool delayedHoming = false;          
-    public float homingDelay = 1f;             
+    public bool delayedHoming = false;
+    public float homingDelay = 1f;
     
     [Header("LifeTime")]
     public int maxLifeTime;
@@ -68,9 +68,9 @@ public class bullet : MonoBehaviour
         Destroy(this.gameObject,maxLifeTime);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        lifetime += Time.deltaTime;
+        lifetime += Time.fixedDeltaTime;
 
         Vector2 movement = direction * currentSpeed;
         
