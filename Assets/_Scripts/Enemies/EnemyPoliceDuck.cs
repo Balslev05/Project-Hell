@@ -5,12 +5,12 @@ public class EnemyPoliceDuck : EnemyBase
 {
     [Header("PoliceDuckSpecific")]
     [SerializeField] private GameObject gun;
+    [SerializeField] private SpriteRenderer gunSprite;
     [SerializeField] private Transform gunPoint;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float attackRange;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float bulletSpeed;
-
 
     private void Update()
     {
@@ -42,6 +42,9 @@ public class EnemyPoliceDuck : EnemyBase
     {
         Vector2 playerPosition = player.transform.position;
         gun.transform.right = -(playerPosition - new Vector2(transform.position.x, transform.position.y));
+
+        if (player.transform.position.x > transform.position.x) { gunSprite.flipY = true; }
+        else if (player.transform.position.x < transform.position.x) { gunSprite.flipY = false; }
     }
 
     public void ActivateGun(bool activate)

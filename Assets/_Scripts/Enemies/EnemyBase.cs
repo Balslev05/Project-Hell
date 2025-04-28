@@ -22,6 +22,8 @@ public abstract class EnemyBase : MonoBehaviour
     public int currencyValue;
     [SerializeField] protected int maxHealth;
     [HideInInspector] public float currentHealth;
+    [SerializeField] protected int maxArmor;
+    [HideInInspector] public float currentArmor;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float MoveToRange;
     public int damage;
@@ -52,6 +54,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Update()
     {
         Move();
+        FlipSprite(bodySprite);
 
         if (isDead) { return; }
     }
@@ -64,7 +67,6 @@ public abstract class EnemyBase : MonoBehaviour
         if (!isDead && distanceToPlayer > MoveToRange && !isAttacking && !playerAbilities.isGhosting) {
             isMoving = true; animator.SetBool("IsMoving", true);
             path.destination = player.transform.position;
-            FlipSprite();
         }
         else {
             isMoving = false; animator.SetBool("IsMoving", false);
@@ -72,10 +74,15 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    protected void FlipSprite()
+    protected virtual void FlipSprite(SpriteRenderer sprite)
     {
-        if (path.desiredVelocity.x >= 0.01f) { bodySprite.flipX = true; }
-        else if (path.desiredVelocity.x <= -0.01f) { bodySprite.flipX = false; }
+        if (isDead || playerAbilities.isGhosting || isAttacking) { return; }
+
+        if (player.transform.position.x > transform.position.x) { sprite.flipX = true; }
+        else if (player.transform.position.x < transform.position.x) { sprite.flipX = false; }
+
+        //if (path.desiredVelocity.x >= 0.01f) { sprite.flipX = true; }
+        //else if (path.desiredVelocity.x <= -0.01f) { sprite.flipX = false; }
     }
 
     public virtual void Die()

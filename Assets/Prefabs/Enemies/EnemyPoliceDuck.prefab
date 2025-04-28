@@ -329,11 +329,12 @@ MonoBehaviour:
   damage: 8
   isDead: 0
   gun: {fileID: 453369676462379318}
+  gunSprite: {fileID: 4487641869150865567}
   gunPoint: {fileID: 8488539336132940442}
   bulletPrefab: {fileID: 894301910066111340, guid: b4baab68a4143364aa00225fb2aa9ffb, type: 3}
-  attackRange: 10
+  attackRange: 8
   attackCooldown: 2
-  bulletSpeed: 55
+  bulletSpeed: 30
 --- !u!212 &2933960358741715912 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3918744144634423177, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}

@@ -404,6 +404,8 @@ MonoBehaviour:
   currencyValue: 1
   maxHealth: 40
   currentHealth: 0
+  maxArmor: 0
+  currentArmor: 0
   moveSpeed: 3
   MoveToRange: 1.2
   damage: 5
