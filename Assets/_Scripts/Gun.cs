@@ -30,8 +30,6 @@ public class Gun : ScriptableObject
     }
     public float CameraShakeStreangth = 0.5f;   
     public enum GunRarity { Common, Rare, Epic, Legendary }
-    [Header("Meta")]    
-    public GunRarity rarity = GunRarity.Common;
 
     private PlayerStats stats;
     

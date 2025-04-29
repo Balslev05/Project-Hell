@@ -8,6 +8,7 @@ public class GunManager : MonoBehaviour
     public Transform shootPoint;
     public SpriteRenderer WeaponHolder;
     public GameObject GunDrop;
+    [SerializeField] private Ui_Ammo UIAmmoHandler;
     
     [Header("Gun System")]
     public Gun currentGun;
@@ -17,8 +18,9 @@ public class GunManager : MonoBehaviour
     private float timeSinceLastShot = 0f;
     private int currentGunIndex = 0;
 
-    public enum AmmoType { Light, Medium, Heavy, Explosive, Shell }
-    private Dictionary<AmmoType, int> AmmoInventory = new Dictionary<AmmoType, int>();
+    public enum AmmoType { Light, Medium, Heavy, Explosive, Shell}
+
+    public Dictionary<AmmoType, int> AmmoInventory = new Dictionary<AmmoType, int>();
     
     private void Awake()
     {
@@ -41,6 +43,28 @@ public class GunManager : MonoBehaviour
             AmmoInventory[type] = amount;
     }
     
+    public string GetAmmoCount(string ammoTypeString)
+{
+    if (System.Enum.TryParse(ammoTypeString, out AmmoType ammoType))
+    {
+        if (AmmoInventory.TryGetValue(ammoType, out int count))
+        {
+            return $"Ammo: {count}";
+        }
+        else
+        {
+            Debug.LogWarning($"Ammo type {ammoType} not found in inventory.");
+            return $"{ammoType} Ammo: 0";
+        }
+    }
+    else
+    {
+        Debug.LogError($"'{ammoTypeString}' is not a valid AmmoType!");
+        return $"Invalid Ammo Type: {ammoTypeString}";
+    }
+}
+
+    
     private void Start()
     {
         if (GunList.Count > 0) currentGun = GunList[0];
@@ -48,6 +72,15 @@ public class GunManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            AddAmmo(AmmoType.Light,1000);
+            AddAmmo(AmmoType.Medium,1000);
+            AddAmmo(AmmoType.Heavy,1000);
+            AddAmmo(AmmoType.Explosive,1000);
+            AddAmmo(AmmoType.Shell,1000);
+        } 
+
         timeSinceLastShot += Time.deltaTime;
 
         if (currentGun && Input.GetKey(KeyCode.Mouse1) && timeSinceLastShot >= currentGun.timeBetweenShots)
@@ -59,15 +92,18 @@ public class GunManager : MonoBehaviour
                 CameraShaker.Instance.ShakeOnce(currentGun.CameraShakeStreangth, currentGun.CameraShakeStreangth, 0.25f, 0.25f);
                 AmmoInventory[ammoType]--;
                 timeSinceLastShot = 0f;
+                UIAmmoHandler.UpdateUI(currentGun);
             }
         }
 
-     //   if (Input.GetKeyDown(KeyCode.Z)) DropGun(currentGun);
+        //if (Input.GetKeyDown(KeyCode.Z)) DropGun(currentGun);
 
         for (int i = 0; i < GunList.Count && i < 9; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i)) SwitchToGun(i);
         }
+        if(UIAmmoHandler)
+            UIAmmoHandler.UpdateUI(currentGun);
     }
 
     private void Fire(Transform firePoint)
@@ -102,6 +138,7 @@ public class GunManager : MonoBehaviour
             currentGunIndex = index;
             currentGun = GunList[currentGunIndex];
             WeaponHolder.sprite = currentGun.GunSprite;
+            Debug.Log("Switched to " + GunList[index].gunname);
         }
     }
 
@@ -138,6 +175,7 @@ public class GunManager : MonoBehaviour
         if (GunList.Count < MaxGuns)
         {
             GunList.Add(gun);
+            Debug.Log("Added " + gun.gunname);
             SwitchToGun(GunList.Count - 1);
         }else
         {

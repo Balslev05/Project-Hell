@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c4fe7237202474eadd99db7f6709db, type: 3}
   m_Name: ShotGun
   m_EditorClassIdentifier: 
+  gunname: 
   GunSprite: {fileID: -1068439443906237425, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: 2012def4675f7fd4c82385a5e7da3500, type: 3}
-  price: 10
+  price: 6
   tags:
   - Woa
   BaseDamage: 10
-  criticalchange: 10
-  criticalMultiplayer: 1.5
+  criticalchange: 1
+  criticalMultiplayer: 2
   HoldToFire: 0
-  timeBetweenShots: 0.3
+  timeBetweenShots: 2
   bulletCount: 7
   spreadAngle: 30
-  damage: 10
-  ammoType: 0
+  damage: 14
+  ammoType: 4
   CameraShakeStreangth: 0.5
+  rarity: 0

@@ -25,7 +25,6 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(LiveEnemies.Count);
 
         if (Input.GetKeyDown(KeyCode.X))
         {

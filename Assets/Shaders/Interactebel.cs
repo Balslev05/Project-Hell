@@ -77,7 +77,7 @@ public class InteractableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
-        container.ReorderItem(this);
+        container.ReorderItem(this.GetComponent<InteractableUI>());
     }
 
     public void MoveTo(Vector2 newPosition, float duration = 0.25f, Ease easeType = Ease.OutQuad)
