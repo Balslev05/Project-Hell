@@ -8,6 +8,7 @@ public abstract class EnemyBase : MonoBehaviour
     public SpriteRenderer bodySprite;
     public Animator animator;
     public Collider2D collider;
+    public GameObject shadow;
     protected AIPath path;
 
     protected GameObject player;
@@ -88,5 +89,6 @@ public abstract class EnemyBase : MonoBehaviour
         isDead = true;
         waveManager.LiveEnemies.Remove(this.gameObject);
         collider.enabled = false;
+        shadow.SetActive(false);
     }
 }

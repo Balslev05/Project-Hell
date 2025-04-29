@@ -543,6 +543,7 @@ MonoBehaviour:
   bodySprite: {fileID: 2609004951811597344}
   animator: {fileID: 6535124421333307290}
   collider: {fileID: 5473735758489261114}
+  shadow: {fileID: 8961894831028849102}
   threatValue: 5
   currencyValue: 5
   maxHealth: 200

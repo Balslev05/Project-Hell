@@ -23,6 +23,8 @@ public class EnemyMilitaryDuck : EnemyBase
     [SerializeField] private float revolverShootCooldown;
     [SerializeField] private int revolverRapidFireAmount;
     [SerializeField] private float revolverRapidFireCooldown;
+    private float revolverOffsetX = -0.125f;
+    private float revolverOffsetY = -0.1875f;
 
     [Header("Sniper")]
     [SerializeField] private GameObject sniper;
@@ -33,6 +35,8 @@ public class EnemyMilitaryDuck : EnemyBase
     [SerializeField] private float sniperBulletSpeed;
     [SerializeField] private float sniperRange;
     [SerializeField] private float sniperShootCooldown;
+    private float sniperOffsetX = -0.15625f;
+    private float sniperOffsetY = -0.09375f;
 
     private void Start()
     {
@@ -55,8 +59,7 @@ public class EnemyMilitaryDuck : EnemyBase
         else if (Taunted && distanceToPlayer <= sniperRange) { inAttackRange = true; }
         else { inAttackRange = false; }
 
-        if (!isDead && inAttackRange && canAttack && !playerAbilities.isGhosting)
-        {
+        if (!isDead && inAttackRange && canAttack && !playerAbilities.isGhosting) {
             StartCoroutine(Shoot());
         }
     }
@@ -92,14 +95,26 @@ public class EnemyMilitaryDuck : EnemyBase
         if (!Taunted) {
             revolver.transform.right = -(playerPosition - new Vector2(transform.position.x, transform.position.y));
 
-            if (player.transform.position.x > transform.position.x) { revolverSprite.flipY = true; }
-            else if (player.transform.position.x < transform.position.x) { revolverSprite.flipY = false; }
+            if (player.transform.position.x > transform.position.x) {
+                revolver.transform.localScale = new Vector3(revolver.transform.localScale.x, -1, revolver.transform.localScale.z);
+                //revolver.transform.position = new Vector3(revolverOffsetX * -1, revolverOffsetY * -1, revolver.transform.position.z);
+            }
+            else if (player.transform.position.x < transform.position.x) {
+                revolver.transform.localScale = new Vector3(revolver.transform.localScale.x, 1, revolver.transform.localScale.z);
+                //revolver.transform.position = new Vector3(revolverOffsetX, revolverOffsetY, revolver.transform.position.z);
+            }
         }
         else if (Taunted) {
             sniper.transform.right = -(playerPosition - new Vector2(transform.position.x, transform.position.y));
 
-            if (player.transform.position.x > transform.position.x) { sniperSprite.flipY = true; }
-            else if (player.transform.position.x < transform.position.x) { sniperSprite.flipY = false; }
+            if (player.transform.position.x > transform.position.x) {
+                sniper.transform.localScale = new Vector3(sniper.transform.localScale.x, -1, sniper.transform.localScale.z);
+                //sniper.transform.position = new Vector3(sniperOffsetX * -1, sniperOffsetY * -1, sniper.transform.position.z);
+            }
+            else if (player.transform.position.x < transform.position.x) {
+                sniper.transform.localScale = new Vector3(sniper.transform.localScale.x, 1, sniper.transform.localScale.z);
+                ///sniper.transform.position = new Vector3(sniperOffsetX, sniperOffsetY, sniper.transform.position.z);
+            }
         }
     }
 

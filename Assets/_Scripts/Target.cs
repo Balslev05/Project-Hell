@@ -64,7 +64,7 @@ public class Target : MonoBehaviour
 
     private void CheckHealth()
     {
-        if (militaryDuck != null && militaryDuck.currentArmor <= 0) { StartCoroutine(militaryDuck.Taunt()); }
+        if (militaryDuck != null && militaryDuck.currentArmor <= 0 && !militaryDuck.Taunted) { StartCoroutine(militaryDuck.Taunt()); }
         if (enemyBase.currentHealth <= 0) { StartCoroutine(Die()); }
     }
 

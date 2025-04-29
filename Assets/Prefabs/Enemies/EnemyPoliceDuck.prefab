@@ -259,6 +259,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3918744144634423177, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918744144634423177, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2556644351687815658, guid: 3011624367a578c4eabbfcc7010fc388, type: 3}
@@ -320,6 +324,7 @@ MonoBehaviour:
   bodySprite: {fileID: 2933960358741715912}
   animator: {fileID: 5917105166353626131}
   collider: {fileID: 8980089797251716692}
+  shadow: {fileID: 5734836055658699013}
   threatValue: 2
   currencyValue: 2
   maxHealth: 40
