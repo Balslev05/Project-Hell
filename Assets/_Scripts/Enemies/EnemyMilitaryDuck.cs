@@ -6,7 +6,9 @@ using System.Net;
 public class EnemyMilitaryDuck : EnemyBase
 {
     [Header("MilitaryDuckSpecific")]
-    [SerializeField] public bool Taunted = false;
+    [SerializeField] protected int maxArmor;
+    [HideInInspector] public float currentArmor;
+    public bool Taunted = false;
     private bool Taunting = false;
     [SerializeField] private float TauntingDuration;
 
@@ -32,8 +34,19 @@ public class EnemyMilitaryDuck : EnemyBase
     [SerializeField] private float sniperRange;
     [SerializeField] private float sniperShootCooldown;
 
+    private void Start()
+    {
+        base.Start();
+        currentArmor = maxArmor;
+
+        ActivateRevolver(true);
+        ActivateSniper(false);
+    }
+
     private void Update()
     {
+        if (Taunting) { path.destination = transform.position; return; }
+
         base.Update();
 
         GunLookAtPlayer();
@@ -102,16 +115,19 @@ public class EnemyMilitaryDuck : EnemyBase
         else if (!activate) { sniper.SetActive(false); }
     }
 
-    public override IEnumerator Taunt()
+    public IEnumerator Taunt()
     {
         Taunting = true;
         ActivateRevolver(false);
+        collider.enabled = false;
         animator.SetTrigger("Taunt");
         yield return new WaitForSeconds(TauntingDuration);
 
         ActivateSniper(true);
+        collider.enabled = true;
         animator.SetTrigger("Continue");
         Taunting = false;
+        Taunted = true;
     }
 
     public override void Die()

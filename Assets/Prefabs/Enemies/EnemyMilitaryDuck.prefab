@@ -166,7 +166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7306450766718924247
 Transform:
   m_ObjectHideFlags: 0
@@ -397,6 +397,10 @@ PrefabInstance:
       propertyPath: enableRotation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7246508382675919237, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -450,18 +454,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodySprite: {fileID: 7039608149329121435}
-  animator: {fileID: 0}
+  animator: {fileID: 6992084525072450448}
   collider: {fileID: 3862262333960744199}
   threatValue: 4
   currencyValue: 4
   maxHealth: 40
   currentHealth: 0
-  maxArmor: 80
-  currentArmor: 0
   moveSpeed: 2.5
   MoveToRange: 6
   damage: 0
   isDead: 0
+  maxArmor: 80
+  currentArmor: 0
   Taunted: 0
   TauntingDuration: 2
   revolver: {fileID: 7448774949906976688}
@@ -471,9 +475,9 @@ MonoBehaviour:
   revolverBulletDamage: 6
   revolverBulletSpeed: 30
   revolverRange: 8
-  revolverShootCooldown: 6
+  revolverShootCooldown: 4
   revolverRapidFireAmount: 6
-  revolverRapidFireCooldown: 0.5
+  revolverRapidFireCooldown: 0.2
   sniper: {fileID: 6949401226343144958}
   sniperSprite: {fileID: 1285642914834128258}
   sniperPoint: {fileID: 8125880780261240211}

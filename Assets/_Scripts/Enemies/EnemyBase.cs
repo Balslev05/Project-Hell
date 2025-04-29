@@ -22,8 +22,6 @@ public abstract class EnemyBase : MonoBehaviour
     public int currencyValue;
     [SerializeField] protected int maxHealth;
     [HideInInspector] public float currentHealth;
-    [SerializeField] protected int maxArmor;
-    [HideInInspector] public float currentArmor;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float MoveToRange;
     public int damage;
@@ -49,7 +47,6 @@ public abstract class EnemyBase : MonoBehaviour
         waveManager = manager.waveManager;
 
         currentHealth = maxHealth;
-        currentArmor = maxArmor;
     }
 
     protected virtual void Update()
@@ -84,11 +81,6 @@ public abstract class EnemyBase : MonoBehaviour
 
         //if (path.desiredVelocity.x >= 0.01f) { sprite.flipX = true; }
         //else if (path.desiredVelocity.x <= -0.01f) { sprite.flipX = false; }
-    }
-
-    public virtual IEnumerator Taunt()
-    {
-        yield return null;
     }
 
     public virtual void Die()

@@ -12,6 +12,13 @@ public class EnemyPoliceDuck : EnemyBase
     [SerializeField] private float range;
     [SerializeField] private float shootCooldown;
 
+    private void Start()
+    {
+        base.Start();
+
+        ActivateGun(true);
+    }
+
     private void Update()
     {
         base.Update();

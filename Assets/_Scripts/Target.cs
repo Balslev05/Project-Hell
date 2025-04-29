@@ -5,8 +5,8 @@ using System.Collections;
 public class Target : MonoBehaviour
 {
     private EnemyBase enemyBase;
-    private Managers manager;
-    private WaveManager waveManager;
+    private EnemyMilitaryDuck militaryDuck;
+    private EnemyPoliceDuck policeDuck;
 
     [SerializeField] private GameObject PopUpEffectPrefab;
     [SerializeField] private GameObject CurrencyPrefab;
@@ -14,14 +14,15 @@ public class Target : MonoBehaviour
     private void Start()
     {
         enemyBase = GetComponent<EnemyBase>();
-        
+        if (enemyBase.GetComponent<EnemyMilitaryDuck>()) { militaryDuck = enemyBase.GetComponent<EnemyMilitaryDuck>(); }
+        if (enemyBase.GetComponent<EnemyPoliceDuck>()) { policeDuck = enemyBase.GetComponent<EnemyPoliceDuck>(); }
     }
 
     public void TakeDamage(int damage, float criticalMultiplayer)
     {
-    //-----The calculations-----///
-        if (enemyBase.currentArmor > 0) {
-            enemyBase.currentArmor -= Mathf.FloorToInt(damage * criticalMultiplayer);
+        //-----The calculations-----///
+        if (militaryDuck != null && militaryDuck.currentArmor > 0) {
+            militaryDuck.currentArmor -= Mathf.FloorToInt(damage * criticalMultiplayer);
         }
         else {
             enemyBase.currentHealth -= Mathf.FloorToInt(damage * criticalMultiplayer);
@@ -53,7 +54,7 @@ public class Target : MonoBehaviour
         }
     }
 
-    public Vector3 SetPopUpTransform()
+    private Vector3 SetPopUpTransform()
     {
         float randomOffsetX = Random.Range(-1f, 1f);
         float randomOffsetY = Random.Range(-1f, 1f);
@@ -61,15 +62,17 @@ public class Target : MonoBehaviour
         return new Vector3(transform.localPosition.x + randomOffsetX, transform.localPosition.y * 1.5f + randomOffsetY, transform.localPosition.z);
     }
 
-    public void CheckHealth()
+    private void CheckHealth()
     {
-        //if (enemyBase.currentArmor <= 0) { enemyBase.StartCoroutine(Taunt()); }
+        if (militaryDuck != null && militaryDuck.currentArmor <= 0) { StartCoroutine(militaryDuck.Taunt()); }
         if (enemyBase.currentHealth <= 0) { StartCoroutine(Die()); }
     }
 
-    public IEnumerator Die()
+    private IEnumerator Die()
     {
-        enemyBase.Die();
+        if (militaryDuck != null) { militaryDuck.Die(); }
+        else if (policeDuck != null) { policeDuck.Die(); }
+        else { enemyBase.Die(); }
 
         for (int i = 0; i < enemyBase.currencyValue; i++)
         {
