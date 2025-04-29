@@ -1357,16 +1357,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4d0d5853ae86c4187c918fe62a86a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGun: {fileID: 11400000, guid: 672f63f9ccef2864690ea468b5fe6017, type: 2}
+  current_Item: {fileID: 0}
+  current_Gun: {fileID: 0}
+  GunBuyHolder: {fileID: 0}
+  ItemBuyHolder: {fileID: 0}
   cardImage: {fileID: 1079342984}
   cardName: {fileID: 1535003983}
   tagsText: {fileID: 623902124}
   tags: []
-  damage: {fileID: 1459202343}
-  critChange: {fileID: 644028960}
-  critDamage: {fileID: 1648102998}
-  fireRate: {fileID: 2066092375}
-  price: {fileID: 0}
+  GunstatsHolder: {fileID: 0}
+  Text_1: {fileID: 0}
+  Text_2: {fileID: 0}
+  Text_3: {fileID: 0}
+  Text_4: {fileID: 0}
+  priceGUN: {fileID: 0}
+  EffectHolder: {fileID: 0}
+  TextPrefab: {fileID: 0}
+  priceItem: {fileID: 0}
+  effects: []
+  randomDamage: 0
+  randomCritChange: 0
+  randomCritDamage: 0
+  randomFireRate: 0
 --- !u!114 &349762978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2126,16 +2138,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4d0d5853ae86c4187c918fe62a86a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGun: {fileID: 11400000, guid: 672f63f9ccef2864690ea468b5fe6017, type: 2}
+  current_Item: {fileID: 0}
+  current_Gun: {fileID: 0}
+  GunBuyHolder: {fileID: 0}
+  ItemBuyHolder: {fileID: 0}
   cardImage: {fileID: 426850661}
   cardName: {fileID: 1388614146}
   tagsText: {fileID: 2055845226}
   tags: []
-  damage: {fileID: 1073836022}
-  critChange: {fileID: 1079035872}
-  critDamage: {fileID: 1081830894}
-  fireRate: {fileID: 212845200}
-  price: {fileID: 0}
+  GunstatsHolder: {fileID: 0}
+  Text_1: {fileID: 0}
+  Text_2: {fileID: 0}
+  Text_3: {fileID: 0}
+  Text_4: {fileID: 0}
+  priceGUN: {fileID: 0}
+  EffectHolder: {fileID: 0}
+  TextPrefab: {fileID: 0}
+  priceItem: {fileID: 0}
+  effects: []
+  randomDamage: 0
+  randomCritChange: 0
+  randomCritDamage: 0
+  randomFireRate: 0
 --- !u!114 &497963605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5551,6 +5575,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 090afab5d6c42f34cbdfa2fa1f733c76, type: 2}
   - {fileID: 11400000, guid: 672f63f9ccef2864690ea468b5fe6017, type: 2}
   - {fileID: 11400000, guid: fde7ecef8768b1649b9b36232bc93b33, type: 2}
+  items: []
 --- !u!4 &929265186
 Transform:
   m_ObjectHideFlags: 0
@@ -41190,6 +41215,7 @@ MonoBehaviour:
   shootPoint: {fileID: 796004274}
   WeaponHolder: {fileID: 1054164394}
   GunDrop: {fileID: 2007156388383999077, guid: b6671dc5887c980458277ba304770fd8, type: 3}
+  UIAmmoHandler: {fileID: 0}
   currentGun: {fileID: 0}
   MaxGuns: 4
   GunList: []
@@ -41206,6 +41232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ghostArmorCost: 10
+  isGhosting: 0
 --- !u!114 &1501239621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41220,9 +41247,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   walkSpeed: 5
+  sprintSpeed: 8
   rollSpeed: 20
   rollDuration: 0.3
   rollCooldown: 1
+  SprintArmorCost: 0
+  rollArmorCost: 0
 --- !u!114 &1501239622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41241,6 +41271,8 @@ MonoBehaviour:
   currentHealth: 0
   maxArmor: 100
   currentArmor: 0
+  selfHarm: 0
+  gunManager: {fileID: 0}
 --- !u!50 &1501239623
 Rigidbody2D:
   serializedVersion: 5
@@ -42184,16 +42216,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4d0d5853ae86c4187c918fe62a86a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGun: {fileID: 11400000, guid: 672f63f9ccef2864690ea468b5fe6017, type: 2}
+  current_Item: {fileID: 0}
+  current_Gun: {fileID: 0}
+  GunBuyHolder: {fileID: 0}
+  ItemBuyHolder: {fileID: 0}
   cardImage: {fileID: 665099618}
   cardName: {fileID: 1059658424}
   tagsText: {fileID: 661358069}
   tags: []
-  damage: {fileID: 1505244600}
-  critChange: {fileID: 828886233}
-  critDamage: {fileID: 1339082245}
-  fireRate: {fileID: 1458011906}
-  price: {fileID: 0}
+  GunstatsHolder: {fileID: 0}
+  Text_1: {fileID: 0}
+  Text_2: {fileID: 0}
+  Text_3: {fileID: 0}
+  Text_4: {fileID: 0}
+  priceGUN: {fileID: 0}
+  EffectHolder: {fileID: 0}
+  TextPrefab: {fileID: 0}
+  priceItem: {fileID: 0}
+  effects: []
+  randomDamage: 0
+  randomCritChange: 0
+  randomCritDamage: 0
+  randomFireRate: 0
 --- !u!114 &1540595250
 MonoBehaviour:
   m_ObjectHideFlags: 0

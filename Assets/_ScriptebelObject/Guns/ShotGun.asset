@@ -15,17 +15,17 @@ MonoBehaviour:
   gunname: 
   GunSprite: {fileID: -1068439443906237425, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: 2012def4675f7fd4c82385a5e7da3500, type: 3}
-  price: 2
+  price: 6
   tags:
   - Woa
   BaseDamage: 10
-  criticalchange: 9
-  criticalMultiplayer: -3.5
+  criticalchange: 1
+  criticalMultiplayer: 2
   HoldToFire: 0
-  timeBetweenShots: -3.7
+  timeBetweenShots: 2
   bulletCount: 7
   spreadAngle: 30
-  damage: 12
+  damage: 14
   ammoType: 4
   CameraShakeStreangth: 0.5
   rarity: 0

@@ -15,12 +15,6 @@ public class ScrapperUIManager : MonoBehaviour
     public TMP_Text resultText;
     public TMP_Text rollingText;
 
-    [Header("Rarity Texts")]
-    public TMP_Text commonChanceText;
-    public TMP_Text rareChanceText;
-    public TMP_Text epicChanceText;
-    public TMP_Text legendaryChanceText;
-
     private void OnEnable()
     {
         scrapper = GameObject.FindGameObjectWithTag("Scrapper").GetComponent<Scrapper>();
@@ -48,8 +42,6 @@ public class ScrapperUIManager : MonoBehaviour
             RectTransform rectTransform = gunImage.GetComponent<RectTransform>();
             rectTransform.sizeDelta = new Vector2(gunImage.sprite.rect.width, gunImage.sprite.rect.height);
         }
-
-        UpdateRarityUI();
     }
 
     public void OnScrapButtonClicked()
@@ -87,16 +79,6 @@ public class ScrapperUIManager : MonoBehaviour
         resultText.text = reward.name;
         resultText.alpha = 0;
         resultText.DOFade(1, 0.5f).SetEase(Ease.InOutSine);
-    }
-
-    void UpdateRarityUI()
-    {
-        var chances = scrapper.CalculateRarityChances();
-
-        AnimateText(commonChanceText, chances.GetPercent(chances.Common), "Common");
-        AnimateText(rareChanceText, chances.GetPercent(chances.Rare), "Rare");
-        AnimateText(epicChanceText, chances.GetPercent(chances.Epic), "Epic");
-        AnimateText(legendaryChanceText, chances.GetPercent(chances.Legendary), "Legendary");
     }
 
     void AnimateText(TMP_Text text, float value, string label)

@@ -55,7 +55,7 @@ public class ShopCard : MonoBehaviour
         cardName.text = gun.gunname;
         RectTransform rectTransform = cardImage.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(cardImage.sprite.rect.width, cardImage.sprite.rect.height);
-        RandomizeStats();
+        //RandomizeStats();
         SetGunStats();
     }
      public void SetCard(Item item)
@@ -79,6 +79,7 @@ public class ShopCard : MonoBehaviour
                 return;
             }
             gunManager.AddGun(current_Gun);
+            Debug.Log("Bought " + current_Gun.gunname);
             this.gameObject.SetActive(false);
             
         }
@@ -93,25 +94,29 @@ public class ShopCard : MonoBehaviour
         scrapper.AddGun(current_Gun);
         gameObject.SetActive(false);
     }
-    private void RandomizeStats()
+   /*  private void RandomizeStats()
     {
         current_Gun.damage += Random.Range(-randomDamage, randomDamage);
         current_Gun.criticalchange += Random.Range(-randomCritChange, randomCritChange);
         current_Gun.criticalMultiplayer += Random.Range(-randomCritDamage, randomCritDamage);
         current_Gun.timeBetweenShots += Random.Range(-randomFireRate, randomFireRate);
-    }
+    } */
     public void SetGunStats()
     {
-        GunBuyHolder.SetActive(true);
-        GunstatsHolder.SetActive(true);
-
-        ItemBuyHolder.SetActive(false);
-        EffectHolder.SetActive(false);
         Text_1.text = "Damage: " + current_Gun.damage.ToString();
         Text_2.text = "Crit Change: " + current_Gun.criticalchange.ToString();
         Text_3.text = "Crit Damage: " + current_Gun.criticalMultiplayer.ToString();
         Text_4.text = "Fire Rate: " + current_Gun.timeBetweenShots.ToString();
         priceGUN.text = "Price:" + current_Gun.GunSetup();
+        
+        if (GunBuyHolder != null)
+            GunBuyHolder.SetActive(true);
+        if (GunBuyHolder != null)
+            GunstatsHolder.SetActive(true);
+        if (ItemBuyHolder != null)
+            ItemBuyHolder.SetActive(false);
+        if (EffectHolder != null)
+        EffectHolder.SetActive(false);
     }
     public void SetItemStats()
     {   
@@ -131,7 +136,6 @@ public class ShopCard : MonoBehaviour
         {
             TMP_Text text = Instantiate(Text_1, EffectHolder.transform);
             text.transform.localPosition += offset;
-            Debug.Log("Try settings effect");
             offset.y -= 6;
             text.gameObject.SetActive(true);
             text.text = current_Item.effects[i].Descreption();

@@ -461,16 +461,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4d0d5853ae86c4187c918fe62a86a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGun: {fileID: 11400000, guid: 672f63f9ccef2864690ea468b5fe6017, type: 2}
+  current_Item: {fileID: 0}
+  current_Gun: {fileID: 0}
+  GunBuyHolder: {fileID: 0}
+  ItemBuyHolder: {fileID: 0}
   cardImage: {fileID: 5969967353361808626}
   cardName: {fileID: 8736159681965008151}
   tagsText: {fileID: 2151792774477831852}
   tags: []
-  damage: {fileID: 8907475692600911327}
-  critChange: {fileID: 7454759822363668181}
-  critDamage: {fileID: 6049527332071297947}
-  fireRate: {fileID: 1876428298645468953}
-  price: {fileID: 485802164822229265}
+  GunstatsHolder: {fileID: 0}
+  Text_1: {fileID: 7454759822363668181}
+  Text_2: {fileID: 6049527332071297947}
+  Text_3: {fileID: 8907475692600911327}
+  Text_4: {fileID: 1876428298645468953}
+  priceGUN: {fileID: 485802164822229265}
+  EffectHolder: {fileID: 0}
+  TextPrefab: {fileID: 0}
+  priceItem: {fileID: 0}
+  effects: []
   randomDamage: 0
   randomCritChange: 0
   randomCritDamage: 0

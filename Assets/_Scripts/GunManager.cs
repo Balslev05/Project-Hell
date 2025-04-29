@@ -102,6 +102,8 @@ public class GunManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i)) SwitchToGun(i);
         }
+        if(UIAmmoHandler)
+            UIAmmoHandler.UpdateUI(currentGun);
     }
 
     private void Fire(Transform firePoint)
@@ -136,7 +138,7 @@ public class GunManager : MonoBehaviour
             currentGunIndex = index;
             currentGun = GunList[currentGunIndex];
             WeaponHolder.sprite = currentGun.GunSprite;
-            UIAmmoHandler.UpdateUI(currentGun);
+            Debug.Log("Switched to " + GunList[index].gunname);
         }
     }
 
@@ -173,6 +175,7 @@ public class GunManager : MonoBehaviour
         if (GunList.Count < MaxGuns)
         {
             GunList.Add(gun);
+            Debug.Log("Added " + gun.gunname);
             SwitchToGun(GunList.Count - 1);
         }else
         {

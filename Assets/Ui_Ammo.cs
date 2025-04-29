@@ -27,7 +27,7 @@ public class Ui_Ammo : MonoBehaviour
     
 
 
-    void Start()
+    void Awake()
     {
         gunmanager = GameObject.FindGameObjectWithTag("Player").GetComponent<GunManager>();
     }
@@ -35,48 +35,51 @@ public class Ui_Ammo : MonoBehaviour
 
     public void UpdateUI(Gun currentGun)
     {
-        switch (currentGun.ammoType)
+        if(this.gameObject.activeInHierarchy)
         {
-            case Gun.AmmoType.Light:
-            gunImage.sprite = currentGun.GunSprite;
-            AmmoIcon.sprite = lightAmmo;
-            AmmoText.text = gunmanager.GetAmmoCount("Light");
-            AmmoText.color = lightColor;
-            break;
+            switch (currentGun.ammoType)
+            {
+                case Gun.AmmoType.Light:
+                gunImage.sprite = currentGun.GunSprite;
+                AmmoIcon.sprite = lightAmmo;
+                AmmoText.text = gunmanager.GetAmmoCount("Light");
+                AmmoText.color = lightColor;
+                break;
 
-            case Gun.AmmoType.Medium:
-            gunImage.sprite = currentGun.GunSprite;
-            AmmoIcon.sprite = mediumAmmo;
-            AmmoText.text = gunmanager.GetAmmoCount("Medium");
-            AmmoText.color = mediumColor;
-            break;
+                case Gun.AmmoType.Medium:
+                gunImage.sprite = currentGun.GunSprite;
+                AmmoIcon.sprite = mediumAmmo;
+                AmmoText.text = gunmanager.GetAmmoCount("Medium");
+                AmmoText.color = mediumColor;
+                break;
 
-            case Gun.AmmoType.Heavy:
-            gunImage.sprite = currentGun.GunSprite;
-            AmmoIcon.sprite = heavyAmmo;
-            AmmoText.text = gunmanager.GetAmmoCount("Heavy");
-            AmmoText.color = heavyColor;
+                case Gun.AmmoType.Heavy:
+                gunImage.sprite = currentGun.GunSprite;
+                AmmoIcon.sprite = heavyAmmo;
+                AmmoText.text = gunmanager.GetAmmoCount("Heavy");
+                AmmoText.color = heavyColor;
 
-            break;
+                break;
 
-            case Gun.AmmoType.Explosive:
-            gunImage.sprite = currentGun.GunSprite;
-            AmmoIcon.sprite = EksplosiveAmmo;
-            AmmoText.text = gunmanager.GetAmmoCount("Explosive");
-            AmmoText.color = EksplosiveColor;
+                case Gun.AmmoType.Explosive:
+                gunImage.sprite = currentGun.GunSprite;
+                AmmoIcon.sprite = EksplosiveAmmo;
+                AmmoText.text = gunmanager.GetAmmoCount("Explosive");
+                AmmoText.color = EksplosiveColor;
 
-            break;
+                break;
 
-            case Gun.AmmoType.Shell:
-            gunImage.sprite = currentGun.GunSprite;
-            AmmoIcon.sprite = shellsAmmo;
-            AmmoText.text = gunmanager.GetAmmoCount("Shell");
-            AmmoText.color = shellsColor;
-            break;
+                case Gun.AmmoType.Shell:
+                gunImage.sprite = currentGun.GunSprite;
+                AmmoIcon.sprite = shellsAmmo;
+                AmmoText.text = gunmanager.GetAmmoCount("Shell");
+                AmmoText.color = shellsColor;
+                break;
 
-            default:
+                default:
 
-            break;
+                break;
+            }
         }
     }
 }
