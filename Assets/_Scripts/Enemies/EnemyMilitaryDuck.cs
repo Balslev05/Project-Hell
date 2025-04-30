@@ -97,11 +97,13 @@ public class EnemyMilitaryDuck : EnemyBase
 
             if (player.transform.position.x > transform.position.x) {
                 revolver.transform.localScale = new Vector3(revolver.transform.localScale.x, -1, revolver.transform.localScale.z);
-                //revolver.transform.position = new Vector3(revolverOffsetX * -1, revolverOffsetY * -1, revolver.transform.position.z);
+                //revolver.transform.localPosition = new Vector3(revolver.transform.position.x - revolverOffsetX, revolver.transform.position.y - revolverOffsetY, revolver.transform.position.z);
+                //revolver.transform.position = new Vector3(0 - revolverOffsetX, 0 - revolverOffsetY, revolver.transform.position.z);
             }
             else if (player.transform.position.x < transform.position.x) {
                 revolver.transform.localScale = new Vector3(revolver.transform.localScale.x, 1, revolver.transform.localScale.z);
-                //revolver.transform.position = new Vector3(revolverOffsetX, revolverOffsetY, revolver.transform.position.z);
+                //revolver.transform.position = new Vector3(revolver.transform.position.x + revolverOffsetX, revolver.transform.position.y + revolverOffsetY, revolver.transform.position.z);
+                //revolver.transform.position = new Vector3(0 + revolverOffsetX, 0 + revolverOffsetY, revolver.transform.position.z);
             }
         }
         else if (Taunted) {
@@ -109,11 +111,11 @@ public class EnemyMilitaryDuck : EnemyBase
 
             if (player.transform.position.x > transform.position.x) {
                 sniper.transform.localScale = new Vector3(sniper.transform.localScale.x, -1, sniper.transform.localScale.z);
-                //sniper.transform.position = new Vector3(sniperOffsetX * -1, sniperOffsetY * -1, sniper.transform.position.z);
+                //sniper.transform.position = new Vector3(sniper.transform.position.x - sniperOffsetX, sniper.transform.position.y - sniperOffsetY, sniper.transform.position.z);
             }
             else if (player.transform.position.x < transform.position.x) {
                 sniper.transform.localScale = new Vector3(sniper.transform.localScale.x, 1, sniper.transform.localScale.z);
-                ///sniper.transform.position = new Vector3(sniperOffsetX, sniperOffsetY, sniper.transform.position.z);
+                //sniper.transform.position = new Vector3(sniper.transform.position.x + sniperOffsetX, sniper.transform.position.y + sniperOffsetY, sniper.transform.position.z);
             }
         }
     }
