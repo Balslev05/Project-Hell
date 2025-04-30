@@ -8,6 +8,7 @@ public class ButtonEffects : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     
     [Header("Click Settings")]
+    public bool CanClick = true;
     public AudioSource audioSource;
     public float clickScale = 0.9f; 
     public float clickDuration = 0.1f; 
@@ -46,7 +47,7 @@ public class ButtonEffects : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+        if (!CanClick) return;
         Sequence clickSequence = DOTween.Sequence();
         clickSequence.Append(transform.DOScale(originalScale * clickScale, clickDuration).SetEase(Ease.OutQuad));
         clickSequence.Append(transform.DOScale(originalScale * clickBounceScale, clickDuration).SetEase(Ease.OutBounce));
