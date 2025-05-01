@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fed30ecc43f79141b20daeacde5ed44, type: 3}
+  m_Name: Speed 1
+  m_EditorClassIdentifier: 
+  itemName: DogShit
+  description: Cofee is GAS
+  icon: {fileID: -2412350105159597727, guid: 1fb567cd58b918d48b996297b759a821, type: 3}
+  price: 100
+  effects:
+  - {fileID: 11400000, guid: e6ceb6b3e5b5aad45952787f51418a04, type: 2}
+  - {fileID: 11400000, guid: c04056ece3b44274ebaa7e5e2c794863, type: 2}
+  - {fileID: 11400000, guid: 6a82c7905952a2e468a1f30d90c75e5c, type: 2}
+  - {fileID: 11400000, guid: 0fd3df396f2b22e4793051b9d5c9461a, type: 2}

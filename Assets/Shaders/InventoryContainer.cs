@@ -19,7 +19,7 @@ public class InventoryContainer : MonoBehaviour
     [Header("Selection")]
     public GameObject SelectedGun;
 
-    private List<Vector2> slotPositions = new List<Vector2>();
+    public List<Vector2> slotPositions = new List<Vector2>();
 
     void Start()
     {

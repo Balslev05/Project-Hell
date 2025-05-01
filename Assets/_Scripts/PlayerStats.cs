@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour
     public PlotArmorBar armorBar;
 
     [Header("Stats")]
+    public int BaseDamage;
+    public int BaseSpeed;
     public int maxHealth = 100;
     public float currentHealth;
     public int maxArmor = 100;
@@ -27,7 +29,7 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         armorBar.SetMaxPlotArmor(maxArmor);
     }
-
+    
     void Update()
     {
         // Debugs

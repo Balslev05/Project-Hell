@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f193645cbea5d148bde9129c555a333, type: 3}
-  m_Name: -R_Health 1
+  m_Script: {fileID: 11500000, guid: 0de3a1bfecbb41043a1b8120c7816665, type: 3}
+  m_Name: -RandomSpeed
   m_EditorClassIdentifier: 
-  healthMuliplayer: 0.9
+  SpeedBuff: 0.5
   randomize: 1
-  min: 0.9
-  max: 0.3
+  min: 0.1
+  max: 0.9
+  RandomSpeed: 0

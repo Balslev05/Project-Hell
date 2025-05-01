@@ -27,7 +27,6 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.X))
         {
             OnClickStartWave();

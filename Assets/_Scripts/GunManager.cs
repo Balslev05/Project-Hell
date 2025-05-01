@@ -20,6 +20,8 @@ public class GunManager : MonoBehaviour
 
     public enum AmmoType { Light, Medium, Heavy, Explosive, Shell}
 
+    public int Maxammo = 100;
+
     public Dictionary<AmmoType, int> AmmoInventory = new Dictionary<AmmoType, int>();
     
     private void Awake()
@@ -28,11 +30,20 @@ public class GunManager : MonoBehaviour
         {
             AmmoInventory[type] = 0; 
         }
+
         AddAmmo(AmmoType.Light, 100);
         AddAmmo(AmmoType.Medium, 60);
         AddAmmo(AmmoType.Heavy, 20);
         AddAmmo(AmmoType.Explosive, 5);
         AddAmmo(AmmoType.Shell, 30);
+    }
+
+    public void AmmoToMAx()
+    {
+        foreach (AmmoType type in System.Enum.GetValues(typeof(AmmoType)))
+        {
+            AmmoInventory[type] = Maxammo;
+        }
     }
 
     public void AddAmmo(AmmoType type, int amount)

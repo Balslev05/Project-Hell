@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fed30ecc43f79141b20daeacde5ed44, type: 3}
+  m_Name: HealthBox
+  m_EditorClassIdentifier: 
+  itemName: HealthBox
+  description: THIS IS BS
+  icon: {fileID: -2044520392, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
+  price: 100
+  effects:
+  - {fileID: 11400000, guid: bf0944536de0be048965866a25a655c3, type: 2}

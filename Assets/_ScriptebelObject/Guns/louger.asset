@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c4fe7237202474eadd99db7f6709db, type: 3}
+  m_Name: louger
+  m_EditorClassIdentifier: 
+  gunname: Ak
+  GunSprite: {fileID: 1642764026, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
+  projectilePrefab: {fileID: 894301910066111340, guid: 92c72e0b93e1cb44792d4320b35b675f, type: 3}
+  price: 24
+  tags:
+  - Medium Ammo
+  - Hold to fire
+  - 'BC: 1'
+  - 
+  BaseDamage: 12
+  criticalchange: 6
+  criticalMultiplayer: 7.5
+  HoldToFire: 1
+  timeBetweenShots: 0.2
+  bulletCount: 1
+  spreadAngle: 10
+  damage: 10
+  ammoType: 0
+  CameraShakeStreangth: 0.5

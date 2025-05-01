@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c4fe7237202474eadd99db7f6709db, type: 3}
+  m_Name: MiniGun
+  m_EditorClassIdentifier: 
+  gunname: MiniGun
+  GunSprite: {fileID: -7672087129735864097, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
+  projectilePrefab: {fileID: 894301910066111340, guid: a87b26052d71eba4ebeaf022496bdbed, type: 3}
+  price: 24
+  tags:
+  - 
+  BaseDamage: 10
+  criticalchange: 6
+  criticalMultiplayer: 7.5
+  HoldToFire: 1
+  timeBetweenShots: 0.1
+  bulletCount: 1
+  spreadAngle: 10
+  damage: 10
+  ammoType: 0
+  CameraShakeStreangth: 0.2

@@ -2,86 +2,59 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class InteractableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
+[RequireComponent(typeof(RectTransform))]
+public class InteractableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public InventoryContainer container;
+    public Vector3 originalScale;
+
     private RectTransform rectTransform;
     private Canvas canvas;
-    private CanvasGroup canvasGroup;
-
-    public Vector2 originalScale;
-    public InventoryContainer container;
-
-    [Header("Animation Settings")]
-    public float returnDuration = 0.25f;
-    public Ease returnEase = Ease.OutBack;
-
-    [Header("Drag Settings")]
-    public float Xoffset = 5f;
-    public float Yoffset = 5f;
+    private Vector3 offset;
 
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
-        canvasGroup = GetComponent<CanvasGroup>();
-
-        if (canvas == null)
-        {
-            Debug.LogError("InteractableUI: Must be a child of a Canvas.");
-        }
-
-        if (canvasGroup == null)
-        {
-            canvasGroup = gameObject.AddComponent<CanvasGroup>();
-        }
-
-        originalScale = transform.localScale;
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        container.SelectGun(this.gameObject);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        rectTransform.SetAsLastSibling();
+        originalScale = transform.localScale;
+        transform.DOScale(originalScale * 1.1f, 0.1f);
 
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            rectTransform,
-            eventData.position,
-            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
-            out var pointerOffset
-        );
-
-        canvasGroup.alpha = 0.8f;
-        canvasGroup.blocksRaycasts = false;
-
-        DOTween.Kill(rectTransform);
+        // Calculate offset from mouse to object's center
+        Vector3 worldPoint;
+        RectTransformUtility.ScreenPointToWorldPointInRectangle(
+            rectTransform, eventData.position, canvas.worldCamera, out worldPoint);
+        offset = rectTransform.position - worldPoint;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            rectTransform.parent as RectTransform,
-            eventData.position,
-            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
-            out var localPoint
-        );
-
-        rectTransform.anchoredPosition = localPoint + new Vector2(Xoffset, Yoffset);
+        Vector3 worldPoint;
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(
+            rectTransform, eventData.position, canvas.worldCamera, out worldPoint))
+        {
+            rectTransform.position = worldPoint + offset;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
+        transform.DOScale(originalScale, 0.1f);
 
-        container.ReorderItem(this.GetComponent<InteractableUI>());
+        container.ReorderItem(this);
+
+        int index = container.InventoryList.IndexOf(this);
+        if (index >= 0 && index < container.slotPositions.Count)
+        {
+            MoveTo(container.slotPositions[index]);
+        }
     }
 
-    public void MoveTo(Vector2 newPosition, float duration = 0.25f, Ease easeType = Ease.OutQuad)
+    public void MoveTo(Vector2 targetPos)
     {
-        rectTransform.DOAnchorPos(newPosition, duration).SetEase(easeType);
+        rectTransform.DOAnchorPos(targetPos, 0.25f).SetEase(Ease.OutExpo);
     }
 }

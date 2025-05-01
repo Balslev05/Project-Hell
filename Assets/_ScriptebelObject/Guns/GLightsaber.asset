@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c4fe7237202474eadd99db7f6709db, type: 3}
+  m_Name: GLightsaber
+  m_EditorClassIdentifier: 
+  gunname: GoodLightsaber
+  GunSprite: {fileID: -1382401937, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
+  projectilePrefab: {fileID: 894301910066111340, guid: 38bc2308246630c4c881eae1209d4277, type: 3}
+  price: 4
+  tags:
+  - Woa
+  BaseDamage: 10
+  criticalchange: 1
+  criticalMultiplayer: 2
+  HoldToFire: 1
+  timeBetweenShots: 0.7
+  bulletCount: 3
+  spreadAngle: 60
+  damage: 14
+  ammoType: 0
+  CameraShakeStreangth: 0.5
