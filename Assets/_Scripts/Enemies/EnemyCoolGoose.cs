@@ -11,8 +11,14 @@ public class EnemyCoolGoose : EnemyBase
 
     private void Start()
     {
+        base.Start();
         buffAura.transform.localScale = new Vector3 (range, range, 1);
+        buffAura.SetActive(true);
     }
 
-
+    private void Update()
+    {
+        if (isDead) { buffAura.SetActive(false); }
+        base.Update();
+    }
 }

@@ -8,6 +8,7 @@ public abstract class EnemyBase : MonoBehaviour
     public SpriteRenderer bodySprite;
     public Animator animator;
     public Collider2D collider;
+    public GameObject sunglasses;
     public GameObject shadow;
     protected AIPath path;
 
@@ -83,6 +84,12 @@ public abstract class EnemyBase : MonoBehaviour
 
         //if (path.desiredVelocity.x >= 0.01f) { sprite.flipX = true; }
         //else if (path.desiredVelocity.x <= -0.01f) { sprite.flipX = false; }
+    }
+
+    public void ActivateSunglasses(bool activate)
+    {
+        if (activate) { sunglasses.SetActive(true); }
+        else if (!activate) {  sunglasses.SetActive(false); }
     }
 
     public virtual void Die()

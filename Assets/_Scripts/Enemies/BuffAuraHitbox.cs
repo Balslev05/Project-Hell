@@ -4,7 +4,7 @@ public class BuffAuraHitbox : MonoBehaviour
 {
     [SerializeField] private EnemyCoolGoose coolGoose;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         //Buff enemies
         if (collision.tag == "Enemy")
@@ -17,6 +17,7 @@ public class BuffAuraHitbox : MonoBehaviour
             enemy.damage = Mathf.FloorToInt(enemy.damage * coolGoose.damageBuff);
             enemy.moveSpeed = enemy.moveSpeed * coolGoose.speedBuff;
             enemy.isBuffed = true;
+            enemy.ActivateSunglasses(true);
         }
     }
 
@@ -33,6 +34,7 @@ public class BuffAuraHitbox : MonoBehaviour
             enemy.damage = Mathf.FloorToInt(enemy.damage / coolGoose.damageBuff);
             enemy.moveSpeed = enemy.moveSpeed / coolGoose.speedBuff;
             enemy.isBuffed = false;
+            enemy.ActivateSunglasses(false);
         }
     }
 }
