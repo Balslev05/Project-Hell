@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5c4fe7237202474eadd99db7f6709db, type: 3}
-  m_Name: SmartKiller
+  m_Name: USP-S
   m_EditorClassIdentifier: 
   gunname: SmartKiller
   GunSprite: {fileID: 2096401156, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
