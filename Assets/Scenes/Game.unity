@@ -2325,6 +2325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -3955,6 +3956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -4907,6 +4909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -5276,6 +5279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.4
   clickDuration: 0.1
@@ -6744,9 +6748,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guns:
   - {fileID: 11400000, guid: 16399ae67642d1b4e8505724899f4e5e, type: 2}
+  - {fileID: 11400000, guid: f2de4d1870523544baab07b50517698e, type: 2}
+  - {fileID: 11400000, guid: 8d8f43c0bcec9d64c8973fb7c3ce8f84, type: 2}
+  - {fileID: 11400000, guid: 050339cffcb854040a6af47cc3226d7b, type: 2}
   - {fileID: 11400000, guid: cb14e520fe7ca8b40ab83c9c618d67b2, type: 2}
+  - {fileID: 11400000, guid: 6bc8be4b6137f74428a5b837be3f1f91, type: 2}
+  - {fileID: 11400000, guid: 3ced29afe52d6904aa278699f2754d17, type: 2}
+  - {fileID: 11400000, guid: b07e0b915e76da146b91f833e3a8f783, type: 2}
+  - {fileID: 11400000, guid: e4121de25d4f4a142866c058ac6114fd, type: 2}
   - {fileID: 11400000, guid: 090afab5d6c42f34cbdfa2fa1f733c76, type: 2}
   - {fileID: 11400000, guid: 672f63f9ccef2864690ea468b5fe6017, type: 2}
+  - {fileID: 11400000, guid: 502bc84d27891bf44a4c8a246b878378, type: 2}
   - {fileID: 11400000, guid: fde7ecef8768b1649b9b36232bc93b33, type: 2}
   items:
   - {fileID: 11400000, guid: e4e3905bfa2f96d4b9993f3b7a58728f, type: 2}
@@ -7939,7 +7951,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 11
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8516,6 +8528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -10258,6 +10271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -42911,6 +42925,7 @@ MonoBehaviour:
   currentGun: {fileID: 0}
   MaxGuns: 4
   GunList: []
+  Maxammo: 100
 --- !u!114 &1501239620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42959,6 +42974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1618330381}
   armorBar: {fileID: 1295761748}
+  BaseDamage: 0
+  BaseSpeed: 0
   maxHealth: 100
   currentHealth: 0
   maxArmor: 100
@@ -43217,6 +43234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -43224,14 +43242,14 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1528456366}
-        m_TargetAssemblyTypeName: ButtonEffects, Assembly-CSharp
-        m_MethodName: SwitchTab
-        m_Mode: 1
+      - m_Target: {fileID: 1501239622}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: HealHealth
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 100
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -43629,6 +43647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -60965,6 +60984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -60972,15 +60992,15 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1787938786}
-        m_TargetAssemblyTypeName: ButtonEffects, Assembly-CSharp
-        m_MethodName: SwitchTab
-        m_Mode: 1
+      - m_Target: {fileID: 1501239622}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: GainArmor
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 100
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -61523,6 +61543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -61530,13 +61551,25 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 2060540877}
+        m_TargetAssemblyTypeName: ShopCanvas, Assembly-CSharp
+        m_MethodName: OnClickCloseCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1636496023}
+        m_TargetAssemblyTypeName: WaveManager, Assembly-CSharp
+        m_MethodName: OnClickStartWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -62026,6 +62059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee8869d5db67d84ab5176b7ae9aea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanClick: 1
   audioSource: {fileID: 0}
   clickScale: 0.9
   clickDuration: 0.1
@@ -62033,9 +62067,9 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070405630}
-        m_TargetAssemblyTypeName: ButtonEffects, Assembly-CSharp
-        m_MethodName: SwitchTab
+      - m_Target: {fileID: 1501239619}
+        m_TargetAssemblyTypeName: GunManager, Assembly-CSharp
+        m_MethodName: AmmoToMAx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

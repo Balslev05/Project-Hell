@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletDamage: 0
   criticalMultiplayer: 0
-  speed: 250
+  speed: 100
   randomizeSpeed: 0
   minSpeed: 25
   maxSpeed: 30
@@ -112,8 +112,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 290967845, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
   m_Color: {r: 1, g: 0.15472594, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

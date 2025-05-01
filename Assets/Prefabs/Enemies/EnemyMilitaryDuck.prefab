@@ -140,11 +140,13 @@ MonoBehaviour:
   maxHealth: 60
   currentHealth: 0
   moveSpeed: 3
+  MoveToRange: 0
   damage: 10
-  attackDuration: 0
-  attackCooldown: 0
-  attackRange: 14
   isDead: 0
+  gun: {fileID: 0}
+  shotPoint: {fileID: 0}
+  attackRange: 14
+  attackCooldown: 0
 --- !u!212 &7039608149329121435 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3918744144634423177, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}

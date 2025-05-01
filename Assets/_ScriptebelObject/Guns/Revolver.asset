@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c4fe7237202474eadd99db7f6709db, type: 3}
+  m_Name: Revolver
+  m_EditorClassIdentifier: 
+  gunname: Revolver
+  GunSprite: {fileID: 4321398367205095341, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
+  projectilePrefab: {fileID: 894301910066111340, guid: a3a8521909983bb4e974359b5df6adb3, type: 3}
+  price: 24
+  tags:
+  - 
+  BaseDamage: 10
+  criticalchange: 6
+  criticalMultiplayer: 7.5
+  HoldToFire: 0
+  timeBetweenShots: 0.5
+  bulletCount: 1
+  spreadAngle: 0
+  damage: 0
+  ammoType: 2
+  CameraShakeStreangth: 0.2
