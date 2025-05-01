@@ -637,7 +637,7 @@ MonoBehaviour:
   sunglasses: {fileID: 3479319653275129300}
   shadow: {fileID: 8961894831028849102}
   threatValue: 5
-  currencyValue: 5
+  currencyValue: 10
   maxHealth: 200
   currentHealth: 0
   moveSpeed: 2

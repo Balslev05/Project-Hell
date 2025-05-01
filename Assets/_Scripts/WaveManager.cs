@@ -15,6 +15,7 @@ public class WaveManager : MonoBehaviour
     public GameObject SpawnMarkerPrefab;
 
     [Header("Components")]
+    [SerializeField] private CurrencyManager currencyManager;
     [SerializeField] private List<Wave> waves = new List<Wave>();
     [SerializeField] private List<GameObject> PossibleEnemies = new List<GameObject>();
     [SerializeField] public List<GameObject> LiveEnemies = new List<GameObject>();
@@ -48,7 +49,7 @@ public class WaveManager : MonoBehaviour
         localTotalThreatScore = waves[currentWave].totalThreatScore;
         SetupPossibleEnemies();
 
-        while (localTotalThreatScore > 0 && LiveEnemies.Count == 0)
+        while (localTotalThreatScore > 0 || LiveEnemies.Count > 0)
         {
             if (GetCurrentThreatLevel() < waves[currentWave].allowedThreatLevel)
             {
@@ -61,6 +62,8 @@ public class WaveManager : MonoBehaviour
             }
             yield return new WaitForSeconds(5);
         }
+
+        currencyManager.GetMoney(waves[currentWave].waveCurrencyValue);
 
         if (currentWave == waves.Count) { Debug.Log("End Game"); }
         else {

@@ -403,7 +403,7 @@ MonoBehaviour:
   bodySprite: {fileID: 1954336827983338623}
   sunglasses: {fileID: 7985422851948340774}
   shadow: {fileID: 1926955978909751715}
-  threatValue: 6
+  threatValue: 8
   currencyValue: 20
   maxHealth: 80
   currentHealth: 0

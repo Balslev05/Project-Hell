@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07d81bb4241d0f449bf9fe0bd6e57a03, type: 3}
-  m_Name: Wave 3
+  m_Name: Wave 11
   m_EditorClassIdentifier: 
   enemyNormalDuckAllowed: 1
   enemyBuffDuckAllowed: 0
   enemyPoliceDuckAllowed: 1
-  enemyMilitaryDuckAllowed: 0
+  enemyMilitaryDuckAllowed: 1
   enemyCoolGooseAllowed: 0
-  enemyNormalDuckSpawnChance: 4
+  enemyNormalDuckSpawnChance: 1
   enemyBuffDuckSpawnChance: 0
-  enemyPoliceDuckSpawnChance: 1
-  enemyMilitaryDuckSpawnChance: 0
+  enemyPoliceDuckSpawnChance: 3
+  enemyMilitaryDuckSpawnChance: 2
   enemyCoolGooseSpawnChance: 0
-  totalThreatScore: 130
-  allowedThreatLevel: 20
+  totalThreatScore: 150
+  allowedThreatLevel: 30
   maxSpawnAmount: 6
-  minSpawnAmount: 2
-  waveCurrencyValue: 40
+  minSpawnAmount: 4
+  waveCurrencyValue: 75

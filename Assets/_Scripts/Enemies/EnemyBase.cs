@@ -95,13 +95,14 @@ public abstract class EnemyBase : MonoBehaviour
     public void ActivateSunglasses(bool activate)
     {
         if (activate) { sunglasses.SetActive(true); }
-        else if (!activate) {  sunglasses.SetActive(false); }
+        else if (!activate) { sunglasses.SetActive(false); }
     }
 
     public virtual void Die()
     {
         isDead = true;
         waveManager.LiveEnemies.Remove(this.gameObject);
+        tag = "Untagged";
         collider.enabled = false;
         shadow.SetActive(false);
     }

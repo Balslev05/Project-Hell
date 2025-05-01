@@ -34261,10 +34261,28 @@ MonoBehaviour:
   enemyMilitaryDuckPrefab: {fileID: 6225666379509061222, guid: 45e37ebd138d86d4ebd0c74e62c35b8b, type: 3}
   enemyCoolGoosePrefab: {fileID: 3226976724082678402, guid: 311c2670e834fdb4ab0f37f806f6f000, type: 3}
   SpawnMarkerPrefab: {fileID: 6177823870520763783, guid: c06cc4b28cd323c44a80df4cf5818906, type: 3}
+  currencyManager: {fileID: 0}
   waves:
   - {fileID: 11400000, guid: 240048e480b7c87428ed005750889db4, type: 2}
   - {fileID: 11400000, guid: c269db1a1e42100408f4d75a1353922e, type: 2}
   - {fileID: 11400000, guid: 6ca2476d9ef9bec4590bfb478dde7459, type: 2}
+  - {fileID: 11400000, guid: c0ca12a83cf5f4042a2eb1ad59202782, type: 2}
+  - {fileID: 11400000, guid: bb50853e1250f2f40af8e95fade97772, type: 2}
+  - {fileID: 11400000, guid: 8fb94f9b8452c154c8fd41ef43db419e, type: 2}
+  - {fileID: 11400000, guid: 4a740563a749d9a49be4ef560e874795, type: 2}
+  - {fileID: 11400000, guid: 0835ecc636bc5de468aca59eaa89ca67, type: 2}
+  - {fileID: 11400000, guid: 559eaef9b0530464280c91ea91f6de75, type: 2}
+  - {fileID: 11400000, guid: 251f85eac09704040965e1d80ca7fe6d, type: 2}
+  - {fileID: 11400000, guid: 741897625a694df4c8101cb249b3187c, type: 2}
+  - {fileID: 11400000, guid: 50335d5cb909ddf4193feb7e0d1a5c04, type: 2}
+  - {fileID: 11400000, guid: 864b4de8aedafa0419d6471dc445b56a, type: 2}
+  - {fileID: 11400000, guid: b841664d5dad40b46a41cf216c807e6c, type: 2}
+  - {fileID: 11400000, guid: 5600cb3ea95d1914da004d8332cb62d3, type: 2}
+  - {fileID: 11400000, guid: 8a26ae15ba69f3247a30932cecce3b0c, type: 2}
+  - {fileID: 11400000, guid: 96d43b4054bd6364cb00a891436aa033, type: 2}
+  - {fileID: 11400000, guid: a7dbd74a3e2b15d44b85ad85aa3aa6db, type: 2}
+  - {fileID: 11400000, guid: 7e064fed114f27e429ee1a5798ed1a86, type: 2}
+  - {fileID: 11400000, guid: 45fa477435d93b04baa04306473e2f04, type: 2}
   PossibleEnemies: []
   LiveEnemies: []
   spawnArea: {fileID: 192550068}
