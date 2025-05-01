@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
         localTotalThreatScore = waves[currentWave].totalThreatScore;
         SetupPossibleEnemies();
 
-        while (localTotalThreatScore > 0)
+        while (localTotalThreatScore > 0 && LiveEnemies.Count == 0)
         {
             if (GetCurrentThreatLevel() < waves[currentWave].allowedThreatLevel)
             {
@@ -62,9 +62,12 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(5);
         }
 
-        if (currentWave != waves.Count)
-        currentWave++;
-        waveRunning = false;
+        if (currentWave == waves.Count) { Debug.Log("End Game"); }
+        else {
+            currentWave++;
+            waveRunning = false;
+            // start shop
+        }
     }
 
     private IEnumerator SpawnEnemy(GameObject EnemyToSpawn)

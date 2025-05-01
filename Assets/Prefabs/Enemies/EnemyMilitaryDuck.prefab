@@ -528,6 +528,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9079581983469811090, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
   m_PrefabInstance: {fileID: 6328572712103360274}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3857751542536652944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7087231841152434050, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+  m_PrefabInstance: {fileID: 6328572712103360274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!58 &3862262333960744199 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 7082500271246367253, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
@@ -555,9 +560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e43036a623349a469bfa34ece3ca613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodySprite: {fileID: 7039608149329121435}
   animator: {fileID: 6992084525072450448}
   collider: {fileID: 3862262333960744199}
+  GFX: {fileID: 3857751542536652944}
+  bodySprite: {fileID: 7039608149329121435}
   sunglasses: {fileID: 6558147100545718802}
   shadow: {fileID: 8965282992867686008}
   threatValue: 4
