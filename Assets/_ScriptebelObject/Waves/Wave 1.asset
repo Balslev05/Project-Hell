@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyNormalDuckAllowed: 0
   enemyBuffDuckAllowed: 0
-  enemyPoliceDuckAllowed: 1
-  enemyMilitaryDuckAllowed: 0
+  enemyPoliceDuckAllowed: 0
+  enemyMilitaryDuckAllowed: 1
   enemyNormalDuckSpawnChance: 1
   enemyBuffDuckSpawnChance: 1
   enemyPoliceDuckSpawnChance: 1
-  enemyMilitaryDuckSpawnChance: 0
+  enemyMilitaryDuckSpawnChance: 1
   totalThreatScore: 100
   allowedThreatLevel: 1
   maxSpawnAmount: 1

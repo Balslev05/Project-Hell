@@ -1,6 +1,6 @@
 using UnityEngine;
 using Pathfinding;
-using DG.Tweening.Core.Easing;
+using System.Collections;
 
 public abstract class EnemyBase : MonoBehaviour
 {
@@ -8,6 +8,7 @@ public abstract class EnemyBase : MonoBehaviour
     public SpriteRenderer bodySprite;
     public Animator animator;
     public Collider2D collider;
+    public GameObject shadow;
     protected AIPath path;
 
     protected GameObject player;
@@ -52,6 +53,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Update()
     {
         Move();
+        FlipSprite(bodySprite);
 
         if (isDead) { return; }
     }
@@ -64,7 +66,6 @@ public abstract class EnemyBase : MonoBehaviour
         if (!isDead && distanceToPlayer > MoveToRange && !isAttacking && !playerAbilities.isGhosting) {
             isMoving = true; animator.SetBool("IsMoving", true);
             path.destination = player.transform.position;
-            FlipSprite();
         }
         else {
             isMoving = false; animator.SetBool("IsMoving", false);
@@ -72,10 +73,15 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    protected void FlipSprite()
+    protected virtual void FlipSprite(SpriteRenderer sprite)
     {
-        if (path.desiredVelocity.x >= 0.01f) { bodySprite.flipX = true; }
-        else if (path.desiredVelocity.x <= -0.01f) { bodySprite.flipX = false; }
+        if (isDead || playerAbilities.isGhosting || isAttacking) { return; }
+
+        if (player.transform.position.x > transform.position.x) { sprite.flipX = true; }
+        else if (player.transform.position.x < transform.position.x) { sprite.flipX = false; }
+
+        //if (path.desiredVelocity.x >= 0.01f) { sprite.flipX = true; }
+        //else if (path.desiredVelocity.x <= -0.01f) { sprite.flipX = false; }
     }
 
     public virtual void Die()
@@ -83,5 +89,6 @@ public abstract class EnemyBase : MonoBehaviour
         isDead = true;
         waveManager.LiveEnemies.Remove(this.gameObject);
         collider.enabled = false;
+        shadow.SetActive(false);
     }
 }

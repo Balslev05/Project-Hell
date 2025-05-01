@@ -400,9 +400,10 @@ MonoBehaviour:
   bodySprite: {fileID: 1954336827983338623}
   animator: {fileID: 104051811678453991}
   collider: {fileID: 5708039353893511651}
+  shadow: {fileID: 1926955978909751715}
   threatValue: 1
   currencyValue: 1
-  maxHealth: 40
+  maxHealth: 50
   currentHealth: 0
   moveSpeed: 3
   MoveToRange: 1.2

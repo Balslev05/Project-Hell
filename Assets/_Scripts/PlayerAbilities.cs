@@ -9,7 +9,6 @@ public class PlayerAbilities : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] private float ghostArmorCost;
-
     [HideInInspector] public bool isGhosting;
 
     void Start()

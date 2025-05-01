@@ -139,10 +139,10 @@ TextureImporter:
       name: 4_DuckMilitaryAnim_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 6
         y: 80
-        width: 13
-        height: 19
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,28 +153,6 @@ TextureImporter:
       bones: []
       spriteID: 11429784742e25cf0800000000000000
       internalID: -264900632274983919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4_DuckMilitaryAnim_2
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 80
-        width: 13
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b77010cac6ccdca60800000000000000
-      internalID: 7696032105360328571
       vertices: []
       indices: 
       edges: []
@@ -205,10 +183,10 @@ TextureImporter:
       name: 4_DuckMilitaryAnim_4
       rect:
         serializedVersion: 2
-        x: 8
+        x: 6
         y: 54
-        width: 13
-        height: 19
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +249,10 @@ TextureImporter:
       name: 4_DuckMilitaryAnim_8
       rect:
         serializedVersion: 2
-        x: 8
+        x: 6
         y: 27
-        width: 13
-        height: 19
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +293,10 @@ TextureImporter:
       name: 4_DuckMilitaryAnim_11
       rect:
         serializedVersion: 2
-        x: 8
+        x: 6
         y: 3
-        width: 13
-        height: 18
+        width: 15
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

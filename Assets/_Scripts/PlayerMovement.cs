@@ -74,11 +74,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void LookAtMouse()
+    /*private void LookAtMouse()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.up = mousePosition - new Vector2(transform.position.x, transform.position.y);
-    }
+    }*/
 
     public void GetPlayerInput()
     {

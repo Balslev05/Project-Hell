@@ -22,7 +22,8 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        gunManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GunManager>();
+        gunManager = GetComponent<GunManager>();
+
         currentHealth = maxHealth;
         currentArmor = maxArmor;
         healthBar.SetMaxHealth(maxHealth);
