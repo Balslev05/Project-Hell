@@ -8,6 +8,7 @@ public abstract class EnemyBase : MonoBehaviour
     public SpriteRenderer bodySprite;
     public Animator animator;
     public Collider2D collider;
+    public GameObject sunglasses;
     public GameObject shadow;
     protected AIPath path;
 
@@ -21,11 +22,11 @@ public abstract class EnemyBase : MonoBehaviour
     [Header("Stats")]
     public int threatValue;
     public int currencyValue;
-    [SerializeField] protected int maxHealth;
+    [SerializeField] public int maxHealth;
     [HideInInspector] public float currentHealth;
-    [SerializeField] protected float moveSpeed;
+    [SerializeField] public float moveSpeed;
     [SerializeField] protected float MoveToRange;
-    public int damage;
+    [SerializeField] public int damage;
     //[SerializeField] public int DeathVersions;
 
     protected float distanceToPlayer;
@@ -34,6 +35,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected bool inAttackRange;
     protected bool canAttack = true;
     protected bool isAttacking = false;
+    [HideInInspector] public bool isBuffed;
 
     protected virtual void Start()
     {
@@ -82,6 +84,12 @@ public abstract class EnemyBase : MonoBehaviour
 
         //if (path.desiredVelocity.x >= 0.01f) { sprite.flipX = true; }
         //else if (path.desiredVelocity.x <= -0.01f) { sprite.flipX = false; }
+    }
+
+    public void ActivateSunglasses(bool activate)
+    {
+        if (activate) { sunglasses.SetActive(true); }
+        else if (!activate) {  sunglasses.SetActive(false); }
     }
 
     public virtual void Die()

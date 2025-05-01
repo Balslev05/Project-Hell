@@ -8,11 +8,13 @@ public class Wave : ScriptableObject
     public bool enemyBuffDuckAllowed;
     public bool enemyPoliceDuckAllowed;
     public bool enemyMilitaryDuckAllowed;
+    public bool enemyCoolGooseAllowed;
     
     public int enemyNormalDuckSpawnChance;
     public int enemyBuffDuckSpawnChance;
     public int enemyPoliceDuckSpawnChance;
     public int enemyMilitaryDuckSpawnChance;
+    public int enemyCoolGooseSpawnChance;
 
     [Header("Variables")]
     public int totalThreatScore;

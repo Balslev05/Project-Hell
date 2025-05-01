@@ -3,18 +3,22 @@ using UnityEngine;
 public class EnemyCoolGoose : EnemyBase
 {
     [Header("CoolGooseSpecific")]
-    [SerializeField] private GameObject attackHitbox;
-    [SerializeField] private float HealthBuff = 2f;
-    [SerializeField] private float DamageBuff = 2f;
-    [SerializeField] private float SpeedBuff = 1.5f;
+    [SerializeField] private GameObject buffAura;
+    [SerializeField] private float range;
+    public float healthBuff = 2f;
+    public float damageBuff = 2f;
+    public float speedBuff = 1.5f;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Start()
     {
-        //Buff enemies
+        base.Start();
+        buffAura.transform.localScale = new Vector3 (range, range, 1);
+        buffAura.SetActive(true);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void Update()
     {
-        //Debuff enemies
+        if (isDead) { buffAura.SetActive(false); }
+        base.Update();
     }
 }
