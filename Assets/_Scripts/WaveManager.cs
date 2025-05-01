@@ -10,6 +10,7 @@ public class WaveManager : MonoBehaviour
     public GameObject enemyBuffDuckPrefab;
     public GameObject enemyPoliceDuckPrefab;
     public GameObject enemyMilitaryDuckPrefab;
+    public GameObject enemyCoolGoosePrefab;
     
     public GameObject SpawnMarkerPrefab;
 
@@ -102,6 +103,11 @@ public class WaveManager : MonoBehaviour
         if (waves[currentWave].enemyMilitaryDuckAllowed) {
             for (int i = 0; i < waves[currentWave].enemyMilitaryDuckSpawnChance; i++) {
                 PossibleEnemies.Add(enemyMilitaryDuckPrefab); }
+        }
+
+        if (waves[currentWave].enemyCoolGooseAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyCoolGooseSpawnChance; i++) {
+                PossibleEnemies.Add(enemyCoolGoosePrefab); }
         }
     }
 

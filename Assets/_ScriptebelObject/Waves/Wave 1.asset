@@ -16,12 +16,14 @@ MonoBehaviour:
   enemyBuffDuckAllowed: 0
   enemyPoliceDuckAllowed: 0
   enemyMilitaryDuckAllowed: 1
+  enemyCoolGooseAllowed: 1
   enemyNormalDuckSpawnChance: 1
   enemyBuffDuckSpawnChance: 1
   enemyPoliceDuckSpawnChance: 1
   enemyMilitaryDuckSpawnChance: 1
+  enemyCoolGooseSpawnChance: 1
   totalThreatScore: 100
-  allowedThreatLevel: 1
-  maxSpawnAmount: 1
+  allowedThreatLevel: 40
+  maxSpawnAmount: 4
   minSpawnAmount: 1
   waveCurrencyValue: 0

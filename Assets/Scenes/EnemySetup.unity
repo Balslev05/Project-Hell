@@ -34259,6 +34259,7 @@ MonoBehaviour:
   enemyBuffDuckPrefab: {fileID: 1432910938364240605, guid: 2b2b5b8785ecaab42bdf10aec6b12e44, type: 3}
   enemyPoliceDuckPrefab: {fileID: 2260861580196408629, guid: 7138c53e424e0a942b18503c0f29b702, type: 3}
   enemyMilitaryDuckPrefab: {fileID: 6225666379509061222, guid: 45e37ebd138d86d4ebd0c74e62c35b8b, type: 3}
+  enemyCoolGoosePrefab: {fileID: 3226976724082678402, guid: 311c2670e834fdb4ab0f37f806f6f000, type: 3}
   SpawnMarkerPrefab: {fileID: 6177823870520763783, guid: c06cc4b28cd323c44a80df4cf5818906, type: 3}
   waves:
   - {fileID: 11400000, guid: 240048e480b7c87428ed005750889db4, type: 2}

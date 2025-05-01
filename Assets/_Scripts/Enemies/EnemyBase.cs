@@ -21,11 +21,11 @@ public abstract class EnemyBase : MonoBehaviour
     [Header("Stats")]
     public int threatValue;
     public int currencyValue;
-    [SerializeField] protected int maxHealth;
+    [SerializeField] public int maxHealth;
     [HideInInspector] public float currentHealth;
-    [SerializeField] protected float moveSpeed;
+    [SerializeField] public float moveSpeed;
     [SerializeField] protected float MoveToRange;
-    public int damage;
+    [SerializeField] public int damage;
     //[SerializeField] public int DeathVersions;
 
     protected float distanceToPlayer;
@@ -34,6 +34,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected bool inAttackRange;
     protected bool canAttack = true;
     protected bool isAttacking = false;
+    [HideInInspector] public bool isBuffed;
 
     protected virtual void Start()
     {
