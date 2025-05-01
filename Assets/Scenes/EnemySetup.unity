@@ -33942,6 +33942,7 @@ MonoBehaviour:
   currentGun: {fileID: 0}
   MaxGuns: 4
   GunList: []
+  Maxammo: 100
 --- !u!114 &1501239620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33990,6 +33991,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1618330381}
   armorBar: {fileID: 1295761748}
+  BaseDamage: 0
+  BaseSpeed: 0
   maxHealth: 100
   currentHealth: 0
   maxArmor: 100
@@ -34261,7 +34264,7 @@ MonoBehaviour:
   enemyMilitaryDuckPrefab: {fileID: 6225666379509061222, guid: 45e37ebd138d86d4ebd0c74e62c35b8b, type: 3}
   enemyCoolGoosePrefab: {fileID: 3226976724082678402, guid: 311c2670e834fdb4ab0f37f806f6f000, type: 3}
   SpawnMarkerPrefab: {fileID: 6177823870520763783, guid: c06cc4b28cd323c44a80df4cf5818906, type: 3}
-  currencyManager: {fileID: 0}
+  currencyManager: {fileID: 1638671377}
   waves:
   - {fileID: 11400000, guid: 240048e480b7c87428ed005750889db4, type: 2}
   - {fileID: 11400000, guid: c269db1a1e42100408f4d75a1353922e, type: 2}

@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d81bb4241d0f449bf9fe0bd6e57a03, type: 3}
   m_Name: Wave Test
   m_EditorClassIdentifier: 
-  enemyNormalDuckAllowed: 1
+  enemyNormalDuckAllowed: 0
   enemyBuffDuckAllowed: 0
-  enemyPoliceDuckAllowed: 0
-  enemyMilitaryDuckAllowed: 0
+  enemyPoliceDuckAllowed: 1
+  enemyMilitaryDuckAllowed: 1
   enemyCoolGooseAllowed: 0
   enemyNormalDuckSpawnChance: 1
-  enemyBuffDuckSpawnChance: 0
-  enemyPoliceDuckSpawnChance: 0
-  enemyMilitaryDuckSpawnChance: 0
-  enemyCoolGooseSpawnChance: 0
+  enemyBuffDuckSpawnChance: 1
+  enemyPoliceDuckSpawnChance: 1
+  enemyMilitaryDuckSpawnChance: 1
+  enemyCoolGooseSpawnChance: 1
   totalThreatScore: 100
-  allowedThreatLevel: 20
+  allowedThreatLevel: 40
   maxSpawnAmount: 4
   minSpawnAmount: 2
   waveCurrencyValue: 20
