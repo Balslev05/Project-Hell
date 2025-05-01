@@ -33,12 +33,12 @@ public class HealthMuliplayer : Effect
         RandomizedHealth = Random.Range(min,max);
         if (randomize)
         {
-            return "Health Muliplayer " + this.RandomizedHealth.ToString("F2");
+            return "Health Multiplier: X" + this.RandomizedHealth.ToString("F1");
 
         }
         else
         {
-            return "Health Muliplayer " + healthMuliplayer;
+            return "Health Multiplier: X" + healthMuliplayer;
         }
     }
 }

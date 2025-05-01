@@ -23,11 +23,11 @@ public class DamageBuff : Effect
         randomDamage = Random.Range(min,max);
         if (randomize)
         {
-            return "Damage Buff " + randomDamage.ToString("F1");;
+            return "Damage Multiplier: X" + randomDamage.ToString("F1");;
         }
         else
         {
-            return "Damage Buff " + damageBuff;
+            return "Damage Buff: X" + damageBuff;
         }
     }
 }
