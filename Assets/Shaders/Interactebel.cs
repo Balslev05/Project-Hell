@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 
 [RequireComponent(typeof(RectTransform))]
-public class InteractableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InteractableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public InventoryContainer container;
     public Vector3 originalScale;
@@ -57,4 +57,10 @@ public class InteractableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         rectTransform.DOAnchorPos(targetPos, 0.25f).SetEase(Ease.OutExpo);
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        container.SelectGun(this.gameObject);
+    }
+    
 }

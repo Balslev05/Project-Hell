@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using EZCameraShake;
-
 public class GunManager : MonoBehaviour
 {
     [Header("Assignments")]
@@ -9,6 +7,7 @@ public class GunManager : MonoBehaviour
     public SpriteRenderer WeaponHolder;
     public GameObject GunDrop;
     [SerializeField] private Ui_Ammo UIAmmoHandler;
+    private PlayerStats playerStats;
     
     [Header("Gun System")]
     public Gun currentGun;
@@ -19,13 +18,12 @@ public class GunManager : MonoBehaviour
     private int currentGunIndex = 0;
 
     public enum AmmoType { Light, Medium, Heavy, Explosive, Shell}
-
     public int Maxammo = 100;
-
     public Dictionary<AmmoType, int> AmmoInventory = new Dictionary<AmmoType, int>();
     
     private void Awake()
     {
+        playerStats = GetComponent<PlayerStats>();
         foreach (AmmoType type in System.Enum.GetValues(typeof(AmmoType)))
         {
             AmmoInventory[type] = 0; 
@@ -100,7 +98,7 @@ public class GunManager : MonoBehaviour
             if (AmmoInventory[ammoType] > 0)
             {
                 Fire(shootPoint);
-                CameraShaker.Instance.ShakeOnce(currentGun.CameraShakeStreangth, currentGun.CameraShakeStreangth, 0.25f, 0.25f);
+                CameraShake.Shake(0.10f, currentGun.CameraShakeStreangth);
                 AmmoInventory[ammoType]--;
                 timeSinceLastShot = 0f;
                 UIAmmoHandler.UpdateUI(currentGun);
@@ -124,7 +122,7 @@ public class GunManager : MonoBehaviour
             float angleOffset = Random.Range(-currentGun.spreadAngle / 2f, currentGun.spreadAngle / 2f);
             Quaternion rotation = Quaternion.Euler(0, 0, angleOffset);
             GameObject bullet = Instantiate(currentGun.projectilePrefab, firePoint.position, firePoint.rotation * rotation);
-            bullet.GetComponent<bullet>().SetStats(currentGun.BaseDamage, RollForCritical());
+            bullet.GetComponent<bullet>().SetStats(currentGun.BaseDamage * playerStats.BaseDamage, RollForCritical());
         }
     }
 

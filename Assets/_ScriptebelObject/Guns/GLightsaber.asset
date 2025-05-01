@@ -15,16 +15,15 @@ MonoBehaviour:
   gunname: GoodLightsaber
   GunSprite: {fileID: -1382401937, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: 38bc2308246630c4c881eae1209d4277, type: 3}
-  price: 4
+  price: -24
   tags:
   - Woa
-  BaseDamage: 10
+  BaseDamage: 20
   criticalchange: 1
   criticalMultiplayer: 2
   HoldToFire: 1
   timeBetweenShots: 0.7
   bulletCount: 3
   spreadAngle: 60
-  damage: 14
   ammoType: 0
-  CameraShakeStreangth: 0.5
+  CameraShakeStreangth: 0.25

@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52976a4c05679fb48ac51ca99cce5b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopUpText: {fileID: 0}
+  PopUpText: {fileID: 4587775936357507810}
   Crit:
     serializedVersion: 2
     key0: {r: 0.72156864, g: 0.07847144, b: 0, a: 1}

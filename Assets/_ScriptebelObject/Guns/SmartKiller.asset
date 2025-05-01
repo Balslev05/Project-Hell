@@ -15,16 +15,15 @@ MonoBehaviour:
   gunname: SmartKiller
   GunSprite: {fileID: 2096401156, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: d1ffba77a19c00043af71b2c62191bee, type: 3}
-  price: 4
+  price: -6
   tags:
   - Woa
-  BaseDamage: 10
+  BaseDamage: 25
   criticalchange: 1
   criticalMultiplayer: 2
   HoldToFire: 1
   timeBetweenShots: 0.7
   bulletCount: 1
   spreadAngle: 30
-  damage: 14
   ammoType: 4
   CameraShakeStreangth: 0.5

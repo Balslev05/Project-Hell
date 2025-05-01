@@ -103,14 +103,4 @@ public class PlayerStats : MonoBehaviour
                 item.effects[i].Apply(this);
             }
     }
-   /*  public void ApplyItems()
-    {
-        for (int i = 0; i < Items.Count; i++)
-        {
-            for (int j = 0; j < Items[i].effects.Count; j++)
-            {
-                Items[i].effects[j].Apply(this);
-            }
-        }
-    } */
 }

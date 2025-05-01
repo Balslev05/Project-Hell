@@ -18,13 +18,12 @@ MonoBehaviour:
   price: 31
   tags:
   - Woa
-  BaseDamage: 10
-  criticalchange: 7
-  criticalMultiplayer: 2
+  BaseDamage: 50
+  criticalchange: 50
+  criticalMultiplayer: 3
   HoldToFire: 0
   timeBetweenShots: 1
   bulletCount: 1
   spreadAngle: 0
-  damage: 10
   ammoType: 3
   CameraShakeStreangth: 0.5

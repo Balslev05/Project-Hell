@@ -1321,6 +1321,7 @@ MonoBehaviour:
   randomCritChange: 0
   randomCritDamage: 0
   randomFireRate: 0
+  currencyManager: {fileID: 0}
 --- !u!114 &121431359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2985,6 +2986,7 @@ MonoBehaviour:
   randomCritChange: 0
   randomCritDamage: 0
   randomFireRate: 0
+  currencyManager: {fileID: 0}
 --- !u!114 &264598642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4304,13 +4306,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 608676174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23665ab759215e84a8b3d94cfcf3035f, type: 3}
+  m_Script: {fileID: 11500000, guid: d45029da440321d4e8445cfd1401c53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
-  DefaultRotInfluence: {x: 1, y: 1, z: 1}
-  RestPositionOffset: {x: 0, y: 0, z: 0}
-  RestRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &611063829
 GameObject:
   m_ObjectHideFlags: 0
@@ -6909,6 +6907,7 @@ MonoBehaviour:
   randomCritChange: 0
   randomCritDamage: 0
   randomFireRate: 0
+  currencyManager: {fileID: 0}
 --- !u!114 &926598003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43139,8 +43138,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 548778728}
   - {fileID: 199520740}
+  - {fileID: 548778728}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1501239619
@@ -43161,7 +43160,8 @@ MonoBehaviour:
   UIAmmoHandler: {fileID: 1638484540}
   currentGun: {fileID: 0}
   MaxGuns: 4
-  GunList: []
+  GunList:
+  - {fileID: 11400000, guid: b07e0b915e76da146b91f833e3a8f783, type: 2}
   Maxammo: 100
 --- !u!114 &1501239620
 MonoBehaviour:
@@ -43211,8 +43211,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1618330381}
   armorBar: {fileID: 1295761748}
-  BaseDamage: 0
-  BaseSpeed: 0
+  BaseDamage: 1
+  BaseSpeed: 1
   maxHealth: 100
   currentHealth: 0
   maxArmor: 100
@@ -44149,6 +44149,7 @@ MonoBehaviour:
   enemyBuffDuckPrefab: {fileID: 1432910938364240605, guid: 2b2b5b8785ecaab42bdf10aec6b12e44, type: 3}
   enemyPoliceDuckPrefab: {fileID: 2260861580196408629, guid: 7138c53e424e0a942b18503c0f29b702, type: 3}
   enemyMilitaryDuckPrefab: {fileID: 6225666379509061222, guid: 45e37ebd138d86d4ebd0c74e62c35b8b, type: 3}
+  enemyCoolGoosePrefab: {fileID: 3226976724082678402, guid: 311c2670e834fdb4ab0f37f806f6f000, type: 3}
   SpawnMarkerPrefab: {fileID: 6177823870520763783, guid: c06cc4b28cd323c44a80df4cf5818906, type: 3}
   waves:
   - {fileID: 11400000, guid: 240048e480b7c87428ed005750889db4, type: 2}

@@ -40,12 +40,14 @@ public class ShopCard : MonoBehaviour
     private GunManager gunManager;
     private PlayerStats playerStats;
     private Scrapper scrapper; 
+    [SerializeField] private CurrencyManager currencyManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         gunManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GunManager>();
         scrapper = GameObject.FindGameObjectWithTag("Scrapper").GetComponent<Scrapper>();
+        currencyManager = GameObject.Find("CurrencyManager").GetComponent<CurrencyManager>(); 
     }
 
     public void SetCard(Gun gun)
@@ -80,6 +82,7 @@ public class ShopCard : MonoBehaviour
             }
             gunManager.AddGun(current_Gun);
             Debug.Log("Bought " + current_Gun.gunname);
+            currencyManager.LoseMoney(current_Gun.price);
             this.gameObject.SetActive(false);
             
         }
@@ -87,6 +90,7 @@ public class ShopCard : MonoBehaviour
         {
             playerStats.Applyitem(current_Item);
             this.gameObject.SetActive(false);
+            currencyManager.LoseMoney(current_Item.price);
         }   
     }
     public void GiveToScrapper()
@@ -103,7 +107,7 @@ public class ShopCard : MonoBehaviour
     } */
     public void SetGunStats()
     {
-        Text_1.text = "Damage: " + current_Gun.damage.ToString();
+        Text_1.text = "Damage: " + current_Gun.BaseDamage.ToString();
         Text_2.text = "Crit Change: " + current_Gun.criticalchange.ToString();
         Text_3.text = "Crit Damage: " + current_Gun.criticalMultiplayer.ToString();
         Text_4.text = "Fire Rate: " + current_Gun.timeBetweenShots.ToString();

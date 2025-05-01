@@ -20,14 +20,12 @@ MonoBehaviour:
   - Medium Ammo
   - Hold to fire
   - 'BC: 1'
-  - 
-  BaseDamage: 12
+  BaseDamage: 20
   criticalchange: 6
   criticalMultiplayer: 7.5
   HoldToFire: 1
   timeBetweenShots: 0.2
   bulletCount: 1
   spreadAngle: 10
-  damage: 10
   ammoType: 0
   CameraShakeStreangth: 0.5

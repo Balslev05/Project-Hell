@@ -102,6 +102,7 @@ public class bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
+            Debug.Log("hit" + bulletDamage);
             other.gameObject.GetComponent<Target>().TakeDamage(bulletDamage,criticalMultiplayer);
             Destroy(gameObject);
         }
