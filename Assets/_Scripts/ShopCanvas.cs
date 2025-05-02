@@ -18,6 +18,10 @@ public class ShopCanvas : MonoBehaviour
     public List<Transform> ShopBoxes = new List<Transform>();
     public int RerollCost = 1;
     public TMP_Text RerollCostText;
+
+    public TMP_Text CurrentCurrency;
+    [SerializeField] private CurrencyManager currencyManager;
+
     public GameObject TabObjects;
     public GameObject RerollButton;
     public GameObject BoxContainer;
@@ -25,8 +29,12 @@ public class ShopCanvas : MonoBehaviour
     private int StartBox_XPos = -175;
     private int OffSet = 150;
 
+    public void Awake()
+    {
+      StartShop();
+    }
 
-    void Start()
+    void StartShop()
     {
       RerollCostText.text = "Reroll:" + RerollCost.ToString();
       RerollButton.SetActive(false);
@@ -42,6 +50,8 @@ public class ShopCanvas : MonoBehaviour
     
     void Update()
     {
+      CurrentCurrency.text = "Currency: "+currencyManager.currency.ToString();
+
       if (Input.GetKeyDown(KeyCode.Escape))
       {
         StartCoroutine(HideShop());
