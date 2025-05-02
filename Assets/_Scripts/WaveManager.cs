@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ public class WaveManager : MonoBehaviour
     public GameObject SpawnMarkerPrefab;
 
     [Header("Components")]
+    [SerializeField] private TMP_Text WaveNumberText;
+    [SerializeField] private TMP_Text ThreatLevelText;
     [SerializeField] private CurrencyManager currencyManager;
     [SerializeField] private List<Wave> waves = new List<Wave>();
     [SerializeField] private List<GameObject> PossibleEnemies = new List<GameObject>();
@@ -46,6 +49,7 @@ public class WaveManager : MonoBehaviour
     {
         waveRunning = true;
         localTotalThreatScore = waves[currentWave].totalThreatScore;
+        UpdateText();
         SetupPossibleEnemies();
 
         while (localTotalThreatScore > 0 || LiveEnemies.Count > 0)
@@ -57,6 +61,8 @@ public class WaveManager : MonoBehaviour
                 for (int i = 0; i < spawnAmount; i++)
                 {
                     StartCoroutine(SpawnEnemy(PossibleEnemies[Random.Range(0, PossibleEnemies.Count)]));
+                    UpdateText();
+                    yield return new WaitForSeconds(0.1f);
                 }
             }
             yield return new WaitForSeconds(5);
@@ -144,5 +150,11 @@ public class WaveManager : MonoBehaviour
         else {
             return Vector2.zero;
         }
+    }
+
+    private void UpdateText()
+    {
+        WaveNumberText.text = $"{currentWave.ToString()} / {waves.Count}";
+        ThreatLevelText.text = $"{localTotalThreatScore.ToString()} / {currentThreatLevel}";
     }
 }
