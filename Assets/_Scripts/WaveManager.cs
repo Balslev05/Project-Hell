@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
     public GameObject enemyPoliceDuckPrefab;
     public GameObject enemyMilitaryDuckPrefab;
     public GameObject enemyCoolGoosePrefab;
-    
+
     public GameObject SpawnMarkerPrefab;
 
     [Header("Components")]
@@ -55,7 +55,7 @@ public class WaveManager : MonoBehaviour
             if (GetCurrentThreatLevel() < waves[currentWave].allowedThreatLevel)
             {
                 int spawnAmount = Random.Range(waves[currentWave].minSpawnAmount, waves[currentWave].maxSpawnAmount + 1);
-                
+
                 for (int i = 0; i < spawnAmount; i++)
                 {
                     StartCoroutine(SpawnEnemy(PossibleEnemies[Random.Range(0, PossibleEnemies.Count)]));
@@ -65,26 +65,19 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(5);
         }
 
+        while (LiveEnemies.Count > 0) { yield return new WaitForSeconds(5); }
         EndWave();
     }
 
     private void EndWave()
     {
-        if (LiveEnemies.Count > 0)
-        {
-            EndWave();
-            //Show UI Enemies Remaining
-        }
+        currencyManager.GetMoney(waves[currentWave].waveCurrencyValue);
+        if (currentWave == waves.Count) { Debug.Log("End Game"); }
         else
         {
-            currencyManager.GetMoney(waves[currentWave].waveCurrencyValue);
-            if (currentWave == waves.Count) { Debug.Log("End Game"); }
-            else
-            {
-                waveRunning = false;
-                currentWave++;
-                shopCanvas.StartShop();
-            }
+            waveRunning = false;
+            currentWave++;
+            shopCanvas.StartShop();
         }
     }
 
@@ -97,7 +90,7 @@ public class WaveManager : MonoBehaviour
 
         Destroy(spawnMarker);
         GameObject spawnedEnemy = Instantiate(EnemyToSpawn, SpawnPoint, Quaternion.identity);
-        
+
         LiveEnemies.Add(spawnedEnemy);
         localTotalThreatScore -= spawnedEnemy.GetComponent<EnemyBase>().threatValue;
         UpdateText();
@@ -107,29 +100,44 @@ public class WaveManager : MonoBehaviour
     {
         if (PossibleEnemies.Count != 0) { PossibleEnemies.Clear(); }
 
-        if (waves[currentWave].enemyNormalDuckAllowed) {
-            for (int i = 0; i < waves[currentWave].enemyNormalDuckSpawnChance; i++) {
-                PossibleEnemies.Add(enemyNormalDuckPrefab); }
+        if (waves[currentWave].enemyNormalDuckAllowed)
+        {
+            for (int i = 0; i < waves[currentWave].enemyNormalDuckSpawnChance; i++)
+            {
+                PossibleEnemies.Add(enemyNormalDuckPrefab);
+            }
         }
 
-        if (waves[currentWave].enemyBuffDuckAllowed) {
-            for (int i = 0; i < waves[currentWave].enemyBuffDuckSpawnChance; i++) {
-                PossibleEnemies.Add(enemyBuffDuckPrefab); }
+        if (waves[currentWave].enemyBuffDuckAllowed)
+        {
+            for (int i = 0; i < waves[currentWave].enemyBuffDuckSpawnChance; i++)
+            {
+                PossibleEnemies.Add(enemyBuffDuckPrefab);
+            }
         }
 
-        if (waves[currentWave].enemyPoliceDuckAllowed) {
-            for (int i = 0; i < waves[currentWave].enemyPoliceDuckSpawnChance; i++) {
-                PossibleEnemies.Add(enemyPoliceDuckPrefab); }
+        if (waves[currentWave].enemyPoliceDuckAllowed)
+        {
+            for (int i = 0; i < waves[currentWave].enemyPoliceDuckSpawnChance; i++)
+            {
+                PossibleEnemies.Add(enemyPoliceDuckPrefab);
+            }
         }
 
-        if (waves[currentWave].enemyMilitaryDuckAllowed) {
-            for (int i = 0; i < waves[currentWave].enemyMilitaryDuckSpawnChance; i++) {
-                PossibleEnemies.Add(enemyMilitaryDuckPrefab); }
+        if (waves[currentWave].enemyMilitaryDuckAllowed)
+        {
+            for (int i = 0; i < waves[currentWave].enemyMilitaryDuckSpawnChance; i++)
+            {
+                PossibleEnemies.Add(enemyMilitaryDuckPrefab);
+            }
         }
 
-        if (waves[currentWave].enemyCoolGooseAllowed) {
-            for (int i = 0; i < waves[currentWave].enemyCoolGooseSpawnChance; i++) {
-                PossibleEnemies.Add(enemyCoolGoosePrefab); }
+        if (waves[currentWave].enemyCoolGooseAllowed)
+        {
+            for (int i = 0; i < waves[currentWave].enemyCoolGooseSpawnChance; i++)
+            {
+                PossibleEnemies.Add(enemyCoolGoosePrefab);
+            }
         }
     }
 
@@ -151,14 +159,16 @@ public class WaveManager : MonoBehaviour
 
     private Vector2 FindRadnomPointInCollider()
     {
-        if (spawnArea) {
+        if (spawnArea)
+        {
             float RandomX = Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x);
             float RandomY = Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y);
 
             Vector2 SpawnPoint = new Vector2(RandomX, RandomY);
             return SpawnPoint;
         }
-        else {
+        else
+        {
             return Vector2.zero;
         }
     }
@@ -166,6 +176,6 @@ public class WaveManager : MonoBehaviour
     private void UpdateText()
     {
         WaveNumberText.text = $"Wave: {(currentWave + 1)} / {waves.Count}";
-        ThreatLevelText.text = $"Threat Level: {waves[currentWave].totalThreatScore} / {localTotalThreatScore}";
+        ThreatLevelText.text = $"Threat Level: {localTotalThreatScore} / {waves[currentWave].totalThreatScore}";
     }
 }

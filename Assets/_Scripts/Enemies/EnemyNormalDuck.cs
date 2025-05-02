@@ -43,4 +43,16 @@ public class EnemyNormalDuck : EnemyBase
         Vector2 playerPosition = player.transform.position;
         attackHitbox.transform.up = playerPosition - new Vector2(transform.position.x, transform.position.y);
     }
+
+    public void ActivateHitbox(bool activate)
+    {
+        if (activate) { attackHitbox.SetActive(true); }
+        else if (!activate) { attackHitbox.SetActive(false); }
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        ActivateHitbox(false);
+    }
 }
