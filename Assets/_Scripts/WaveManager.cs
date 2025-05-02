@@ -19,6 +19,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private TMP_Text WaveNumberText;
     [SerializeField] private TMP_Text ThreatLevelText;
     [SerializeField] private CurrencyManager currencyManager;
+    [SerializeField] private ShopCanvas shopCanvas;
     [SerializeField] private List<Wave> waves = new List<Wave>();
     [SerializeField] private List<GameObject> PossibleEnemies = new List<GameObject>();
     [SerializeField] public List<GameObject> LiveEnemies = new List<GameObject>();
@@ -28,18 +29,15 @@ public class WaveManager : MonoBehaviour
     private int currentThreatLevel;
     private bool waveRunning = false;
 
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
             OnClickStartWave();
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            StartCoroutine(SpawnEnemy(enemyNormalDuckPrefab));
-        }
     }
+
     public void OnClickStartWave()
     {
         if (!waveRunning) { StartCoroutine(PlayWave()); }
@@ -52,7 +50,7 @@ public class WaveManager : MonoBehaviour
         UpdateText();
         SetupPossibleEnemies();
 
-        while (localTotalThreatScore > 0 || LiveEnemies.Count > 0)
+        while (localTotalThreatScore > 0)
         {
             if (GetCurrentThreatLevel() < waves[currentWave].allowedThreatLevel)
             {
@@ -61,20 +59,31 @@ public class WaveManager : MonoBehaviour
                 for (int i = 0; i < spawnAmount; i++)
                 {
                     StartCoroutine(SpawnEnemy(PossibleEnemies[Random.Range(0, PossibleEnemies.Count)]));
-                    UpdateText();
                     yield return new WaitForSeconds(0.1f);
                 }
             }
             yield return new WaitForSeconds(5);
         }
 
-        currencyManager.GetMoney(waves[currentWave].waveCurrencyValue);
+        EndWave();
+    }
 
-        if (currentWave == waves.Count) { Debug.Log("End Game"); }
-        else {
-            currentWave++;
-            waveRunning = false;
-            // start shop
+    private void EndWave()
+    {
+        if (LiveEnemies.Count > 0)
+        {
+            EndWave();
+            //Show UI Enemies Remaining
+        }
+        else
+        {
+            currencyManager.GetMoney(waves[currentWave].waveCurrencyValue);
+            if (currentWave == waves.Count) { Debug.Log("End Game"); }
+            else
+            {
+                waveRunning = false;
+                currentWave++;
+            }
         }
     }
 
@@ -90,6 +99,7 @@ public class WaveManager : MonoBehaviour
         
         LiveEnemies.Add(spawnedEnemy);
         localTotalThreatScore -= spawnedEnemy.GetComponent<EnemyBase>().threatValue;
+        UpdateText();
     }
 
     private void SetupPossibleEnemies()
@@ -134,7 +144,7 @@ public class WaveManager : MonoBehaviour
                 currentThreatLevel += enemy.GetComponent<EnemyBase>().threatValue;
             }
         }
-
+        UpdateText();
         return currentThreatLevel;
     }
 
@@ -154,7 +164,7 @@ public class WaveManager : MonoBehaviour
 
     private void UpdateText()
     {
-        WaveNumberText.text = $"{currentWave.ToString()} / {waves.Count}";
-        ThreatLevelText.text = $"{localTotalThreatScore.ToString()} / {currentThreatLevel}";
+        WaveNumberText.text = $"Wave: {(currentWave + 1)} / {waves.Count}";
+        ThreatLevelText.text = $"Threat Level: {waves[currentWave].totalThreatScore} / {localTotalThreatScore}";
     }
 }

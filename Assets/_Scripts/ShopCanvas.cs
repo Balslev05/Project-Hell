@@ -37,6 +37,7 @@ public class ShopCanvas : MonoBehaviour
         child.GetComponent<RectTransform>().anchoredPosition = new Vector2(-3000, 0.5f);
       }
       StartCoroutine(ShowShop());
+      
     }
     
     void Update()
