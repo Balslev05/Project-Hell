@@ -12,10 +12,11 @@ public class DamageBuff : Effect
 
     public override void Apply(PlayerStats player)
     {
-        foreach (Gun gun in player.gunManager.GunList)
+        if (randomize)
         {
-            gun.damage = Mathf.CeilToInt(gun.damage * damageBuff);
+            randomDamage = Random.Range(min, max);
         }
+        player.BaseDamage = Mathf.CeilToInt(player.BaseDamage * damageBuff);
     }
 
     public override string Descreption()
@@ -23,11 +24,11 @@ public class DamageBuff : Effect
         randomDamage = Random.Range(min,max);
         if (randomize)
         {
-            return "Damage Buff " + randomDamage.ToString("F1");;
+            return "Damage Multiplier: X" + randomDamage.ToString("F1");;
         }
         else
         {
-            return "Damage Buff " + damageBuff;
+            return "Damage Buff: X" + damageBuff;
         }
     }
 }

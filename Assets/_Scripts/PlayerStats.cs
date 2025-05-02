@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
     public int maxArmor = 100;
     public float currentArmor;
     public bool selfHarm = false;
+    public float ArmorCostMultiplayer = 1f;
 
     [Header("Inventory")]
     List<Item> Items = new List<Item>();
@@ -75,14 +76,14 @@ public class PlayerStats : MonoBehaviour
 
     public void HealHealth(int amount)
     {
-        currentHealth += amount;
+        currentHealth += amount;;
         if (currentHealth > maxHealth) { currentHealth = maxHealth; }
         healthBar.SetCurrentHealth(Mathf.FloorToInt(currentHealth));
     }
 
     public void LoseArmor(float amount)
     {
-        currentArmor -= amount;
+        currentArmor -= amount * ArmorCostMultiplayer;
         if (currentArmor < 0) { currentArmor = 0; }
         armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
     }
@@ -102,14 +103,4 @@ public class PlayerStats : MonoBehaviour
                 item.effects[i].Apply(this);
             }
     }
-   /*  public void ApplyItems()
-    {
-        for (int i = 0; i < Items.Count; i++)
-        {
-            for (int j = 0; j < Items[i].effects.Count; j++)
-            {
-                Items[i].effects[j].Apply(this);
-            }
-        }
-    } */
 }

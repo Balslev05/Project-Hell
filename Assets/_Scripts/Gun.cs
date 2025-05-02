@@ -18,7 +18,6 @@ public class Gun : ScriptableObject
     public float timeBetweenShots;
     public int bulletCount = 1;    
     public float spreadAngle = 0f; 
-    public int damage = 10;    
     public AmmoType ammoType;
     public enum AmmoType
     {
@@ -37,7 +36,7 @@ public class Gun : ScriptableObject
     public int GunSetup()
     {
         stats = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerStats>();
-        price = BaseDamage + criticalchange + (int)criticalMultiplayer + (int)timeBetweenShots + bulletCount - (int)spreadAngle + (int)damage;
+        price = BaseDamage + criticalchange + (int)criticalMultiplayer + (int)timeBetweenShots + bulletCount - (int)spreadAngle + (int)BaseDamage;
         return price;
     }
 

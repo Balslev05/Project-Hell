@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletDamage: 0
   criticalMultiplayer: 0
-  speed: 80
+  speed: 20
   randomizeSpeed: 0
   minSpeed: 25
   maxSpeed: 30

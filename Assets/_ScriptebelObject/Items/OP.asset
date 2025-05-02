@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: TesterOP AS FUCK
   description: THIS IS BS
-  icon: {fileID: -7339290641555315788, guid: 71ec5c00e537f2b43827d313759a501f, type: 3}
+  icon: {fileID: 6205804860085937721, guid: 1fb567cd58b918d48b996297b759a821, type: 3}
   price: 100
   effects:
   - {fileID: 11400000, guid: 7eda2a3b988bd7e4691772b5675b1c56, type: 2}

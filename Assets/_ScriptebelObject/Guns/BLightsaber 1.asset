@@ -15,16 +15,15 @@ MonoBehaviour:
   gunname: DARKSIDE
   GunSprite: {fileID: -1360185342, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: 71681f76d95e77f4cbda087313dbd045, type: 3}
-  price: 100
+  price: -79
   tags:
   - Woa
-  BaseDamage: 10
+  BaseDamage: 25
   criticalchange: 1
   criticalMultiplayer: 2
   HoldToFire: 1
   timeBetweenShots: 0.7
   bulletCount: 10
   spreadAngle: 180
-  damage: 14
   ammoType: 2
   CameraShakeStreangth: 0.5

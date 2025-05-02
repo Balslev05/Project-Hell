@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using EZCameraShake;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 public class PlayerMovement : MonoBehaviour
@@ -31,9 +30,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isRolling;
     private bool canRoll;
 
+    private PlayerStats playerStats;
+
     void Start()
     {
-        
+        playerStats = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         abilities = GetComponent<PlayerAbilities>();
@@ -88,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        rb.linearVelocity = playerInput.normalized * moveSpeed;
+        rb.linearVelocity = (playerInput.normalized * moveSpeed) * playerStats.BaseSpeed;
     }
 
     private IEnumerator DodgeRoll()

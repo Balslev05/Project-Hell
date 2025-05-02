@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fed30ecc43f79141b20daeacde5ed44, type: 3}
+  m_Name: Magnus
+  m_EditorClassIdentifier: 
+  itemName: Magnus
+  description: Buff as Fuck
+  icon: {fileID: -507471420, guid: c2ab8d2608b7b764990911a2455c228e, type: 3}
+  price: 1
+  effects:
+  - {fileID: 11400000, guid: 7eda2a3b988bd7e4691772b5675b1c56, type: 2}
+  - {fileID: 11400000, guid: f1227b3ce96893847b8f7af317812b03, type: 2}
+  - {fileID: 11400000, guid: 2e706ed2cbdf2454db5df92fe334c93b, type: 2}
+  - {fileID: 11400000, guid: 0c345291d33eec142adf23ad065b77a4, type: 2}

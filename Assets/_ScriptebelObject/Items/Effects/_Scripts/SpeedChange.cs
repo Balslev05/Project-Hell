@@ -25,11 +25,11 @@ public class SpeedChange : Effect
         RandomSpeed = Random.Range(min,max);
         if (randomize)
         {
-            return "Speed Buff " + RandomSpeed.ToString("F1");;
+            return "Speed Multiplier: X" + RandomSpeed.ToString("F1");;
         }
         else
         {
-            return "Speed Buff " + SpeedBuff;
+            return "Speed Multiplier: X" + SpeedBuff;
         }
     }
 }

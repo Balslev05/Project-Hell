@@ -15,16 +15,15 @@ MonoBehaviour:
   gunname: Pistol
   GunSprite: {fileID: 2860768655726451345, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: a87b26052d71eba4ebeaf022496bdbed, type: 3}
-  price: 10
+  price: 4
   tags:
   - Woaw
-  BaseDamage: 5
+  BaseDamage: 15
   criticalchange: 10
-  criticalMultiplayer: 1.25
+  criticalMultiplayer: 1.5
   HoldToFire: 1
   timeBetweenShots: 0.6
   bulletCount: 1
-  spreadAngle: 0
-  damage: 10
+  spreadAngle: 10
   ammoType: 0
   CameraShakeStreangth: 0.5

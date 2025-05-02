@@ -15,16 +15,15 @@ MonoBehaviour:
   gunname: BANANANANA
   GunSprite: {fileID: 537077440, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: 642897b872f3f424c86bd4c8f8b4064b, type: 3}
-  price: 33
+  price: -329
   tags:
-  - Woa
-  BaseDamage: 10
+  - BPS:10
+  BaseDamage: 5
   criticalchange: 10
   criticalMultiplayer: 1.5
   HoldToFire: 1
-  timeBetweenShots: 0.5
-  bulletCount: 1
-  spreadAngle: 0
-  damage: 10
-  ammoType: 3
+  timeBetweenShots: 0.1
+  bulletCount: 10
+  spreadAngle: 360
+  ammoType: 0
   CameraShakeStreangth: 0.5
