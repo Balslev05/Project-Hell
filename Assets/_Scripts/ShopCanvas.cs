@@ -34,7 +34,7 @@ public class ShopCanvas : MonoBehaviour
       StartShop();
     }
 
-    void StartShop()
+    public void StartShop()
     {
       RerollCostText.text = "Reroll:" + RerollCost.ToString();
       RerollButton.SetActive(false);

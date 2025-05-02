@@ -83,6 +83,7 @@ public class WaveManager : MonoBehaviour
             {
                 waveRunning = false;
                 currentWave++;
+                shopCanvas.StartShop();
             }
         }
     }
