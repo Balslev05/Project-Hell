@@ -62575,8 +62575,8 @@ MonoBehaviour:
   ShopBoxes: []
   RerollCost: 1
   RerollCostText: {fileID: 659545560}
-  CurrentCurrency: {fileID: 0}
-  currencyManager: {fileID: 0}
+  CurrentCurrency: {fileID: 700192700}
+  currencyManager: {fileID: 1638671377}
   TabObjects: {fileID: 338339735}
   RerollButton: {fileID: 591457831}
   BoxContainer: {fileID: 1233652349}

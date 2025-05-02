@@ -176,6 +176,6 @@ public class WaveManager : MonoBehaviour
     private void UpdateText()
     {
         WaveNumberText.text = $"Wave: {(currentWave + 1)} / {waves.Count}";
-        ThreatLevelText.text = $"Threat Level: {localTotalThreatScore} / {waves[currentWave].totalThreatScore}";
+        ThreatLevelText.text = $"Threat: {localTotalThreatScore} / {waves[currentWave].totalThreatScore}";
     }
 }

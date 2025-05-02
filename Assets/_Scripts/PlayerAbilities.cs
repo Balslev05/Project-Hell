@@ -45,12 +45,14 @@ public class PlayerAbilities : MonoBehaviour
     {
         if (becomeGhost) {
             isGhosting = true;
-            collider.enabled = false;
+            //collider.enabled = false;
+            this.gameObject.tag = "Untagged";
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.4f);
         }
         else if (!becomeGhost) {
             isGhosting = false;
-            collider.enabled = true;
+            //collider.enabled = true;
+            this.gameObject.tag = "Player";
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
         }
     }

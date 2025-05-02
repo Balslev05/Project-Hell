@@ -645,6 +645,7 @@ MonoBehaviour:
   damage: 20
   isDead: 0
   isBuffed: 0
+  attackHitbox: {fileID: 3010176419132022722}
   attackRange: 3
   attackDuration: 0.66
   attackCooldown: 1
