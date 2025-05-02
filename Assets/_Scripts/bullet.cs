@@ -53,7 +53,6 @@ public class bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         direction = transform.right;
-        
         // Initialize speeds
         currentSpeed = randomizeSpeed ? Random.Range(minSpeed, maxSpeed) : speed;
         if (randomizeRotation) {

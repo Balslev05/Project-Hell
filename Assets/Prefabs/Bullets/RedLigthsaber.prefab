@@ -63,7 +63,7 @@ MonoBehaviour:
   oscillatingAmplitude: 0
   amplitudeChangeSpeed: 1
   homing: 1
-  homingStrength: 3
+  homingStrength: 1
   homingTarget: Player
   delayedHoming: 0
   homingDelay: 1

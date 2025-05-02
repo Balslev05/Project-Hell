@@ -11,6 +11,7 @@ public class InteractableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private RectTransform rectTransform;
     private Canvas canvas;
     private Vector3 offset;
+    private Vector3 origionalScale;
 
     void Awake()
     {
@@ -60,6 +61,10 @@ public class InteractableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (container.SelectedGun == this.gameObject){
+            this.gameObject.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.2f).SetEase(Ease.InOutSine);
+            return;
+        }
         container.SelectGun(this.gameObject);
     }
     
