@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")]
     private Rigidbody2D rb;
     private Animator animator;
-    private PlayerAbilities abilities;
-    private PlayerStats stats;
+    private PlayerStats playerStats;
+    private PlayerAbilities playerAbilities;
     
     private Managers manager;
     private CurrencyManager currencyManager;
@@ -30,15 +30,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isRolling;
     private bool canRoll;
 
-    private PlayerStats playerStats;
 
     void Start()
     {
         playerStats = GetComponent<PlayerStats>();
+        playerAbilities = GetComponent<PlayerAbilities>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        abilities = GetComponent<PlayerAbilities>();
-        stats = GetComponent<PlayerStats>();
 
         manager = GameObject.FindWithTag("Manager").GetComponent<Managers>();
         currencyManager = manager.currencyManager;
@@ -57,12 +55,12 @@ public class PlayerMovement : MonoBehaviour
 
         Sprint();
 
+        if (Input.GetKey(KeyCode.Space) && canRoll && isMoving && playerStats.currentArmor > rollArmorCost)
+            StartCoroutine(DodgeRoll());
+
         if (isRolling) { return; }
         
         GetPlayerInput();
-
-        if (Input.GetKey(KeyCode.Space) && canRoll && isMoving)
-            StartCoroutine(DodgeRoll());
     }
 
     void FixedUpdate()
@@ -71,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isSprinting) {
             float armorCost = SprintArmorCost * Time.fixedDeltaTime;
-            stats.LoseArmor(armorCost);
+            playerStats.LoseArmor(armorCost);
         }
     }
 
@@ -98,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         canRoll = false;
         moveSpeed = rollSpeed;
         //abilities.GhostMode(true);
-        stats.LoseArmor(rollArmorCost);
+        playerStats.LoseArmor(rollArmorCost);
 
         yield return new WaitForSeconds(rollDuration);
         isRolling = false; animator.SetBool("IsRolling", false);
@@ -111,11 +109,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Sprint()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && isMoving && stats.currentArmor > 0) {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isMoving && playerStats.currentArmor > 0) {
             isSprinting = true;
             moveSpeed = sprintSpeed;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift) || !isMoving || stats.currentArmor <= 0) {
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || !isMoving || playerStats.currentArmor <= 0) {
             isSprinting = false;
             moveSpeed = walkSpeed;
         }
