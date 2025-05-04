@@ -5,6 +5,7 @@ public class Item : ScriptableObject
 {
     enum Type {passive,active, GunSpecifik};
     public string itemName;
+    [TextArea(2,2)]
     public string description;
     public Sprite icon;
     public int price = 100;

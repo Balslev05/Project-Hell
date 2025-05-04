@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fed30ecc43f79141b20daeacde5ed44, type: 3}
-  m_Name: GlassCanon
+  m_Name: New Item
   m_EditorClassIdentifier: 
-  itemName: GlassCanon
-  description: Dont throw rocks on a class house
-  icon: {fileID: 7376822881301054950, guid: 1fb567cd58b918d48b996297b759a821, type: 3}
+  itemName: AmmoBox
+  description: THIS IS BS
+  icon: {fileID: 1275965431, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
   price: 100
   effects:
-  - {fileID: 11400000, guid: e6ceb6b3e5b5aad45952787f51418a04, type: 2}
-  - {fileID: 11400000, guid: 6a82c7905952a2e468a1f30d90c75e5c, type: 2}
+  - {fileID: 11400000, guid: dc9cd81b10563f34da5a2623c64362fd, type: 2}

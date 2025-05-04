@@ -17,8 +17,8 @@ public class GunManager : MonoBehaviour
     private float timeSinceLastShot = 0f;
     private int currentGunIndex = 0;
 
-    public enum AmmoType { Light, Medium, Heavy, Explosive, Shell}
     public int Maxammo = 100;
+    public enum AmmoType { Light, Medium, Heavy, Explosive, Shell}
     public Dictionary<AmmoType, int> AmmoInventory = new Dictionary<AmmoType, int>();
     
     private void Awake()
@@ -28,7 +28,7 @@ public class GunManager : MonoBehaviour
         {
             AmmoInventory[type] = 0; 
         }
-
+        
         AddAmmo(AmmoType.Light, 100);
         AddAmmo(AmmoType.Medium, 60);
         AddAmmo(AmmoType.Heavy, 20);
@@ -36,7 +36,7 @@ public class GunManager : MonoBehaviour
         AddAmmo(AmmoType.Shell, 30);
     }
 
-    public void AmmoToMAx()
+    public void SetAmmoToMax()
     {
         foreach (AmmoType type in System.Enum.GetValues(typeof(AmmoType)))
         {
@@ -62,18 +62,14 @@ public class GunManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Ammo type {ammoType} not found in inventory.");
             return $"{ammoType} Ammo: 0";
         }
     }
     else
     {
-        Debug.LogError($"'{ammoTypeString}' is not a valid AmmoType!");
-        return $"Invalid Ammo Type: {ammoTypeString}";
+        return $"NOT FOUND Ammo Type: {ammoTypeString}";
     }
-}
-
-    
+}   
     private void Start()
     {
         if (GunList.Count > 0) currentGun = GunList[0];
@@ -81,7 +77,9 @@ public class GunManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        timeSinceLastShot += Time.deltaTime; // holder styr på tid siden sidste skud
+
+        if (Input.GetKeyDown(KeyCode.M)) // TESTING FUNCTION ONLY
         {
             AddAmmo(AmmoType.Light,1000);
             AddAmmo(AmmoType.Medium,1000);
@@ -90,7 +88,6 @@ public class GunManager : MonoBehaviour
             AddAmmo(AmmoType.Shell,1000);
         } 
 
-        timeSinceLastShot += Time.deltaTime;
 
         if (currentGun && Input.GetKey(KeyCode.Mouse1) && timeSinceLastShot >= currentGun.timeBetweenShots)
         {
@@ -105,12 +102,13 @@ public class GunManager : MonoBehaviour
             }
         }
 
-        //if (Input.GetKeyDown(KeyCode.Z)) DropGun(currentGun);
+        //if (Input.GetKeyDown(KeyCode.Z)) DropGun(currentGun); // old drop function
 
         for (int i = 0; i < GunList.Count && i < 9; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i)) SwitchToGun(i);
         }
+        
         if(UIAmmoHandler)
             UIAmmoHandler.UpdateUI(currentGun);
     }
@@ -151,7 +149,7 @@ public class GunManager : MonoBehaviour
         }
     }
 
-    private void DropGun(Gun gun)
+    private void DropGun(Gun gun) // funtion er kommenteret ud
     {
         if (GunList.Count > 1)
         {
@@ -166,19 +164,7 @@ public class GunManager : MonoBehaviour
         GunList.Remove(gun);
         SwitchToGun(0);
     }
-
-    //!! DET HER ER PICK UP FUNKTIONEN
-  /*   private void OnTriggerStay2D(Collider2D other)
-    {
-        Gun pickupGun = other.GetComponent<GunHolder>()?.gun;
-        if (pickupGun != null && GunList.Count < MaxGuns && Input.GetKey(KeyCode.E))
-        {
-            GunList.Add(pickupGun);
-            SwitchToGun(GunList.Count - 1);
-            Destroy(other.gameObject);
-        }
-    } */
-
+ 
     public void AddGun(Gun gun)
     {
         if (GunList.Count < MaxGuns)
@@ -191,5 +177,18 @@ public class GunManager : MonoBehaviour
             Debug.Log("No more guns allowed!");
         }
     }
+
+    //!! DET HER ER PICK UP FUNKTIONEN Relevant inden vi lavede shoppen.
+  /*   private void OnTriggerStay2D(Collider2D other)
+    {
+        Gun pickupGun = other.GetComponent<GunHolder>()?.gun;
+        if (pickupGun != null && GunList.Count < MaxGuns && Input.GetKey(KeyCode.E))
+        {
+            GunList.Add(pickupGun);
+            SwitchToGun(GunList.Count - 1);
+            Destroy(other.gameObject);
+        }
+    } */
+
 
 }
