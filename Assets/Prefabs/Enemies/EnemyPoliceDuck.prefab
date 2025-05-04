@@ -411,13 +411,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46712011db7dfdb4c9315d706e015b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodySprite: {fileID: 2933960358741715912}
   animator: {fileID: 5917105166353626131}
   collider: {fileID: 8980089797251716692}
+  GFX: {fileID: 8975480131150246851}
+  bodySprite: {fileID: 2933960358741715912}
   sunglasses: {fileID: 5566188820166168018}
   shadow: {fileID: 5734836055658699013}
-  threatValue: 2
-  currencyValue: 2
+  threatValue: 3
+  currencyValue: 3
   maxHealth: 40
   currentHealth: 0
   moveSpeed: 3
@@ -469,6 +470,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &8975480131150246851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7087231841152434050, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+  m_PrefabInstance: {fileID: 2221867187037211713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!58 &8980089797251716692 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 7082500271246367253, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}

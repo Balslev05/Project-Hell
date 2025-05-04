@@ -33,19 +33,7 @@ public class PlayerStats : MonoBehaviour
     
     void Update()
     {
-        // Debugs
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(10);
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            TakeDamage(50);
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            HealHealth(5);
-        }
+        //Debug
         if (Input.GetKeyDown(KeyCode.M))
         {
             currentHealth = maxHealth;
@@ -94,7 +82,6 @@ public class PlayerStats : MonoBehaviour
         if (currentArmor > maxArmor) { currentArmor = maxArmor; }
         armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
     }
-
 
     public void Applyitem(Item item)
     {

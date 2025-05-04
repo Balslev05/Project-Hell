@@ -11,6 +11,8 @@ public class EnemyNormalDuck : EnemyBase
 
     private void Update()
     {
+        if (isDead) { ActivateHitbox(false); }
+
         base.Update();
 
         if (distanceToPlayer <= attackRange) { inAttackRange = true; }
@@ -42,5 +44,11 @@ public class EnemyNormalDuck : EnemyBase
     {
         Vector2 playerPosition = player.transform.position;
         attackHitbox.transform.up = playerPosition - new Vector2(transform.position.x, transform.position.y);
+    }
+
+    public void ActivateHitbox(bool activate)
+    {
+        if (activate) { attackHitbox.SetActive(true); }
+        else if (!activate) { attackHitbox.SetActive(false); }
     }
 }

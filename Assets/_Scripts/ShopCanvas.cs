@@ -34,7 +34,7 @@ public class ShopCanvas : MonoBehaviour
       StartShop();
     }
 
-    void StartShop()
+    public void StartShop()
     {
       RerollCostText.text = "Reroll:" + RerollCost.ToString();
       RerollButton.SetActive(false);
@@ -45,6 +45,7 @@ public class ShopCanvas : MonoBehaviour
         child.GetComponent<RectTransform>().anchoredPosition = new Vector2(-3000, 0.5f);
       }
       StartCoroutine(ShowShop());
+      
     }
     
     void Update()

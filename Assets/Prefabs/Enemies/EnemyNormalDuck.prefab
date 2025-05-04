@@ -487,9 +487,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bd50e3bbcf25d43b51193a8f348c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodySprite: {fileID: 1954336827983338623}
   animator: {fileID: 104051811678453991}
   collider: {fileID: 5708039353893511651}
+  GFX: {fileID: 5703800386939307124}
+  bodySprite: {fileID: 1954336827983338623}
   sunglasses: {fileID: 6369011452934560135}
   shadow: {fileID: 1926955978909751715}
   threatValue: 1
@@ -551,6 +552,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 5811992217835282647}
   enemyBase: {fileID: -7027928772570122925}
+--- !u!1 &5703800386939307124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7087231841152434050, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+  m_PrefabInstance: {fileID: 3277811236929715190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!58 &5708039353893511651 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 7082500271246367253, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}

@@ -1,13 +1,15 @@
 using UnityEngine;
 using Pathfinding;
 using System.Collections;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public abstract class EnemyBase : MonoBehaviour
 {
     [Header("Components")]
-    public SpriteRenderer bodySprite;
     public Animator animator;
     public Collider2D collider;
+    public GameObject GFX;
+    public SpriteRenderer bodySprite;
     public GameObject sunglasses;
     public GameObject shadow;
     protected AIPath path;
@@ -55,7 +57,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Update()
     {
         Move();
-        FlipSprite(bodySprite);
+        FlipSprite();
 
         if (isDead) { return; }
     }
@@ -75,12 +77,16 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    protected virtual void FlipSprite(SpriteRenderer sprite)
+    protected virtual void FlipSprite()
     {
         if (isDead || playerAbilities.isGhosting || isAttacking) { return; }
 
-        if (player.transform.position.x > transform.position.x) { sprite.flipX = true; }
-        else if (player.transform.position.x < transform.position.x) { sprite.flipX = false; }
+        if (player.transform.position.x > transform.position.x) {
+            GFX.transform.localScale = new Vector3(-1, GFX.transform.localScale.y, GFX.transform.localScale.z);
+        }
+        else if (player.transform.position.x < transform.position.x) {
+            GFX.transform.localScale = new Vector3(1, GFX.transform.localScale.y, GFX.transform.localScale.z);
+        }
 
         //if (path.desiredVelocity.x >= 0.01f) { sprite.flipX = true; }
         //else if (path.desiredVelocity.x <= -0.01f) { sprite.flipX = false; }
@@ -89,13 +95,14 @@ public abstract class EnemyBase : MonoBehaviour
     public void ActivateSunglasses(bool activate)
     {
         if (activate) { sunglasses.SetActive(true); }
-        else if (!activate) {  sunglasses.SetActive(false); }
+        else if (!activate) { sunglasses.SetActive(false); }
     }
 
     public virtual void Die()
     {
         isDead = true;
         waveManager.LiveEnemies.Remove(this.gameObject);
+        tag = "Untagged";
         collider.enabled = false;
         shadow.SetActive(false);
     }

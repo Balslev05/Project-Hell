@@ -630,13 +630,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611d7675ee18ad04f97d4a96db2a345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodySprite: {fileID: 2609004951811597344}
   animator: {fileID: 6535124421333307290}
   collider: {fileID: 5473735758489261114}
+  GFX: {fileID: 8074328410838465579}
+  bodySprite: {fileID: 2609004951811597344}
   sunglasses: {fileID: 3479319653275129300}
   shadow: {fileID: 8961894831028849102}
   threatValue: 5
-  currencyValue: 5
+  currencyValue: 10
   maxHealth: 200
   currentHealth: 0
   moveSpeed: 2
@@ -644,6 +645,7 @@ MonoBehaviour:
   damage: 20
   isDead: 0
   isBuffed: 0
+  attackHitbox: {fileID: 3010176419132022722}
   attackRange: 3
   attackDuration: 0.66
   attackCooldown: 1
@@ -692,6 +694,11 @@ SpriteRenderer:
 --- !u!4 &7806434232165054011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9079581983469811090, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
+  m_PrefabInstance: {fileID: 1321561470187897769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8074328410838465579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7087231841152434050, guid: 9a29804c33c4c0b43b5469628c5395bc, type: 3}
   m_PrefabInstance: {fileID: 1321561470187897769}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8559062355268166188 stripped

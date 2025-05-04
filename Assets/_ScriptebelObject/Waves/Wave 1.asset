@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   enemyNormalDuckAllowed: 1
-  enemyBuffDuckAllowed: 1
-  enemyPoliceDuckAllowed: 1
-  enemyMilitaryDuckAllowed: 1
-  enemyCoolGooseAllowed: 1
+  enemyBuffDuckAllowed: 0
+  enemyPoliceDuckAllowed: 0
+  enemyMilitaryDuckAllowed: 0
+  enemyCoolGooseAllowed: 0
   enemyNormalDuckSpawnChance: 1
-  enemyBuffDuckSpawnChance: 1
-  enemyPoliceDuckSpawnChance: 1
-  enemyMilitaryDuckSpawnChance: 1
-  enemyCoolGooseSpawnChance: 2
-  totalThreatScore: 100
-  allowedThreatLevel: 40
+  enemyBuffDuckSpawnChance: 0
+  enemyPoliceDuckSpawnChance: 0
+  enemyMilitaryDuckSpawnChance: 0
+  enemyCoolGooseSpawnChance: 0
+  totalThreatScore: 50
+  allowedThreatLevel: 20
   maxSpawnAmount: 4
-  minSpawnAmount: 1
-  waveCurrencyValue: 0
+  minSpawnAmount: 2
+  waveCurrencyValue: 20
