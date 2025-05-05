@@ -8,8 +8,10 @@ public class PlayerAbilities : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     [Header("Stats")]
-    [SerializeField] private float ghostArmorCost;
     [HideInInspector] public bool isGhosting;
+    [SerializeField] private float ghostArmorCost;
+    [SerializeField] private float HealArmorCost;
+    [SerializeField] private float HealAmount = 0.2f;
 
     void Start()
     {
@@ -20,7 +22,16 @@ public class PlayerAbilities : MonoBehaviour
 
     void Update()
     {
-        Dodge();
+        if (Input.GetKeyDown(KeyCode.Q) && !isGhosting && playerStats.currentArmor > 0) {
+            GhostMode(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.Q) && isGhosting || playerStats.currentArmor <= 0) {
+            GhostMode(false);
+        }
+
+        if (playerStats.currentArmor >= HealArmorCost && playerStats.currentHealth <= playerStats.maxHealth * (1 - HealAmount)) {
+            Heal();
+        }
     }
 
     void FixedUpdate()
@@ -28,16 +39,6 @@ public class PlayerAbilities : MonoBehaviour
         if (isGhosting) {
             float armorCost = ghostArmorCost * Time.fixedDeltaTime;
             playerStats.LoseArmor(armorCost);
-        }
-    }
-
-    private void Dodge()
-    {
-        if (Input.GetKeyDown(KeyCode.Q) && !isGhosting && playerStats.currentArmor > 0) {
-            GhostMode(true);
-        }
-        else if (Input.GetKeyDown(KeyCode.Q) && isGhosting || playerStats.currentArmor <= 0) {
-            GhostMode(false);
         }
     }
 
@@ -61,7 +62,11 @@ public class PlayerAbilities : MonoBehaviour
 
     private void TimeControlAbility() { }
 
-    private void Heal() { }
+    private void Heal()
+    {
+        playerStats.HealHealth(Mathf.CeilToInt(playerStats.maxHealth * HealAmount));
+        playerStats.LoseArmor(HealArmorCost);
+    }
 
     private void Luck() { }
 }

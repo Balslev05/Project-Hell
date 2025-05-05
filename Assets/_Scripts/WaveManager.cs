@@ -100,42 +100,28 @@ public class WaveManager : MonoBehaviour
     {
         if (PossibleEnemies.Count != 0) { PossibleEnemies.Clear(); }
 
-        if (waves[currentWave].enemyNormalDuckAllowed)
-        {
-            for (int i = 0; i < waves[currentWave].enemyNormalDuckSpawnChance; i++)
-            {
+        if (waves[currentWave].enemyNormalDuckAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyNormalDuckSpawnChance; i++) {
                 PossibleEnemies.Add(enemyNormalDuckPrefab);
             }
         }
-
-        if (waves[currentWave].enemyBuffDuckAllowed)
-        {
-            for (int i = 0; i < waves[currentWave].enemyBuffDuckSpawnChance; i++)
-            {
+        if (waves[currentWave].enemyBuffDuckAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyBuffDuckSpawnChance; i++) {
                 PossibleEnemies.Add(enemyBuffDuckPrefab);
             }
         }
-
-        if (waves[currentWave].enemyPoliceDuckAllowed)
-        {
-            for (int i = 0; i < waves[currentWave].enemyPoliceDuckSpawnChance; i++)
-            {
+        if (waves[currentWave].enemyPoliceDuckAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyPoliceDuckSpawnChance; i++) {
                 PossibleEnemies.Add(enemyPoliceDuckPrefab);
             }
         }
-
-        if (waves[currentWave].enemyMilitaryDuckAllowed)
-        {
-            for (int i = 0; i < waves[currentWave].enemyMilitaryDuckSpawnChance; i++)
-            {
+        if (waves[currentWave].enemyMilitaryDuckAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyMilitaryDuckSpawnChance; i++) {
                 PossibleEnemies.Add(enemyMilitaryDuckPrefab);
             }
         }
-
-        if (waves[currentWave].enemyCoolGooseAllowed)
-        {
-            for (int i = 0; i < waves[currentWave].enemyCoolGooseSpawnChance; i++)
-            {
+        if (waves[currentWave].enemyCoolGooseAllowed) {
+            for (int i = 0; i < waves[currentWave].enemyCoolGooseSpawnChance; i++) {
                 PossibleEnemies.Add(enemyCoolGoosePrefab);
             }
         }
@@ -153,7 +139,6 @@ public class WaveManager : MonoBehaviour
                 currentThreatLevel += enemy.GetComponent<EnemyBase>().threatValue;
             }
         }
-        UpdateText();
         return currentThreatLevel;
     }
 

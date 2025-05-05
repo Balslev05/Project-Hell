@@ -109,11 +109,11 @@ public class EnemyMilitaryDuck : EnemyBase
 
             if (player.transform.position.x > transform.position.x) {
                 sniper.transform.localScale = new Vector3(sniper.transform.localScale.x, -1, sniper.transform.localScale.z);
-                sniper.transform.position = new Vector3(sniperOffsetX * -1, sniper.transform.localPosition.y, sniper.transform.localPosition.z);
+                sniper.transform.localPosition = new Vector3(sniperOffsetX * -1, sniper.transform.localPosition.y, sniper.transform.localPosition.z);
             }
             else if (player.transform.position.x < transform.position.x) {
                 sniper.transform.localScale = new Vector3(sniper.transform.localScale.x, 1, sniper.transform.localScale.z);
-                sniper.transform.position = new Vector3(sniperOffsetX, sniper.transform.localPosition.y, sniper.transform.localPosition.z);
+                sniper.transform.localPosition = new Vector3(sniperOffsetX, sniper.transform.localPosition.y, sniper.transform.localPosition.z);
             }
         }
     }

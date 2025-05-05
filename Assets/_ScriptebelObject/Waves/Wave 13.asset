@@ -17,7 +17,7 @@ MonoBehaviour:
   enemyPoliceDuckAllowed: 0
   enemyMilitaryDuckAllowed: 1
   enemyCoolGooseAllowed: 0
-  enemyNormalDuckSpawnChance: 1
+  enemyNormalDuckSpawnChance: 2
   enemyBuffDuckSpawnChance: 0
   enemyPoliceDuckSpawnChance: 0
   enemyMilitaryDuckSpawnChance: 2
