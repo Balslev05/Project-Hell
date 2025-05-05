@@ -79,13 +79,13 @@ public class GunManager : MonoBehaviour
     {
         timeSinceLastShot += Time.deltaTime; // holder styr på tid siden sidste skud
 
-        if (Input.GetKeyDown(KeyCode.M)) // TESTING FUNCTION ONLY
+        if (Input.GetKey(KeyCode.M)) // TESTING FUNCTION ONLY
         {
-            AddAmmo(AmmoType.Light,1000);
-            AddAmmo(AmmoType.Medium,1000);
-            AddAmmo(AmmoType.Heavy,1000);
-            AddAmmo(AmmoType.Explosive,1000);
-            AddAmmo(AmmoType.Shell,1000);
+            AddAmmo(AmmoType.Light,10000);
+            AddAmmo(AmmoType.Medium,10000);
+            AddAmmo(AmmoType.Heavy,10000);
+            AddAmmo(AmmoType.Explosive,10000);
+            AddAmmo(AmmoType.Shell,10000);
         } 
 
 

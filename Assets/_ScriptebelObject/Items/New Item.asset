@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fed30ecc43f79141b20daeacde5ed44, type: 3}
   m_Name: New Item
   m_EditorClassIdentifier: 
-  itemName: AmmoBox
-  description: THIS IS BS
-  icon: {fileID: 1275965431, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
-  price: 100
+  itemName: New Item
+  description: This is just a test new item
+  icon: {fileID: 290967845, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
+  price: 0
   effects:
-  - {fileID: 11400000, guid: dc9cd81b10563f34da5a2623c64362fd, type: 2}
+  - {fileID: 0}

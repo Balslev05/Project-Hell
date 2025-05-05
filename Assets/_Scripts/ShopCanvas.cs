@@ -31,7 +31,8 @@ public class ShopCanvas : MonoBehaviour
 
     public void Awake()
     {
-      StartShop();
+      
+      StartCoroutine(HideShop());
     }
 
     public void StartShop()
@@ -50,7 +51,7 @@ public class ShopCanvas : MonoBehaviour
     
     void Update()
     {
-      CurrentCurrency.text = "Currency: "+currencyManager.currency.ToString();
+      CurrentCurrency.text = "Currency: " + currencyManager.currency.ToString();
 
       if (Input.GetKeyDown(KeyCode.Escape))
       {

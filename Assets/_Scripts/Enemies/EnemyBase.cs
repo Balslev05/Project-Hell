@@ -43,19 +43,21 @@ public abstract class EnemyBase : MonoBehaviour
     {
         path = GetComponent<AIPath>();
         collider = GetComponent<Collider2D>();
-
+        manager = GameObject.FindWithTag("Manager").GetComponent<Managers>();
+        waveManager = manager.waveManager;
+        currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
         playerAbilities = player.GetComponent<PlayerAbilities>();
         playerStats = player.GetComponent<PlayerStats>();
-
-        manager = GameObject.FindWithTag("Manager").GetComponent<Managers>();
-        waveManager = manager.waveManager;
-
-        currentHealth = maxHealth;
     }
 
     protected virtual void Update()
     {
+        if(!player){
+            player = GameObject.FindGameObjectWithTag("Player");
+             playerAbilities = player.GetComponent<PlayerAbilities>();
+            playerStats = player.GetComponent<PlayerStats>();
+        }
         Move();
         FlipSprite();
 
@@ -65,7 +67,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Move()
     {
         path.maxSpeed = moveSpeed;
-
+        Debug.Log(player);
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (!isDead && distanceToPlayer > MoveToRange && !isAttacking && !playerAbilities.isGhosting) {
             isMoving = true; animator.SetBool("IsMoving", true);
