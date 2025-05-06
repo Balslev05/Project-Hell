@@ -67,7 +67,6 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Move()
     {
         path.maxSpeed = moveSpeed;
-        Debug.Log(player);
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (!isDead && distanceToPlayer > MoveToRange && !isAttacking && !playerAbilities.isGhosting) {
             isMoving = true; animator.SetBool("IsMoving", true);
@@ -89,9 +88,6 @@ public abstract class EnemyBase : MonoBehaviour
         else if (player.transform.position.x < transform.position.x) {
             GFX.transform.localScale = new Vector3(1, GFX.transform.localScale.y, GFX.transform.localScale.z);
         }
-
-        //if (path.desiredVelocity.x >= 0.01f) { sprite.flipX = true; }
-        //else if (path.desiredVelocity.x <= -0.01f) { sprite.flipX = false; }
     }
 
     public void ActivateSunglasses(bool activate)
