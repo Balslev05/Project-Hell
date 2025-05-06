@@ -29,11 +29,12 @@ public class GunManager : MonoBehaviour
             AmmoInventory[type] = 0; 
         }
         
-        AddAmmo(AmmoType.Light, 100);
-        AddAmmo(AmmoType.Medium, 60);
-        AddAmmo(AmmoType.Heavy, 20);
-        AddAmmo(AmmoType.Explosive, 5);
-        AddAmmo(AmmoType.Shell, 30);
+        AddAmmo(AmmoType.Light, 250);
+        AddAmmo(AmmoType.Medium, 150);
+        AddAmmo(AmmoType.Heavy, 60);
+        AddAmmo(AmmoType.Explosive, 40);
+        AddAmmo(AmmoType.Shell, 120);
+        SwitchToGun(0);
     }
 
     public void SetAmmoToMax()
@@ -78,16 +79,6 @@ public class GunManager : MonoBehaviour
     private void Update()
     {
         timeSinceLastShot += Time.deltaTime; // holder styr på tid siden sidste skud
-
-        if (Input.GetKey(KeyCode.M)) // TESTING FUNCTION ONLY
-        {
-            AddAmmo(AmmoType.Light,10000);
-            AddAmmo(AmmoType.Medium,10000);
-            AddAmmo(AmmoType.Heavy,10000);
-            AddAmmo(AmmoType.Explosive,10000);
-            AddAmmo(AmmoType.Shell,10000);
-        } 
-
 
         if (currentGun && Input.GetKey(KeyCode.Mouse0) && timeSinceLastShot >= currentGun.timeBetweenShots)
         {

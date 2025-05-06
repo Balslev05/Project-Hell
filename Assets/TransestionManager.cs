@@ -9,7 +9,7 @@ public class TransestionManager : MonoBehaviour
     [SerializeField] private GameObject transestion;
     [SerializeField] private float time;
     [SerializeField] private int Scale = 30;
-    
+    [SerializeField] private bool isStart = false;
 
 
     public void Transestion(int SceneIndex)
@@ -24,12 +24,21 @@ public class TransestionManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(SceneIndex);
     }
 
+    public IEnumerator FadeInTransestion()
+    {
+        transestion.transform.DOScale(Vector3.zero, time).SetEase(Ease.InBack);
+        yield return new WaitForSeconds(time);
+    }
+
 
 
 
     void Start()
     {
-        
+        if (isStart)
+        {
+            StartCoroutine(FadeInTransestion());
+        }
     }
 
     // Update is called once per frame

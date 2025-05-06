@@ -29,7 +29,10 @@ public class WaveManager : MonoBehaviour
     private int currentThreatLevel;
     private bool waveRunning = false;
 
-
+    void Start()
+    {
+        OnClickStartWave();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))
