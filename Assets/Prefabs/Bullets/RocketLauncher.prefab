@@ -68,7 +68,7 @@ MonoBehaviour:
   delayedHoming: 0
   homingDelay: 1
   maxLifeTime: 5
-  spawnOnHit: {fileID: 0}
+  spawnOnHit: {fileID: 2882262002560539360, guid: 67302768ed5b11847a3f43caa2ffd334, type: 3}
 --- !u!50 &8837729650576416559
 Rigidbody2D:
   serializedVersion: 5

@@ -15,10 +15,10 @@ MonoBehaviour:
   gunname: GADONG
   GunSprite: {fileID: -1068439443906237425, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: 2012def4675f7fd4c82385a5e7da3500, type: 3}
-  price: 2
+  price: -1
   tags:
   - Woa
-  BaseDamage: 5
+  BaseDamage: 20
   criticalchange: 10
   criticalMultiplayer: 2
   HoldToFire: 0

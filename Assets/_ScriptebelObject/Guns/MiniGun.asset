@@ -22,8 +22,8 @@ MonoBehaviour:
   criticalchange: 6
   criticalMultiplayer: 7.5
   HoldToFire: 1
-  timeBetweenShots: 0.025
+  timeBetweenShots: 0.08
   bulletCount: 1
   spreadAngle: 10
   ammoType: 0
-  CameraShakeStreangth: 0.4
+  CameraShakeStreangth: 0.2

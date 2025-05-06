@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Obsidian
   description: THIS IS BS
   icon: {fileID: -2772845983209122643, guid: 1fb567cd58b918d48b996297b759a821, type: 3}
-  price: 100
+  price: 65
   effects:
   - {fileID: 11400000, guid: a207cfbfb05e8f54a97573a4356af4af, type: 2}
   - {fileID: 11400000, guid: f1227b3ce96893847b8f7af317812b03, type: 2}

@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Yin
   description: THIS IS BS
   icon: {fileID: -9086056213265067965, guid: 1fb567cd58b918d48b996297b759a821, type: 3}
+  price: 33
   effects:
   - {fileID: 11400000, guid: bf0944536de0be048965866a25a655c3, type: 2}
   - {fileID: 11400000, guid: d34904bd1b9cd3e4db6fd06634e9266d, type: 2}

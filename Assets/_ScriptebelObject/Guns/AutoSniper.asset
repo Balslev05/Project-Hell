@@ -15,7 +15,7 @@ MonoBehaviour:
   gunname: AutoSniper
   GunSprite: {fileID: 339051261737948287, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: 92c72e0b93e1cb44792d4320b35b675f, type: 3}
-  price: 34
+  price: 70
   tags:
   - 
   BaseDamage: 50

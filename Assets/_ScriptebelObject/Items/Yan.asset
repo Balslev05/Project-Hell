@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Yan
   description: THIS IS BS
   icon: {fileID: 2499736779693332101, guid: 1fb567cd58b918d48b996297b759a821, type: 3}
+  price: 33
   effects:
   - {fileID: 11400000, guid: 7eda2a3b988bd7e4691772b5675b1c56, type: 2}
   - {fileID: 11400000, guid: f1227b3ce96893847b8f7af317812b03, type: 2}

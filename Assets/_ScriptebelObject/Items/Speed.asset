@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Cofee
   description: Cofee is GAS
   icon: {fileID: -2268447078326165758, guid: 1fb567cd58b918d48b996297b759a821, type: 3}
-  price: 100
+  price: 33
   effects:
   - {fileID: 11400000, guid: f1227b3ce96893847b8f7af317812b03, type: 2}
   - {fileID: 11400000, guid: 8e6ecf76e19303d4a8b19588dcb8f2ca, type: 2}

@@ -83,6 +83,13 @@ public class PlayerStats : MonoBehaviour
         armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
     }
 
+    public void UpdateUI(){
+        healthBar.SetMaxHealth(maxHealth);
+        armorBar.SetMaxPlotArmor(maxArmor);
+        healthBar.SetCurrentHealth(Mathf.FloorToInt(currentHealth));
+        armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
+    }
+
     public void Applyitem(Item item)
     {
          for (int i = 0; i < item.effects.Count; i++)
