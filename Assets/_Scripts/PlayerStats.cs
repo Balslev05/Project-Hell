@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -59,7 +60,8 @@ public class PlayerStats : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("I'm dead D:");
+        
+        SceneManager.LoadScene("lose screen");
     }
 
     public void HealHealth(int amount)

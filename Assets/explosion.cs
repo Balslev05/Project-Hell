@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class explosion : MonoBehaviour
@@ -16,11 +17,21 @@ public class explosion : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter2D(Collider2D other)
+ /*    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
             other.GetComponent<Target>().TakeDamage(100*playerStats.BaseDamage,1);
+        }
+    }
+ */
+    void OnTriggerStay2D(Collider2D other)
+    {
+        List<GameObject> enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+        if (other.gameObject.tag == "Enemy" && enemies.Contains(other.gameObject)!)
+        {
+            other.GetComponent<Target>().TakeDamage(100 * playerStats.BaseDamage, 1);
+            enemies.Add(other.gameObject);
         }
     }
 }

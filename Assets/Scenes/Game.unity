@@ -8427,7 +8427,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 9
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -43726,7 +43726,7 @@ MonoBehaviour:
   MaxGuns: 4
   GunList:
   - {fileID: 11400000, guid: b07e0b915e76da146b91f833e3a8f783, type: 2}
-  Maxammo: 100
+  Maxammo: 200
 --- !u!114 &1501239620
 MonoBehaviour:
   m_ObjectHideFlags: 0

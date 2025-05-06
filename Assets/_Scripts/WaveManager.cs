@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -75,7 +76,7 @@ public class WaveManager : MonoBehaviour
     private void EndWave()
     {
         currencyManager.GetMoney(waves[currentWave].waveCurrencyValue);
-        if (currentWave == waves.Count) { Debug.Log("End Game"); }
+        if (currentWave == waves.Count) { SceneManager.LoadScene("Win Screen"); }
         else
         {
             waveRunning = false;
