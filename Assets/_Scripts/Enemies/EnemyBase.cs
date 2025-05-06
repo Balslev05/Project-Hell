@@ -107,5 +107,6 @@ public abstract class EnemyBase : MonoBehaviour
         tag = "Untagged";
         collider.enabled = false;
         shadow.SetActive(false);
+        sunglasses.SetActive(false);
     }
 }
