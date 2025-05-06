@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: DogShit
   description: Cofee is GAS
   icon: {fileID: -2412350105159597727, guid: 1fb567cd58b918d48b996297b759a821, type: 3}
-  price: 100
+  price: 77
   effects:
   - {fileID: 11400000, guid: e6ceb6b3e5b5aad45952787f51418a04, type: 2}
   - {fileID: 11400000, guid: c04056ece3b44274ebaa7e5e2c794863, type: 2}

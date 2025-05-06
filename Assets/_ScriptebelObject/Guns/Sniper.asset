@@ -15,12 +15,12 @@ MonoBehaviour:
   gunname: PEW PEW
   GunSprite: {fileID: 3091235889615749175, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: a3a8521909983bb4e974359b5df6adb3, type: 3}
-  price: 33
+  price: 113
   tags:
   - Woa
-  BaseDamage: 50
-  criticalchange: 10
-  criticalMultiplayer: 1.5
+  BaseDamage: 100
+  criticalchange: 30
+  criticalMultiplayer: 2.5
   HoldToFire: 1
   timeBetweenShots: 1
   bulletCount: 1

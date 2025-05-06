@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: HealthBox
   description: THIS IS BS
   icon: {fileID: -2044520392, guid: f8c91fa3e6b900e4d9acdd556838a30a, type: 3}
-  price: 100
+  price: 15
   effects:
   - {fileID: 11400000, guid: bf0944536de0be048965866a25a655c3, type: 2}

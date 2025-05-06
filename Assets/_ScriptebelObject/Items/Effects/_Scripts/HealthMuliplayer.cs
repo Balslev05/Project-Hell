@@ -26,6 +26,7 @@ public class HealthMuliplayer : Effect
             player.maxHealth = Mathf.FloorToInt(player.maxHealth * RandomizedHealth);
             player.currentHealth = Mathf.FloorToInt(player.currentHealth * RandomizedHealth);
         }
+        player.UpdateUI();
     }
 
     public override string Descreption()

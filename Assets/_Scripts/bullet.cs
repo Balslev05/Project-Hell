@@ -104,19 +104,20 @@ public class bullet : MonoBehaviour
             Debug.Log("hit" + bulletDamage);
             other.gameObject.GetComponent<Target>().TakeDamage(bulletDamage,criticalMultiplayer);
             Destroy(gameObject);
-        }
-        if (spawnOnHit != null)
-        {
-            Instantiate(spawnOnHit, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            
+            if (spawnOnHit != null)
+            {
+                Instantiate(spawnOnHit, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
+   /*  void OnCollisionEnter2D(Collision2D collision)
     {
         if (spawnOnHit != null)
         {
             Instantiate(spawnOnHit, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
-    }
+    } */
 }

@@ -24,7 +24,7 @@ MonoBehaviour:
   enemyCoolGooseSpawnChance: 4
   totalThreatScore: 200
   allowedThreatLevel: 60
-  timeBetweenSpawn: 5
+  timeBetweenSpawn: 4
   maxSpawnAmount: 20
   minSpawnAmount: 10
   waveCurrencyValue: 100

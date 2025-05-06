@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Magnus
   description: Buff as Fuck
   icon: {fileID: -507471420, guid: c2ab8d2608b7b764990911a2455c228e, type: 3}
-  price: 1
+  price: 300
   effects:
   - {fileID: 11400000, guid: 7eda2a3b988bd7e4691772b5675b1c56, type: 2}
   - {fileID: 11400000, guid: f1227b3ce96893847b8f7af317812b03, type: 2}

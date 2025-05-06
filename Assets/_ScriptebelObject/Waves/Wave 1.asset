@@ -22,9 +22,9 @@ MonoBehaviour:
   enemyPoliceDuckSpawnChance: 0
   enemyMilitaryDuckSpawnChance: 0
   enemyCoolGooseSpawnChance: 0
-  totalThreatScore: 40
-  allowedThreatLevel: 20
-  timeBetweenSpawn: 5
-  maxSpawnAmount: 3
+  totalThreatScore: 20
+  allowedThreatLevel: 15
+  timeBetweenSpawn: 3
+  maxSpawnAmount: 7
   minSpawnAmount: 1
   waveCurrencyValue: 20

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -59,7 +60,8 @@ public class PlayerStats : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("I'm dead D:");
+        
+        SceneManager.LoadScene("lose screen");
     }
 
     public void HealHealth(int amount)
@@ -80,6 +82,13 @@ public class PlayerStats : MonoBehaviour
     {
         currentArmor += amount;
         if (currentArmor > maxArmor) { currentArmor = maxArmor; }
+        armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
+    }
+
+    public void UpdateUI(){
+        healthBar.SetMaxHealth(maxHealth);
+        armorBar.SetMaxPlotArmor(maxArmor);
+        healthBar.SetCurrentHealth(Mathf.FloorToInt(currentHealth));
         armorBar.SetCurrentPlotArmor(Mathf.FloorToInt(currentArmor));
     }
 

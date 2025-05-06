@@ -77,7 +77,7 @@ public class ShopCard : MonoBehaviour
     {
         if (current_Gun != null)
         {
-            if (gunManager.GunList.Count >= gunManager.MaxGuns)
+            if (gunManager.GunList.Count >= gunManager.MaxGuns || currencyManager.currency < current_Gun.price)
             {
                 //shake effect to show and error
                 transform.DOShakePosition(0.5f);
@@ -90,12 +90,19 @@ public class ShopCard : MonoBehaviour
             this.gameObject.SetActive(false);
             
         }
-        else if(current_Item != null)
+
+        if(current_Item != null && currencyManager.currency >= current_Item.price)
         {
             playerStats.Applyitem(current_Item);
             this.gameObject.SetActive(false);
             currencyManager.LoseMoney(current_Item.price);
-        }   
+        }   else
+        {
+            //shake effect to show and error
+            transform.DOShakePosition(0.5f);
+            this.GetComponent<Image>().DOColor(Color.red, 0.25f).OnComplete(() => this.GetComponent<Image>().DOColor(Color.black, 0.25f));
+        }
+
     }
     public void GiveToScrapper()
     {
@@ -147,6 +154,7 @@ public class ShopCard : MonoBehaviour
             offset.y -= 6;
             text.gameObject.SetActive(true);
             text.text = current_Item.effects[i].Descreption();
+            priceItem.text = "Price: " + current_Item.price.ToString();
         }
     }
 }

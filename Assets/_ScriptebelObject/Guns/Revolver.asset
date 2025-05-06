@@ -15,10 +15,10 @@ MonoBehaviour:
   gunname: Revolver
   GunSprite: {fileID: 4321398367205095341, guid: 229809cd1e93ba74abfbb4dc5be7c31e, type: 3}
   projectilePrefab: {fileID: 894301910066111340, guid: a3a8521909983bb4e974359b5df6adb3, type: 3}
-  price: 20
+  price: 34
   tags:
   - 
-  BaseDamage: 10
+  BaseDamage: 25
   criticalchange: 6
   criticalMultiplayer: 7.5
   HoldToFire: 0
