@@ -89,7 +89,7 @@ public class GunManager : MonoBehaviour
         } 
 
 
-        if (currentGun && Input.GetKey(KeyCode.Mouse1) && timeSinceLastShot >= currentGun.timeBetweenShots)
+        if (currentGun && Input.GetKey(KeyCode.Mouse0) && timeSinceLastShot >= currentGun.timeBetweenShots)
         {
             AmmoType ammoType = (AmmoType)currentGun.ammoType;
             if (AmmoInventory[ammoType] > 0)

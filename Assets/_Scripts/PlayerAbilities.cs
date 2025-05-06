@@ -29,7 +29,7 @@ public class PlayerAbilities : MonoBehaviour
             GhostMode(false);
         }
 
-        if (playerStats.currentArmor >= HealArmorCost && playerStats.currentHealth <= playerStats.maxHealth * (1 - HealAmount)) {
+        if (Input.GetKeyDown(KeyCode.E) && playerStats.currentArmor >= HealArmorCost && playerStats.currentHealth <= playerStats.maxHealth * (1 - HealAmount)) {
             Heal();
         }
     }

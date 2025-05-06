@@ -43603,7 +43603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1618330381}
   armorBar: {fileID: 1295761748}
-  BaseDamage: 10
+  BaseDamage: 1
   BaseSpeed: 1
   maxHealth: 100
   currentHealth: 0
