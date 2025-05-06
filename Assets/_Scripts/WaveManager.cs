@@ -62,10 +62,10 @@ public class WaveManager : MonoBehaviour
                 for (int i = 0; i < spawnAmount; i++)
                 {
                     StartCoroutine(SpawnEnemy(PossibleEnemies[Random.Range(0, PossibleEnemies.Count)]));
-                    yield return new WaitForSeconds(0.1f);
+                    yield return new WaitForSeconds(0.25f);
                 }
             }
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(waves[currentWave].timeBetweenSpawn);
         }
 
         while (LiveEnemies.Count > 0) { yield return new WaitForSeconds(5); }
