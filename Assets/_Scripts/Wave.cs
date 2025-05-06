@@ -19,8 +19,8 @@ public class Wave : ScriptableObject
     [Header("Variables")]
     public int totalThreatScore;
     public int allowedThreatLevel;
+    public int timeBetweenSpawn;
     public int maxSpawnAmount;
     public int minSpawnAmount;
-
     public int waveCurrencyValue;
 }
