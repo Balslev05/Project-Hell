@@ -55,6 +55,7 @@ public class ShopCard : MonoBehaviour
         current_Gun = gun;
         cardImage.sprite = gun.GunSprite;
         cardName.text = gun.gunname;
+
         RectTransform rectTransform = cardImage.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(cardImage.sprite.rect.width, cardImage.sprite.rect.height);
         //RandomizeStats();
@@ -65,10 +66,13 @@ public class ShopCard : MonoBehaviour
         current_Item = item;
         cardImage.sprite = item.icon;
         cardName.text = item.itemName;
+
         RectTransform rectTransform = cardImage.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(cardImage.sprite.rect.width, cardImage.sprite.rect.height);
+
         SetItemStats();
     }
+    
     public void Buy()
     {
         if (current_Gun != null)

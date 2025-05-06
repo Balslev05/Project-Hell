@@ -25,26 +25,22 @@ public class ShopCanvas : MonoBehaviour
     public GameObject TabObjects;
     public GameObject RerollButton;
     public GameObject BoxContainer;
+
     [Header("ShopAnimation")]
     private int StartBox_XPos = -175;
     private int OffSet = 150;
 
     public void Awake()
-    {
-      
+    { 
       StartCoroutine(HideShop());
     }
 
     public void StartShop()
     {
-      RerollCostText.text = "Reroll:" + RerollCost.ToString();
+      RerollCostText.text = "Reroll: " + RerollCost.ToString();
       RerollButton.SetActive(false);
       nextRoundButton.SetActive(false);
-      foreach (Transform child in BoxContainer.transform)
-      {
-        ShopBoxes.Add(child.transform);
-        child.GetComponent<RectTransform>().anchoredPosition = new Vector2(-3000, 0.5f);
-      }
+
       StartCoroutine(ShowShop());
       
     }
@@ -58,6 +54,7 @@ public class ShopCanvas : MonoBehaviour
         StartCoroutine(HideShop());
       }
     }
+
     public void UpdateChildrenCount()
     {
         ShopBoxes.Clear();
@@ -75,31 +72,33 @@ public class ShopCanvas : MonoBehaviour
       yield return new WaitForSeconds(0.25f);
       FadeCanvas.DOFade(1, 0.5f).SetEase(Ease.OutExpo);
       yield return new WaitForSeconds(0.5f);
-      StartCoroutine(AnimateShopBox());
+      StartCoroutine(AnimateShopCards());
       Tabs.SetActive(true);
     }
-    public IEnumerator AnimateShopBox()
+    
+    public IEnumerator AnimateShopCards()
     {
-      int i = 0;
-      foreach (Transform child in ShopBoxes)
+     for (int i = 0; i < ShopBoxes.Count; i++)
       {
+        Transform child = ShopBoxes[i];
         
         child.gameObject.SetActive(true);
         child.GetComponent<RectTransform>().anchoredPosition = new Vector2(-3000, 0.5f);
         child.GetComponent<RectTransform>().DOAnchorPosX(StartBox_XPos + (OffSet * i), 0.5f).SetEase(Ease.OutExpo);
         
-        int Type = Random.Range(0, 2);
+        int Type = Random.Range(0, 3);
 
         if (Type == 0) // ITEM
-          {
-            child.GetComponent<ShopCard>().SetCard(manager.GetRandomItem());
-          }
-        else if (Type == 1) // GUN
-          {
-            child.GetComponent<ShopCard>().SetCard(manager.GetRandomGun());  
-          }
-        i++;
+        {
+          child.GetComponent<ShopCard>().SetCard(manager.GetRandomItem());
+        }
+        else if (Type >= 1) // GUN // der er større change for guns
+        {
+          child.GetComponent<ShopCard>().SetCard(manager.GetRandomGun());  
+        }
+        
         yield return new WaitForSeconds(0.1f);
+
       }
       RerollButton.SetActive(true);
       nextRoundButton.SetActive(true);

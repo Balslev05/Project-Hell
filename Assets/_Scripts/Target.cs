@@ -10,6 +10,7 @@ public class Target : MonoBehaviour
 
     [SerializeField] private GameObject PopUpEffectPrefab;
     [SerializeField] private GameObject CurrencyPrefab;
+    [SerializeField] private GameObject BloodEffect;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class Target : MonoBehaviour
      //-----SpawnDamageNumbers-----///
         GameObject worldCanvas = GameObject.FindGameObjectWithTag("WorldCanvas");
         PopUp EffectPrefab  = Instantiate(PopUpEffectPrefab, worldCanvas.transform).GetComponent<PopUp>();
+        Instantiate(BloodEffect, transform.position, Quaternion.identity);
         EffectPrefab.transform.localPosition = SetPopUpTransform();
 
         switch (criticalMultiplayer)

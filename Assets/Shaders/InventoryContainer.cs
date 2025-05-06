@@ -12,6 +12,7 @@ public class InventoryContainer : MonoBehaviour
     public int Xoffset = 150;
     public int Yoffset = -150;
     public Vector2 StartOffset = new Vector2(0, 0);
+    public List<Vector2> slotPositions = new List<Vector2>();
 
     [Header("Inventory List")]
     public List<InteractableUI> InventoryList = new List<InteractableUI>();
@@ -19,7 +20,6 @@ public class InventoryContainer : MonoBehaviour
     [Header("Selection")]
     public GameObject SelectedGun;
 
-    public List<Vector2> slotPositions = new List<Vector2>();
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class InventoryContainer : MonoBehaviour
         UpdateInventory();
     }
 
-    void OnEnable()
+    void OnEnable() // nogle gange hoppede den af pga underlige seanarier så denne her kode er bare en failsafe
     {
         gunManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GunManager>();
         UpdateInventory();

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     
     private Managers manager;
     private CurrencyManager currencyManager;
+
+    [SerializeField] private GameObject CurrencyEffects;
 
     [Header("Stats")]
     [SerializeField] private float moveSpeed;
@@ -124,7 +127,10 @@ public class PlayerMovement : MonoBehaviour
         if (Collider.tag == "Currency")
         {
             currencyManager.GetMoney(currencyManager.bananaPickupValue);
-            Destroy(Collider.gameObject);
+            Collider.transform.DOMove(transform.position, 0.20f).SetEase(Ease.OutExpo);
+            Destroy(Collider.gameObject,0.10f);
+            GameObject t = Instantiate(CurrencyEffects, transform.position, Quaternion.identity);
+            Destroy(t, 1f);
         }
     }
 }
